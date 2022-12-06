@@ -13,9 +13,13 @@ export default function Myhome() {
 
 
 
+
+
     return (
 
         <Menu pageWrapId={"page-wrap"}>
+            <h1 className="titlelogo"> Make<span className="underscore">_</span>suggest</h1>
+
 
             <a id="home" className="menu-item" href="/"><FaHome /> Home<span className="endpoint">.</span></a >
             <a id="suggest" className="menu-item" href="/suggest"><FaHandSparkles /> Suggestion<span className="endpoint">.</span></a >
