@@ -1,0 +1,78 @@
+@use '../../App';
+
+
+.inputFields{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    height: calc(App.$mainHeight / 2.5);
+    gap: 1em;
+    width: 30%;
+    color: App.$color-primary;
+    border: 1px #e0e4eb solid;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0 20px 60px 0 black;
+    background-color: #ffffff;
+    margin-top: 3%;
+
+}
+
+
+.avatarLogo{
+    border-radius: 50%;
+    height: 15em;
+    box-shadow: 0 20px 60px 0 black;
+    display: block;
+    margin: auto;
+    margin-top: 1%;
+}
+
+    
+.nameInput, .fNameInput, .emailInput, .emailConfInput, .passInput, .passConfInput{
+    font-family: App.$font-text;
+    height: 2em;
+    border: #196c84 solid 0.5px;
+    border-radius: 5px;
+    padding-left: 0.5em;
+}
+
+.localisationInput{
+    height: 2.5em;
+    border: #196c84 solid 0.5px;
+    border-radius: 5px;
+    padding-left: 0.5em;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.nameInput, .fNameInput{
+    width: 40%;
+}
+
+.nameInput{
+    margin-left: 1em;
+}
+
+.fNameInput{
+    margin-right: 1em;
+}
+
+.identityInputs{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.emailInput, .emailConfInput, .passInput, .passConfInput{
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.passConfInput{
+    margin-bottom: 3%;
+}
+
+
+

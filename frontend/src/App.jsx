@@ -1,12 +1,11 @@
-import Home from "./pages/Home";
+import SubscriptionForm from "@pages/SubscriptionForm/SubscriptionForm";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <SubscriptionForm />
     </div>
   );
 }
