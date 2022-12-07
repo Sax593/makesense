@@ -1,0 +1,16 @@
+.usercard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.management {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.usermanagement,
+.sugestmanagement {
+  width: 45%;
+}
