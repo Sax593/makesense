@@ -1,19 +1,16 @@
+import PropTypes from "prop-types";
 import { IoIosCheckmark, IoIosClose } from "react-icons/io";
 
 import "./style.scss";
 
-export default function UserCard() {
+export default function UserCard({ firstname, lastname, picture }) {
   return (
     <article>
       <div className="userident">
-        <img
-          className="avatar"
-          src="https://randomuser.me/api/portraits/men/0.jpg"
-          alt=""
-        />
+        <img className="avatar" src={picture} alt="" />
         <div className="name">
-          <p>Firstname</p>
-          <p>LastName</p>
+          <p>{firstname}</p>
+          <p>{lastname}</p>
         </div>
       </div>
       <div className="validation">
@@ -29,3 +26,9 @@ export default function UserCard() {
     </article>
   );
 }
+
+UserCard.propTypes = {
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+};

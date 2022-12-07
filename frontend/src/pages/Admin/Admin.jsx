@@ -1,4 +1,5 @@
 import UserCard from "@components/UserCard/UserCard";
+import user from "@assets/user.js";
 
 import "./style.scss";
 
@@ -10,20 +11,16 @@ export default function Admin() {
         <h2>User to be validated</h2>
         <p>Users awaiting validation</p>
         <div className="usercard">
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+          {user.map((element) => {
+            return (
+              <UserCard
+                key={element.id}
+                firstname={element.firstname}
+                lastname={element.lastname}
+                picture={element.picture}
+              />
+            );
+          })}
         </div>
       </div>
       <h2>Management</h2>
