@@ -1,11 +1,9 @@
-import Home from "./pages/Home";
-
+import Admin from "@pages/Admin/Admin";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-
+      <Admin />
     </div>
   );
 }
