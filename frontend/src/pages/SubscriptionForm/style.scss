@@ -1,6 +1,5 @@
 @use '../../App';
 
-
 .inputFields{
     display: flex;
     flex-direction: column;
@@ -16,9 +15,7 @@
     box-shadow: 0 20px 60px 0 black;
     background-color: #ffffff;
     margin-top: 3%;
-
 }
-
 
 .avatarLogo{
     border-radius: 50%;
@@ -29,7 +26,6 @@
     margin-top: 1%;
 }
 
-    
 .nameInput, .fNameInput, .emailInput, .emailConfInput, .passInput, .passConfInput{
     font-family: App.$font-text;
     height: 2em;
@@ -76,7 +72,6 @@
     margin-bottom: 3%;
 }
 
-
 .validation{
     padding: 0.5em;
     border-radius: 1em;
@@ -93,31 +88,31 @@
 .validation{
     background: #ffffff;
     transition: background-color 0.5s ease-out 100ms
-  }
+}
   
- .validation:hover {
+.validation:hover {
     background-color: #27ae60;
-  }
+}
 
-  .logoMS{
+.logoMS{
     position: absolute;
     height: 10em;
     left: 10%;
     top: 20%; 
-  }
+}
 
-  .logoMS2{
+.logoMS2{
     position: absolute;
     height: 20em;
     right: 15%;
     top: 40%;
     z-index: -5;
     transform: rotate(-120deg);
-  }
+}
 
-  .logoMS3{
+.logoMS3{
     position: absolute;
     height: 15em;
     transform: rotate(-220deg);
     right:-20%
-  }
+}
