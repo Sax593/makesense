@@ -1,0 +1,52 @@
+@use "../../App";
+
+.settingstitle {
+  background-color: App.$color-background;
+  display: flex;
+  justify-content: center;
+  margin-top: 0rem;
+}
+.settingsp {
+  display: flex;
+
+  padding-top: 10rem;
+  color: whitesmoke;
+  font-size: 2.5em;
+  padding-left: 50rem;
+
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+}
+
+.logoxMS {
+  position: absolute;
+  height: 10em;
+  left: 10%;
+  top: 20%;
+}
+
+.logoxMS2 {
+  position: absolute;
+  height: 12em;
+  right: 10%;
+  top: 80%;
+  z-index: -5;
+  transform: rotate(-120deg);
+}
+
+.logoxMS3 {
+  position: absolute;
+  height: 15em;
+  transform: rotate(-220deg);
+  right: -7%;
+}
+
+.titlesuggest {
+  display: flex;
+
+  padding-top: 10rem;
+  color: whitesmoke;
+  font-size: 2.5em;
+  padding-left: 50rem;
+
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+}
