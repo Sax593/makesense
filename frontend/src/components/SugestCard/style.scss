@@ -1,0 +1,46 @@
+article {
+  border: solid 1px black;
+  max-width: 20vw;
+  padding: 0 2.5vw;
+  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.95);
+  border-radius: 1em;
+  background-color: whitesmoke;
+}
+
+.wrapper {
+  border: solid 1px rgb(121, 117, 117);
+  margin: 0.5rem 0;
+
+  width: fit-content;
+  height: fit-content;
+}
+
+.progressBar {
+  height: 0.5rem;
+  width: 6vw;
+  background-color: yellowgreen;
+}
+
+.footerCard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.adviceButton {
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+.cardz {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 43rem;
+  height: 10rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+article.cardz {
+  margin-bottom: 3em;
+}
