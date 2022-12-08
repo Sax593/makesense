@@ -1,9 +1,9 @@
-import SuggestDetails from "@components/SuggestDetails/SuggestDetails";
+import Suggest from "@pages/Suggest/Suggest";
 
 function App() {
   return (
     <div className="App">
-      <SuggestDetails />
+      <Suggest />
     </div>
   );
 }
