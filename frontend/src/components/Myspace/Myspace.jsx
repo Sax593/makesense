@@ -1,16 +1,13 @@
 import { slide as Menu } from "react-burger-menu";
-import { FaHome } from "react-icons/fa";
-import { FaHandSparkles } from "react-icons/fa";
-import { FaHistory } from "react-icons/fa";
-import { IoMdContacts } from "react-icons/io";
-import { IoMdSettings } from "react-icons/io";
+import { FaHome, FaHandSparkles, FaHistory } from "react-icons/fa";
+import { IoMdContacts, IoMdSettings } from "react-icons/io";
 import { VscDebugDisconnect } from "react-icons/vsc";
 
 import "./Style.scss";
 
 export default function Myhome() {
   return (
-    <Menu pageWrapId={"page-wrap"}>
+    <Menu pageWrapId="page-wrap">
       <h1 className="titlelogo">
         {" "}
         Make<span className="underscore">_</span>suggest
