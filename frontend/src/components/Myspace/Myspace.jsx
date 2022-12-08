@@ -34,6 +34,8 @@ export default function Myhome() {
       <a id="logout" className="menu-item" href="/logout">
         <VscDebugDisconnect /> Logout<span className="endpoint">.</span>
       </a>
+
+      <p className="lang">Fr 🇫🇷 En 🇬🇧 Es 🇪🇸</p>
     </Menu>
   );
 }
