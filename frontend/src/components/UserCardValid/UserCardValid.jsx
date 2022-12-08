@@ -3,7 +3,7 @@ import { IoIosCheckmark, IoIosClose } from "react-icons/io";
 
 import "./style.scss";
 
-export default function UserCard({ firstname, lastname, picture }) {
+export default function UserCardValid({ firstname, lastname, picture }) {
   return (
     <article>
       <div className="userident">
@@ -27,7 +27,7 @@ export default function UserCard({ firstname, lastname, picture }) {
   );
 }
 
-UserCard.propTypes = {
+UserCardValid.propTypes = {
   firstname: PropTypes.string.isRequired,
   lastname: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
