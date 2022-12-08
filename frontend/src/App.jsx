@@ -1,13 +1,13 @@
 import Home from "@pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <Home />
-      </div>
-      <h1>Suggestions</h1>
-    </>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </div>
   );
 }
 
