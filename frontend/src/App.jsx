@@ -1,9 +1,9 @@
-import Admin from "@pages/Admin/Admin";
+import SuggestDetails from "@components/SuggestDetails/SuggestDetails";
 
 function App() {
   return (
     <div className="App">
-      <Admin />
+      <SuggestDetails />
     </div>
   );
 }
