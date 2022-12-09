@@ -12,7 +12,7 @@ export default function Timeline() {
     },
     {
       name: "05/05/2023",
-      active: true,
+      active: false,
     },
     {
       name: "28/01/2023",
