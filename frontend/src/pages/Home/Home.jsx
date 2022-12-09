@@ -3,8 +3,7 @@ import "./Style.scss";
 import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";
-import { BsFilterLeft } from "react-icons/bs";
-import { BsFilterRight } from "react-icons/bs";
+
 
 import SugestCard from "@components/SugestCard/SugestCard";
 
@@ -21,12 +20,10 @@ export default function Home() {
         <h1 className="settingstitle"></h1>
         <h2 className="titlesuggest">
           <span className="filterti1">
-            <BsFilterRight />
-          </span>
+          
           Suggestions
           <span className="filterti">
-            <BsFilterLeft />
-          </span>
+           
         </h2>
         <div className="cardx">
           <SugestCard />
