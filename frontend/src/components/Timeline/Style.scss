@@ -5,7 +5,7 @@
   }
 
   .timelineProgress {
-	width: 33%;
+	width: 0%;
 	height: 100%;
 	background-color: orange;
 }
@@ -29,4 +29,42 @@
 	background-color: #ccc;
 	display: block;
 	border-radius: 100%;
+}
+
+.timelineContent{
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #ddd;
+	width: 100px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.timelineContent::before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background-color: #ddd;
+	display: block;
+	position: absolute;
+	top: -8px;
+	margin-left: -2px;
+	left: 50%;
+	transform: rotate(-45deg) translateX(-50%);
+}
+
+.timelineItem.active::before {
+	background-color: orange;
+}
+
+.timelineItem.active .timelineContent {
+	color: #fff;
+	background-color: orange;
+}
+
+.timelineItem.active .timelineContent::before {
+	background-color: orange;
 }
