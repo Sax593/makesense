@@ -1,11 +1,9 @@
-import Home from "./pages/Home";
-
+import Timeline from "@components/Timeline/Timeline";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-
+      <Timeline />
     </div>
   );
 }
