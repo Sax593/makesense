@@ -23,6 +23,11 @@ export default function Home() {
           <SugestCard />
           <SugestCard />
           <SugestCard />
+          <SugestCard />
+          <SugestCard />
+          <SugestCard />
+          <SugestCard />
+          <SugestCard />
         </div>
       </section>
     </>

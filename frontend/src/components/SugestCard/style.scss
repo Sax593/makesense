@@ -1,6 +1,7 @@
 article {
   border: solid 1px black;
-  max-width: 20vw;
+
+  width: 14vw;
   padding: 0 2.5vw;
   box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.95);
   border-radius: 1em;
@@ -16,9 +17,12 @@ article {
 }
 
 .progressBar {
+  display: flex;
+  padding-top: 0.2rem;
+  justify-content: center;
   height: 0.5rem;
-  width: 6vw;
-  background-color: yellowgreen;
+  width: 16vw;
+  background-color: green;
 }
 
 .footerCard {
@@ -32,15 +36,14 @@ article {
   background-color: transparent;
 }
 .cardz {
+  padding-top: 0.4rem;
   display: flex;
-  justify-content: space-evenly;
-  margin-left: 43rem;
+  justify-content: space-around;
   height: 10rem;
-  flex-direction: column;
   flex-wrap: wrap;
-  display: flex;
 }
 
 article.cardz {
   margin-bottom: 3em;
+  padding-left: 10em;
 }

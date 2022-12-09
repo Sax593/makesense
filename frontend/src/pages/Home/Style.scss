@@ -21,7 +21,7 @@
   position: absolute;
   height: 10em;
   left: 10%;
-  top: 20%;
+  top: 5%;
 }
 
 .logoxMS2 {
@@ -38,23 +38,24 @@
   height: 15em;
   transform: rotate(-220deg);
   right: -7%;
+  top: -8%;
 }
 
 .titlesuggest {
   display: flex;
-  padding-top: 2rem;
+  padding-bottom: 4rem;
+  padding-top: 2em;
   color: #0c3944;
   font-size: 2.2em;
   font-weight: bolder;
   padding-left: 50rem;
   text-decoration: underline 0.2rem App.$color-primary;
-  text-underline-offset: 0.4rem;
+  text-underline-offset: 0.6rem;
 }
 .cardx {
-  padding-top: 2vh;
-  flex-direction: column;
+  padding-top: 3vh;
   flex-wrap: wrap;
   display: flex;
   padding: 1vh;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
