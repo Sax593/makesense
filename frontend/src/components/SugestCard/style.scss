@@ -1,28 +1,26 @@
-article {
+.cardz {
   border: solid 1px black;
-
-  width: 14vw;
+  max-width: 30vw;
   padding: 0 2.5vw;
-  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.95);
+  background-color: lightgray;
   border-radius: 1em;
-  background-color: whitesmoke;
+  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.95);
+  transition: transform 0.4s;
 }
 
+.cardz:hover {
+  cursor: pointer;
+  transform: scale(1.08);
+}
 .wrapper {
   border: solid 1px rgb(121, 117, 117);
   margin: 0.5rem 0;
-
-  width: fit-content;
-  height: fit-content;
 }
 
 .progressBar {
-  display: flex;
-  padding-top: 0.2rem;
-  justify-content: center;
   height: 0.5rem;
-  width: 16vw;
-  background-color: green;
+  width: 2vw;
+  background-color: yellowgreen;
 }
 
 .footerCard {
@@ -34,13 +32,6 @@ article {
   box-shadow: none;
   border: none;
   background-color: transparent;
-}
-.cardz {
-  padding-top: 0.4rem;
-  display: flex;
-  justify-content: space-around;
-  height: 10rem;
-  flex-wrap: wrap;
 }
 
 article.cardz {
