@@ -4,7 +4,6 @@ import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";
 
-
 import SugestCard from "@components/SugestCard/SugestCard";
 
 export default function Home() {
@@ -18,13 +17,7 @@ export default function Home() {
 
       <section className="titlehome">
         <h1 className="settingstitle"></h1>
-        <h2 className="titlesuggest">
-          <span className="filterti1">
-          
-          Suggestions
-          <span className="filterti">
-           
-        </h2>
+        <h2 className="titlesuggest">Suggestions</h2>
         <div className="cardx">
           <SugestCard />
           <SugestCard />
