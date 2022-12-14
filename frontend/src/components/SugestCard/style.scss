@@ -1,0 +1,40 @@
+.cardz {
+  border: solid 1px black;
+  max-width: 30vw;
+  padding: 0 2.5vw;
+  background-color: lightgray;
+  border-radius: 1em;
+  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.95);
+  transition: transform 0.4s;
+}
+
+.cardz:hover {
+  cursor: pointer;
+  transform: scale(1.08);
+}
+.wrapper {
+  border: solid 1px rgb(121, 117, 117);
+  margin: 0.5rem 0;
+}
+
+.progressBar {
+  height: 0.5rem;
+  width: 2vw;
+  background-color: yellowgreen;
+}
+
+.footerCard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.adviceButton {
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+
+article.cardz {
+  margin-bottom: 3em;
+  padding-left: 10em;
+}

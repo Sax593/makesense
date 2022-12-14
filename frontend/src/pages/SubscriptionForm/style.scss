@@ -1,0 +1,127 @@
+@use "../../App";
+
+.inputFields {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  height: calc(App.$mainHeight / 2);
+  gap: 1em;
+  width: 30%;
+  color: App.$color-primary;
+  border: 1px #e0e4eb solid;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 20px 60px 0 black;
+  background-color: #ffffff;
+  margin-top: 3%;
+}
+
+.avatarLogo {
+  border-radius: 50%;
+  height: 12em;
+  box-shadow: 0 20px 60px 0 black;
+  display: block;
+  margin: auto;
+  margin-top: 1%;
+}
+
+.nameInput,
+.fNameInput,
+.emailInput,
+.emailConfInput,
+.passInput,
+.passConfInput {
+  font-family: App.$font-text;
+  height: 2em;
+  border: #196c84 solid 0.5px;
+  border-radius: 1em;
+  padding-left: 0.5em;
+  color: App.$text-color-primary;
+}
+
+.localisationInput {
+  height: 2.5em;
+  border: #196c84 solid 0.5px;
+  border-radius: 1em;
+  padding-left: 0.5em;
+  margin-right: 1em;
+  margin-left: 1em;
+  color: App.$text-color-primary;
+}
+
+.nameInput,
+.fNameInput {
+  width: 40%;
+}
+
+.nameInput {
+  margin-left: 1em;
+}
+
+.fNameInput {
+  margin-right: 1em;
+}
+
+.identityInputs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+
+.emailInput,
+.emailConfInput,
+.passInput,
+.passConfInput {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.passConfInput {
+  margin-bottom: 3%;
+}
+
+.validation {
+  padding: 0.5em;
+  border-radius: 1em;
+  font-family: App.$font-text;
+  box-shadow: 0 20px 60px 0 black;
+  border: none;
+  font-size: 1.2em;
+  display: block;
+  margin: auto;
+  margin-top: 1%;
+  color: App.$text-color-primary;
+}
+
+.validation {
+  background: #ffffff;
+  transition: background-color 0.5s ease-out 100ms;
+}
+
+.validation:hover {
+  background-color: #27ae60;
+}
+
+.logoMS {
+  position: absolute;
+  height: 10em;
+  left: 10%;
+  top: 20%;
+}
+
+.logoMS2 {
+  position: absolute;
+  height: 20em;
+  right: 15%;
+  top: 40%;
+  z-index: -5;
+  transform: rotate(-120deg);
+}
+
+.logoMS3 {
+  position: absolute;
+  height: 15em;
+  transform: rotate(-220deg);
+  right: -20%;
+}
