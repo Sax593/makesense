@@ -2,6 +2,7 @@ import { slide as Menu } from "react-burger-menu";
 import { FaHome, FaHandSparkles, FaHistory } from "react-icons/fa";
 import { IoMdContacts, IoMdSettings } from "react-icons/io";
 import { VscDebugDisconnect } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 import "./Style.scss";
 
@@ -13,24 +14,24 @@ export default function Myhome() {
         Make<span className="underscore">_</span>suggest
       </h1>
 
-      <a id="home" className="menu-item" href="/">
-        <FaHome /> Home<span className="endpoint">.</span>
-      </a>
-      <a id="suggest" className="menu-item" href="/suggest">
+      <Link id="home" className="menu-item" to="/">
+        Home<span className="endpoint">.</span>
+      </Link>
+      <Link id="suggest" className="menu-item" to="/suggest">
         <FaHandSparkles /> Suggestion<span className="endpoint">.</span>
-      </a>
-      <a id="historic" className="menu-item" href="/historic">
+      </Link>
+      <Link id="historic" className="menu-item" to="/historic">
         <FaHistory /> Historique<span className="endpoint">.</span>
-      </a>
-      <a id="Contacts" className="menu-item" href="/contacts">
+      </Link>
+      <Link id="Contacts" className="menu-item" to="/contacts">
         <IoMdContacts /> Contacts<span className="endpoint">.</span>
-      </a>
-      <a id="params" className="menu-item" href="/params">
+      </Link>
+      <Link id="params" className="menu-item" to="/params">
         <IoMdSettings /> Paramètres<span className="endpoint">.</span>
-      </a>
-      <a id="logout" className="menu-item" href="/logout">
+      </Link>
+      <Link id="logout" className="menu-item" to="/logout">
         <VscDebugDisconnect /> Logout<span className="endpoint">.</span>
-      </a>
+      </Link>
 
       <p className="lang">Fr 🇫🇷 En 🇬🇧 Es 🇪🇸</p>
     </Menu>
