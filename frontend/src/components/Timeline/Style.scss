@@ -1,70 +1,70 @@
 .timeline {
-    margin: 50px 60px;
-    height: 4px;
-    background-color: #ccc;
-  }
+  margin: 50px 60px;
+  height: 4px;
+  background-color: #ccc;
+}
 
-  .timelineProgress {
-	width: 0%;
-	height: 100%;
-	background-color: orange;
+.timelineProgress {
+  width: 0%;
+  height: 100%;
+  background-color: orange;
 }
 
 .timelineItems {
-	margin-left: -10px;
-	margin-right: -10px;
-	margin-top: -12px;
-	display: flex;
-	justify-content: space-between;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: -12px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .timelineItem {
-	position: relative;
+  position: relative;
 }
 
 .timelineItem::before {
-	content: '';
-	width: 20px;
-	height: 20px;
-	background-color: #ccc;
-	display: block;
-	border-radius: 100%;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  display: block;
+  border-radius: 100%;
 }
 
-.timelineContent{
-	position: absolute;
-	top: 30px;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: #ddd;
-	width: 100px;
-	padding: 5px 10px;
-	border-radius: 5px;
-	text-align: center;
+.timelineContent {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ddd;
+  width: 100px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .timelineContent::before {
-	content: '';
-	width: 10px;
-	height: 10px;
-	background-color: #ddd;
-	display: block;
-	position: absolute;
-	top: -8px;
-	margin-left: -2px;
-	left: 50%;
-	transform: rotate(-45deg) translateX(-50%);
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  display: block;
+  position: absolute;
+  top: -8px;
+  margin-left: -2px;
+  left: 50%;
+  transform: rotate(-45deg) translateX(-50%);
 }
 
 .timelineItem.active::before {
-	background-color: orange;
+  background-color: orange;
 }
 
 .timelineItem.active .timelineContent {
-	color: #fff;
-	background-color: orange;
+  color: #fff;
+  background-color: orange;
 }
 
 .timelineItem.active .timelineContent::before {
-	background-color: orange;
+  background-color: orange;
 }
