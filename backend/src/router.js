@@ -10,4 +10,12 @@ router.post("/suggests", suggestsControllers.add);
 router.put("/suggests/:id", suggestsControllers.edit);
 router.delete("/suggests/:id", suggestsControllers.destroy);
 
+const usersControllers = require("./controllers/usersControllers");
+
+router.get("/users", usersControllers.browse);
+router.get("/users/:id", usersControllers.read);
+router.post("/users", usersControllers.add);
+router.put("/users/:id", usersControllers.edit);
+router.delete("/users/:id", usersControllers.destroy);
+
 module.exports = router;
