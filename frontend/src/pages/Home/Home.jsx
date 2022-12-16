@@ -4,7 +4,6 @@ import Myhome from "@components/Myspace/Myspace";
 import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";
-import Myhome from "@components/Myspace/Myspace";
 
 export default function Home() {
   return (
@@ -18,6 +17,24 @@ export default function Home() {
       <section className="titlehome">
         <h1 className="settingstitle"> </h1>
         <h2 className="titlesuggest">Suggestions</h2>
+        <fieldset className="filteridea">
+          <legend>Priorisation </legend>
+
+          <div>
+            <input type="checkbox" id="high" name="high"></input>
+            <label for="high">Haute</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="mid" name="mid"></input>
+            <label for="mid">Moyenne</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="low" name="low"></input>
+            <label for="low">Basse</label>
+          </div>
+        </fieldset>
         <div className="cardx">
           <SugestCard />
           <SugestCard />
