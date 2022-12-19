@@ -1,0 +1,15 @@
+@use "../src/App.scss";
+
+.social {
+  color: App.$text-color-primary;
+  font-size: 3rem;
+  padding: 1.5vh;
+  text-decoration: none;
+  cursor: alias;
+}
+
+.socialRubber {
+  display: flexbox;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+}
