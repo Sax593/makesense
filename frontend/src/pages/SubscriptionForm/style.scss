@@ -18,20 +18,18 @@
 }
 
 @media (max-width: 1200px) {
-  .inputFields{
+  .inputFields {
     width: 70vh;
     height: auto;
   }
-    
 }
 
-@media (max-width: 450px ){
-  .inputFields{
+@media (max-width: 450px) {
+  .inputFields {
     width: auto;
     height: auto;
   }
 }
-
 
 .avatarLogo {
   border-radius: 50%;
@@ -135,4 +133,3 @@
   z-index: -5;
   transform: rotate(-120deg);
 }
-
