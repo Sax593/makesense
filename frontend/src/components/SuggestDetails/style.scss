@@ -1,0 +1,44 @@
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+}
+
+.description,
+.repercution,
+h2 {
+  padding: 0 1rem;
+}
+
+.people {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  padding: 0 1rem;
+}
+
+.impacted,
+.expert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.avatarpicture {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}

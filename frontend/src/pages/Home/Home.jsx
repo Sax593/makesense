@@ -15,7 +15,7 @@ export default function Home() {
       <img className="logoxMS3" src={logoMS3} alt="logoMS" />
 
       <section className="titlehome">
-        <h1 className="settingstitle">coucou</h1>
+        <h1 className="settingstitle"> </h1>
         <h2 className="titlesuggest">Suggestions</h2>
         <div className="cardx">
           <SugestCard />
