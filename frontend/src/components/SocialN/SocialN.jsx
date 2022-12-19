@@ -5,7 +5,6 @@ import {
   BsYoutube,
   BsLinkedin,
 } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import "./Style.scss";
 
 export default function SocialN() {
