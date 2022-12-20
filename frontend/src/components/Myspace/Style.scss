@@ -47,13 +47,12 @@ main {
 /* General sidebar styles */
 .bm-menu {
   background-color: #196c84;
-  padding: 8em 3em 0;
+  padding: 5em 1.5em 0;
   font-size: 1.15em;
   background: url("@assets/test.png") no-repeat;
   background-size: cover;
   height: 100vh;
   margin: 0;
-  overflow-y: hidden;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -64,7 +63,7 @@ main {
 /* Wrapper for item list */
 .bm-item-list {
   color: #ffffff;
-  margin-left: 0em;
+  padding: 0.8em;
 }
 
 /* Individual item */
@@ -89,10 +88,8 @@ main {
 }
 
 .titlelogo {
-  display: flex;
-  justify-content: center;
   color: white;
-
+  text-align: center;
   font-weight: bold;
   font-size: 1.6em;
 }
@@ -102,9 +99,7 @@ main {
 }
 
 .menu-item {
-  display: flex;
-  justify-content: center;
-  padding: 2.1vh;
+  padding: 3vh;
   margin: 0vh;
   font-family: Raleway, Helvetica, Arial, sans-serif;
   text-decoration: none;
@@ -119,190 +114,6 @@ main {
 .lang {
   padding-top: 2.7em;
   padding-left: 1.5rem;
-}
-
-@media (max-width: 1500px) {
-  /* Position and sizing of burger button */
-  .bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-  }
-
-  /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    background: #fcf6a0;
-  }
-
-  /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    background: #a90000;
-  }
-
-  /* Position and sizing of clickable cross button */
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
-
-  /* Color/shape of close button cross */
-  .bm-cross {
-    background: whitesmoke;
-    left: 60rem;
-    top: 30px;
-  }
-
-  /*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-  .bm-menu-wrap {
-    position: relative;
-    height: 100%;
-  }
-
-  /* General sidebar styles */
-  .bm-menu {
-    display: flex;
-    justify-content: center;
-    background-color: #196c84;
-    padding: 2em 2em 3em;
-    font-size: 1.5em;
-    background: url("@assets/ok.jpg") no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    border: #196c84 solid 0.2rem;
-
-    margin: 0;
-  }
-
-  .lang {
-    font-size: 0.8em;
-    padding-top: 1.5em;
-    padding-left: 1rem;
-    justify-content: center;
-  }
-
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
-  }
-
-  /* Wrapper for item list */
-  .bm-item-list {
-    color: #ffffff;
-    padding: 0.8em;
-  }
-
-  /* Individual item */
-  .bm-item {
-    display: inline-block;
-  }
-
-  /* Styling of overlay */
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-  }
-
-  .titlelogo {
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    margin-right: 19em;
-    font-size: 1.6em;
-  }
-}
-
-@media (max-width: 850px) {
-  /* Position and sizing of burger button */
-  .bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-    left: 36px;
-    top: 36px;
-  }
-
-  /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    background: #fcf6a0;
-  }
-
-  /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    background: #a90000;
-  }
-
-  /* Position and sizing of clickable cross button */
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
-
-  /* Color/shape of close button cross */
-  .bm-cross {
-    background: whitesmoke;
-    left: 60rem;
-    top: 10px;
-  }
-
-  /*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-  .bm-menu-wrap {
-    position: fixed;
-
-    height: 100%;
-    width: 100%;
-  }
-
-  /* General sidebar styles */
-  .bm-menu {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    background-color: #196c84;
-    padding: 0em 0em 0em;
-    font-size: 1.2em;
-    background: url("@assets/test.png") no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-  }
-
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
-  }
-
-  /* Wrapper for item list */
-  .bm-item-list {
-    color: #ffffff;
-    width: 10em;
-
-    padding: 1.5em;
-  }
-
-  /* Individual item */
-  .bm-item {
-    display: inline-block;
-  }
-
-  /* Styling of overlay */
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-  }
-
-  .titlelogo {
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    margin-right: 2.7em;
-    font-size: 1.6em;
-  }
 }
 
 @media (max-width: 450px) {
@@ -325,35 +136,38 @@ main {
     display: flex;
     justify-content: center;
     background-color: #196c84;
-    padding: 5em 2em 3em;
+    padding: 0.5em 2em 3em;
     font-size: 1.2em;
     background: url("@assets/test.png") no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100vw;
   }
-}
-.bm-item-list {
-  color: #ffffff;
-  padding: 2em;
-  padding-left: 17em;
-  width: 30em;
-  justify-content: center;
-}
 
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
+  .bm-item-list {
+    color: #ffffff;
+    padding: 2em;
+    padding-left: 12em;
+    width: 30em;
+    justify-content: center;
+  }
 
-.bm-cross {
-  background: #fff30d;
-}
-.lang {
-  width: 11rem;
-  padding-top: 1.5em;
-}
-.menu-item {
-  padding-left: 2.5rem;
-  justify-content: center;
+  .bm-cross {
+    background: #fff30d;
+    width: 30em;
+  }
+  .lang {
+    font-size: 0.8em;
+    width: 9rem;
+    padding-top: 0.4em;
+    padding-left: 2.5em;
+  }
+  .menu-item {
+    padding-left: 2.5rem;
+    justify-content: center;
+  }
+
+  .bm-cross-button {
+    left: 400px;
+  }
 }
