@@ -1,6 +1,6 @@
-import "./Style.scss";
 import SugestCard from "@components/SugestCard/SugestCard";
 import Myhome from "@components/Myspace/Myspace";
+import "./Style.scss";
 import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";

@@ -1,7 +1,7 @@
 @use "../src/App.scss";
 
 body {
-  background-color: App.$color-background;
+  background-color: App.$text-color-primary;
   height: App.$mainHeight;
   margin: 0;
   padding: 0;
