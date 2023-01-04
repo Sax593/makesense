@@ -1,14 +1,13 @@
 import "./style.scss";
-import logoMS from "../../assets/pills.svg";
+import logoMS from "../../assets/pills3.svg";
 import logoMS2 from "../../assets/pills2.svg";
-import logoMS3 from "../../assets/pills3.svg";
 
 export default function SubscriptionForm() {
   return (
     <section className="subscriptionForm">
       <img className="logoMS" src={logoMS} alt="logoMS" />
       <img className="logoMS2" src={logoMS2} alt="logoMS" />
-      <img className="logoMS3" src={logoMS3} alt="logoMS" />
+
       <img
         className="avatarLogo"
         src="https://via.placeholder.com/300"
@@ -59,14 +58,14 @@ export default function SubscriptionForm() {
           />
           <input
             className="passInput"
-            type="text"
+            type="password"
             name="passw"
             placeholder="password"
             required
           />
           <input
             className="passConfInput"
-            type="text"
+            type="password"
             name="email"
             placeholder="password confirmation"
             required
