@@ -1,0 +1,24 @@
+@use "../../App.scss";
+
+
+.navBarS{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstB,.secondB,.thirdB, .fourthB{
+    display: flex;
+    width: 100%;
+    height:App.$navBarSuggestHeight;
+    border: 1px solid black;
+    border-right: none;
+    justify-content: center;
+    align-items: center;
+    font-size: App.$font-size;
+    font-family: App.$font-text;
+    transition: 0.5s ease-out 100ms;
+}
+
+
+
