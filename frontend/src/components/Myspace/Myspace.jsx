@@ -15,8 +15,7 @@ export default function Myhome() {
       </h1>
 
       <Link id="home" className="menu-item" to="/">
-        <FaHome />
-        Home<span className="endpoint">.</span>
+        <FaHome /> Home<span className="endpoint">.</span>
       </Link>
       <Link id="suggest" className="menu-item" to="/suggest">
         <FaHandSparkles /> Suggestion<span className="endpoint">.</span>
