@@ -18,8 +18,19 @@ export default function SubscriptionForm() {
     avatar: "",
   });
   const hChange = (evt) => {
-    setUser({ ...user, [evt.target.name]: evt.target.value });
+    const input = evt.target;
+    setUser({ ...user, [input.name]: input.value });
+
+    if (input.name === "avatar") {
+      const avatarPreview = document.getElementById("avatarPreview");
+      if (input.value) {
+        avatarPreview.src = URL.createObjectURL(input.files[0]);
+      } else {
+        avatarPreview.src = "";
+      }
+    }
   };
+
   const hSubmit = (evt) => {
     evt.preventDefault();
     if (user.email !== user.confEmail) {
@@ -31,16 +42,18 @@ export default function SubscriptionForm() {
 
     axios.post(`${import.meta.env.VITE_BACKEND_URL}/users`, user);
   };
+
+  window.addEventListener("beforeunload", () => {
+    const avatarPreview = document.getElementById("avatarPreview");
+    URL.revokeObjectURL(avatarPreview.src);
+  });
+
   return (
     <section className="subscriptionForm">
       <img className="logoMS" src={logoMS} alt="logoMS" />
       <img className="logoMS2" src={logoMS2} alt="logoMS" />
       <img className="logoMS3" src={logoMS3} alt="logoMS" />
-      <img
-        className="avatarLogo"
-        src="https://via.placeholder.com/300"
-        alt="avatar"
-      />
+      <img className="avatarPrev" id="avatarPreview" src="" alt="Avatar " />
 
       <form onSubmit={hSubmit}>
         <label className="inputFields">
@@ -115,11 +128,12 @@ export default function SubscriptionForm() {
             onChange={hChange}
             required
           />
+          <p className="favatar"> Choose your avatar :</p>
           <input
-            className="fNameInput"
+            className="favatarInput"
             type="file"
             name="avatar"
-            placeholder="avatar"
+            placeholder="Choose your avatar"
             value={user.avatar}
             onChange={hChange}
             required
