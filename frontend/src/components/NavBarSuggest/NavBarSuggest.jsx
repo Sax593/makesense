@@ -8,51 +8,38 @@ export default function NavBarSuggest() {
     <div className="navBarS">
       <button
         type="button"
-        className="firstB"
-        style={{
-          backgroundColor: isActive === "idea" ? "#70af90" : "#70af8f60",
-          boxShadow: isActive === "idea" ? "0 20px 60px 0 black" : "unset",
-          cursor: "pointer",
-        }}
+        id="firstB"
+        className={isActive === "idea" ? "active" : "noActive"}
         onClick={() => setIsActive("idea")}
       >
         L'idée
       </button>
+      <div className="triangle" />
 
       <button
         type="button"
-        className="secondB"
-        style={{
-          backgroundColor: isActive === "contrib" ? "#70af90" : "#70af8f60",
-          boxShadow: isActive === "contrib" ? "0 20px 60px 0 black" : "unset",
-          cursor: "pointer",
-        }}
+        id="secondB"
+        className={isActive === "contrib" ? "active" : "noActive"}
         onClick={() => setIsActive("contrib")}
       >
         Contributions
       </button>
+      <div className="triangle" />
 
       <button
         type="button"
-        className="thirdB"
-        style={{
-          backgroundColor: isActive === "votes" ? "#70af90" : "#70af8f60",
-          boxShadow: isActive === "votes" ? "0 20px 60px 0 black" : "unset",
-          cursor: "pointer",
-        }}
+        id="thirdB"
+        className={isActive === "votes" ? "active" : "noActive"}
         onClick={() => setIsActive("votes")}
       >
         Votes
       </button>
+      <div className="triangle" />
 
       <button
         type="button"
-        className="fourthB"
-        style={{
-          backgroundColor: isActive === "finaleD" ? "#70af90" : "#70af8f60",
-          boxShadow: isActive === "finaleD" ? "0 20px 60px 0 black" : "unset",
-          cursor: "pointer",
-        }}
+        id="fourthB"
+        className={isActive === "finaleD" ? "active" : "noActive"}
         onClick={() => setIsActive("finaleD")}
       >
         Décision Finale
