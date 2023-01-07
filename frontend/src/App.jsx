@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<SubscriptionForm />} />
-        <Route path="/form" element={<SuggestForm />} />
+        <Route path="/suggestform" element={<SuggestForm />} />
       </Routes>
     </div>
   );

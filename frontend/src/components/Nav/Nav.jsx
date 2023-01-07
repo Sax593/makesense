@@ -14,7 +14,7 @@ export default function Nav() {
       <Link id="home" className="menu-item" to="/">
         <FaHome /> Home<span className="endpoint">.</span>
       </Link>
-      <Link id="suggest" className="menu-item" to="/suggest">
+      <Link id="suggest" className="menu-item" to="/suggestform">
         <FaHandSparkles /> Create Suggestion<span className="endpoint">.</span>
       </Link>
       <Link id="historic" className="menu-item" to="/historic">
