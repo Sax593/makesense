@@ -14,6 +14,30 @@ export default function Home() {
       <section className="titlehome">
         <h1 className="settingstitle"> </h1>
         <h2 className="titlesuggest">Suggestions</h2>
+        <fieldset className="filteridea">
+          <legend>Priorisation </legend>
+
+          <div>
+            <label htmlFor="high">
+              Haute
+              <input type="checkbox" id="high" name="high" />
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="mid">
+              Moyenne
+              <input type="checkbox" id="mid" name="mid" />
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="low">
+              Basse
+              <input type="checkbox" id="low" name="low" />
+            </label>
+          </div>
+        </fieldset>
         <div className="cardx">
           <SugestCard />
           <SugestCard />
