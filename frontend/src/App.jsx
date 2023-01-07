@@ -1,7 +1,7 @@
-import SuggestForm from "@pages/SuggestForm/SuggestForm";
 import Home from "@pages/Home/Home";
 import SubscriptionForm from "@pages/SubscriptionForm/SubscriptionForm";
 import { Routes, Route } from "react-router-dom";
+import SuggestForm from "@pages/SuggestForm/SuggestForm";
 
 function App() {
   return (
