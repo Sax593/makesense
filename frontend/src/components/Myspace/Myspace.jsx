@@ -1,5 +1,5 @@
 import { slide as Menu } from "react-burger-menu";
-import { FaHandSparkles, FaHistory } from "react-icons/fa";
+import { FaHandSparkles, FaHistory, FaHome } from "react-icons/fa";
 import { IoMdContacts, IoMdSettings } from "react-icons/io";
 import { VscDebugDisconnect } from "react-icons/vsc";
 import { Link } from "react-router-dom";
