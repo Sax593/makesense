@@ -5,7 +5,7 @@ import { IoIosPersonAdd } from "react-icons/io";
 
 import "./style.scss";
 
-export default function Form() {
+export default function SuggestForm() {
   const [search, setSearch] = useState(true);
   const [visibility, setVisibility] = useState(true);
 

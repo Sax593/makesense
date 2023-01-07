@@ -1,4 +1,4 @@
-import Form from "@pages/Form/Form";
+import SuggestForm from "@pages/SuggestForm/SuggestForm";
 import Home from "@pages/Home/Home";
 import SubscriptionForm from "@pages/SubscriptionForm/SubscriptionForm";
 import { Routes, Route } from "react-router-dom";
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<SubscriptionForm />} />
-        <Route path="/form" element={<Form />} />
+        <Route path="/form" element={<SuggestForm />} />
       </Routes>
     </div>
   );
