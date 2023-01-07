@@ -1,11 +1,10 @@
-import AvatarList from "@components/AvatarList/AvatarList";
 import axios from "axios";
 import { useState } from "react";
 import { IoIosPersonAdd } from "react-icons/io";
 
 import "./style.scss";
 
-export default function Form() {
+export default function SuggestForm() {
   const [search, setSearch] = useState(true);
   const [visibility, setVisibility] = useState(true);
 
@@ -76,7 +75,6 @@ export default function Form() {
             </label>
             <label className="add_button" htmlFor="expert">
               Experts:
-              <AvatarList />
               <button
                 onClick={() => {
                   setSearch(!search);
@@ -95,7 +93,6 @@ export default function Form() {
             />
             <label className="add_button" htmlFor="impacted">
               Impacted:
-              <AvatarList />
               <button
                 className="add"
                 type="button"
