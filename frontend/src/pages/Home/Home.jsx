@@ -21,18 +21,18 @@ export default function Home() {
           <legend>Priorisation </legend>
 
           <div>
-            <input type="checkbox" id="high" name="high"></input>
-            <label for="high">Haute</label>
+            <input type="checkbox" id="high" name="high" />
+            <label htmlFor="high">Haute</label>
           </div>
 
           <div>
-            <input type="checkbox" id="mid" name="mid"></input>
-            <label for="mid">Moyenne</label>
+            <input type="checkbox" id="mid" name="mid" />
+            <label htmlFor="mid">Moyenne</label>
           </div>
 
           <div>
-            <input type="checkbox" id="low" name="low"></input>
-            <label for="low">Basse</label>
+            <input type="checkbox" id="low" name="low" />
+            <label htmlFor="low">Basse</label>
           </div>
         </fieldset>
         <div className="cardx">
