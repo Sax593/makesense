@@ -53,7 +53,7 @@ export default function SubscriptionForm() {
       <img className="logoMS" src={logoMS} alt="logoMS" />
       <img className="logoMS2" src={logoMS2} alt="logoMS" />
       <img className="logoMS3" src={logoMS3} alt="logoMS" />
-      <img className="avatarPrev" id="avatarPreview" src="" alt="Avatar " />
+      <img className="avatarPrev" id="avatarPreview" src="" alt="" />
 
       <form onSubmit={hSubmit}>
         <label className="inputFields">
