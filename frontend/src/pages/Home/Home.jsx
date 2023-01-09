@@ -1,4 +1,5 @@
 import SugestCard from "@components/SugestCard/SugestCard";
+import Nav from "@components/Nav/Nav";
 import "./Style.scss";
 import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
