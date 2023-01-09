@@ -1,12 +1,15 @@
 import SugestCard from "@components/SugestCard/SugestCard";
-import "./Style.scss";
+import Nav from "@components/Nav/Nav";
 import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";
+import "./Style.scss";
 
 export default function Home() {
   return (
     <>
+      <Nav />
+
       <img className="logoxMS" src={logoMS} alt="logoMS" />
       <img className="logoxMS2" src={logoMS2} alt="logoMS" />
       <img className="logoxMS3" src={logoMS3} alt="logoMS" />
@@ -18,24 +21,18 @@ export default function Home() {
           <legend>Priorisation </legend>
 
           <div>
-            <label htmlFor="high">
-              Haute
-              <input type="checkbox" id="high" name="high" />
-            </label>
+            <input type="checkbox" id="high" name="high" />
+            <label htmlFor="high">Haute</label>
           </div>
 
           <div>
-            <label htmlFor="mid">
-              Moyenne
-              <input type="checkbox" id="mid" name="mid" />
-            </label>
+            <input type="checkbox" id="mid" name="mid" />
+            <label htmlFor="mid">Moyenne</label>
           </div>
 
           <div>
-            <label htmlFor="low">
-              Basse
-              <input type="checkbox" id="low" name="low" />
-            </label>
+            <input type="checkbox" id="low" name="low" />
+            <label htmlFor="low">Basse</label>
           </div>
         </fieldset>
         <div className="cardx">
