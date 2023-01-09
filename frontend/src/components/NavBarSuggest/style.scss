@@ -1,8 +1,21 @@
 @use "../../App.scss";
 
+@keyframes scale {
+  from{
+    transform: scale(1)
+  }
+  to{
+    transform: scale(2)
+  }
+}
+
 .active {
   color: #70af90;
-  text-shadow: 10px 5px 10px blacks;
+  text-shadow: 10px 5px 10px black;
+}
+
+.active .text{
+  animation: scale 0.5s linear forwards;
 }
 
 .noActive {
@@ -57,8 +70,7 @@
   border: none;
   justify-content: center;
   align-items: center;
-  font-size: App.$font-size;
-  font-family: App.$font-text;
+
   transition: 0.5s ease-out 100ms;
   background-color: App.$text-color-primary;
 }

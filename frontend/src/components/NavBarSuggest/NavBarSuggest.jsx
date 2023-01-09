@@ -12,7 +12,7 @@ export default function NavBarSuggest() {
         className={isActive === "idea" ? "active" : "noActive"}
         onClick={() => setIsActive("idea")}
       >
-        L'idée
+        <h3 className="text">L'idée</h3>
       </button>
       <div className="triangle" />
 
@@ -22,7 +22,7 @@ export default function NavBarSuggest() {
         className={isActive === "contrib" ? "active" : "noActive"}
         onClick={() => setIsActive("contrib")}
       >
-        Contributions
+        <h3 className="text">Contributions</h3>
       </button>
       <div className="triangle" />
 
@@ -32,7 +32,7 @@ export default function NavBarSuggest() {
         className={isActive === "votes" ? "active" : "noActive"}
         onClick={() => setIsActive("votes")}
       >
-        Votes
+        <h3 className="text">Votes</h3>
       </button>
       <div className="triangle" />
 
@@ -42,7 +42,7 @@ export default function NavBarSuggest() {
         className={isActive === "finaleD" ? "active" : "noActive"}
         onClick={() => setIsActive("finaleD")}
       >
-        Décision Finale
+        <h3 className="text">Décision Finale</h3>
       </button>
     </div>
   );
