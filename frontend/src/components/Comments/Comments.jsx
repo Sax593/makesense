@@ -37,7 +37,7 @@ export default function Comments() {
             💚
           </button>
           <span className="num"> {upVote}</span>
-          <button type="button" className="Vote" on onClick={Down}>
+          <button type="button" className="Vote" onClick={Down}>
             💔
           </button>
           <span className="num"> {downVote}</span>
