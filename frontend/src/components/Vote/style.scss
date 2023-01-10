@@ -1,0 +1,80 @@
+.vote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#fpro1 {
+  margin-top: 2vh;
+  width: 55vw;
+  height: 25vh;
+  margin-bottom: 1vh;
+}
+
+#fpro2 {
+  margin-top: 2vh;
+  width: 55vw;
+  height: 25vh;
+  margin-bottom: 1vh;
+}
+
+#fpro3 {
+  margin-top: 2vh;
+  width: 55vw;
+  height: 25vh;
+  margin-bottom: 1vh;
+}
+
+.proptitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  text-shadow: 2px 2px black;
+  font-size: 2em;
+  font-weight: bolder;
+  text-decoration: underline 2px whitesmoke;
+  text-decoration-thickness: 3px;
+}
+
+.vote-button {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 3vh;
+  width: 20%;
+  font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.vote-button:after {
+  content: "";
+  background-color: #f8df4d;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.vote-button:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .vote-button {
+    padding: 13px 50px 13px;
+  }
+}
