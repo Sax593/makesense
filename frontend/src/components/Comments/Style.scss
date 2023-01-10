@@ -47,7 +47,7 @@
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .visible {
@@ -61,4 +61,13 @@ textarea {
   background-color: yellowgreen;
   padding: 20px;
   border-radius: 5%;
+}
+
+// media query//
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .fullComment {
+    height: 25vh;
+    width: 100vw;
+  }
 }

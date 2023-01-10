@@ -4,7 +4,7 @@ import "./Style.scss";
 
 export default function Thread() {
   return (
-    <div>
+    <div className="thread">
       <Comments />
       <Comments />
       <Comments />
