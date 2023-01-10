@@ -1,0 +1,62 @@
+section.form_idea {
+  text-align: center;
+}
+
+.form {
+  margin: 5% auto;
+  padding: 2rem;
+  width: 50%;
+  border: solid 1px black;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.95);
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+input,
+textarea {
+  max-width: 20vw;
+}
+
+button {
+  cursor: pointer;
+  box-shadow: 6px 5px 6px 0px rgba(0, 0, 0, 0.75);
+}
+
+.add {
+  background-color: transparent;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.submit {
+  width: 3rem;
+}
+
+label.vote {
+  display: flex;
+  flex-direction: row;
+}
+
+.add_button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search {
+  display: none;
+}

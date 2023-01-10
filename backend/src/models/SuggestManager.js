@@ -7,14 +7,12 @@ class SuggestsManager extends AbstractManager {
 
   insert(suggests) {
     return this.connection.query(
-      `insert into ${this.table} (title, description, date, consequences, priority, finale_decision) values (?,?,?,?,?,?)`,
+      `insert into ${this.table} (title, description, date, consequences, priority) values (?,?,NOW(),?,?)`,
       [
         suggests.title,
         suggests.description,
-        suggests.date,
         suggests.consequences,
         suggests.priority,
-        suggests.finale_decision,
       ]
     );
   }

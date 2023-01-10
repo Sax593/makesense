@@ -2,6 +2,7 @@ import Home from "@pages/Home/Home";
 import SubscriptionForm from "@pages/SubscriptionForm/SubscriptionForm";
 import Thread from "@pages/Thread/Thread";
 import { Routes, Route } from "react-router-dom";
+import SuggestForm from "@pages/SuggestForm/SuggestForm";
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<SubscriptionForm />} />
         <Route path="/thread" element={<Thread />} />
+        <Route path="/suggestform" element={<SuggestForm />} />
+
       </Routes>
     </div>
   );

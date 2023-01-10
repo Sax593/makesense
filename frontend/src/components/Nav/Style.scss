@@ -108,3 +108,59 @@
   padding-top: 2.7em;
   padding-left: 1.5rem;
 }
+
+@media (max-width: 450px) {
+  .titlelogo {
+    display: flex;
+    justify-content: center;
+    color: white;
+    justify-content: center;
+    font-weight: bold;
+    padding-right: 6.5em;
+    font-size: 1.6em;
+  }
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+  }
+
+  .bm-menu {
+    display: flex;
+    justify-content: center;
+    background-color: #196c84;
+    padding: 0.5em 2em 3em;
+    font-size: 1.2em;
+    background: url("@assets/test.png") no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .bm-item-list {
+    color: #ffffff;
+    padding: 2em;
+    padding-left: 12em;
+    width: 30em;
+    justify-content: center;
+  }
+
+  .bm-cross {
+    background: #fff30d;
+    width: 30em;
+  }
+  .lang {
+    font-size: 0.8em;
+    width: 9rem;
+    padding-top: 0.4em;
+    padding-left: 2.5em;
+  }
+  .menu-item {
+    padding-left: 2.5rem;
+    justify-content: center;
+  }
+
+  .bm-cross-button {
+    left: 400px;
+  }
+}
