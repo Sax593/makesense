@@ -2,9 +2,9 @@ import "./style.scss";
 import logoMS from "../../assets/pills3.svg";
 import logoMS2 from "../../assets/pills2.svg";
 
-export default function SubscriptionForm() {
+export default function Register() {
   return (
-    <section className="subscriptionForm">
+    <section className="register">
       <img className="logoMS" src={logoMS} alt="logoMS" />
       <img className="logoMS2" src={logoMS2} alt="logoMS" />
 
