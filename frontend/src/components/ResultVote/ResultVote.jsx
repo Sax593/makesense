@@ -15,7 +15,7 @@ export default function ResultVote() {
     },
     {
       decision: "Nous ne déménageons pas",
-      vote: 3,
+      vote: 53,
     },
   ];
 
