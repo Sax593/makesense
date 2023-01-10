@@ -3,6 +3,7 @@ import SubscriptionForm from "@pages/SubscriptionForm/SubscriptionForm";
 import { Routes, Route } from "react-router-dom";
 import SuggestForm from "@pages/SuggestForm/SuggestForm";
 import Vote from "@components/Vote/Vote";
+
 function App() {
   return (
     <div className="App">
