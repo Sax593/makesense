@@ -1,0 +1,10 @@
+.finalcontent {
+  margin: auto;
+  width: 50%;
+}
+@media only screen and (max-device-width: 480px) {
+  .finalcontent {
+    width: auto;
+    padding: 1em;
+  }
+}
