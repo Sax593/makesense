@@ -1,6 +1,5 @@
 @use "../../App.scss";
 
-
 .main {
   display: flex;
   flex-direction: row;
@@ -30,19 +29,20 @@ h2 {
   margin-left: 0.5em;
 }
 
-.impactedTitle, .expertTitle{
+.impactedTitle,
+.expertTitle {
   font-family: App.$font-text;
   font-size: calc(App.$font-size - 0.4em);
   margin: 0;
   margin-bottom: 0.5em;
 }
 
-.impactedTitle{
-  color: #70AF90;
+.impactedTitle {
+  color: #70af90;
 }
 
-.expertTitle{
-  color: #24673A
+.expertTitle {
+  color: #24673a;
 }
 
 .impacted,
@@ -51,11 +51,11 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #FFFF;
+  background-color: #ffff;
   border: #e0e4eb 3px solid;
-  box-shadow: 0 0 0 1px rgba(92,106,196,0.1);
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
   border-bottom-right-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;  
+  border-bottom-left-radius: 0.5em;
   width: 100%;
   height: 100%;
 }
@@ -72,19 +72,19 @@ h2 {
   border-radius: 50%;
 }
 
-.descriptionBlock, .repercussionBlock{
+.descriptionBlock,
+.repercussionBlock {
   display: flex;
   flex-direction: column;
-  background-color: #FFFF;
+  background-color: #ffff;
   border: #e0e4eb 3px solid;
-  box-shadow: 0 0 0 1px rgba(92,106,196,0.1);
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
-
 }
 
-.suggestTitleMain{
-  color: #FFFF;
+.suggestTitleMain {
+  color: #ffff;
   font-size: calc(App.$font-size * 1.5);
   font-family: App.$font-text;
   position: absolute;
@@ -93,18 +93,19 @@ h2 {
   transform: translate(-50%, -50%);
 }
 
-.descriptionTitle, .repercussionTitle{
+.descriptionTitle,
+.repercussionTitle {
   font-family: App.$font-text;
   font-size: calc(App.$font-size * 1.1);
 }
-.descriptionTitle{
-  color:#9B084F;
+.descriptionTitle {
+  color: #9b084f;
 }
-.repercussionTitle{
-  color:#C62E43
+.repercussionTitle {
+  color: #c62e43;
 }
 
-.suggestdetail{
+.suggestdetail {
   margin: 0.5em;
 }
 
