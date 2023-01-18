@@ -4,6 +4,7 @@ import Register from "@pages/Register/Register";
 import { Routes, Route } from "react-router-dom";
 import SuggestForm from "@pages/SuggestForm/SuggestForm";
 import FinalDecision from "@components/FinalDecision/FinalDecision";
+import Suggest from "@pages/Suggest/Suggest";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/suggestform" element={<SuggestForm />} />
         <Route path="/finaldecision" element={<FinalDecision />} />
+        <Route path="/suggestionDetails" element={<Suggest />} />
       </Routes>
     </div>
   );
