@@ -12,7 +12,7 @@ export default function SuggestCard({ data }) {
       </div>
       <div className="footerCard">
         <p className="advice">Avis(5)</p>
-        <Link to="/details/:id">
+        <Link to={`/details/:${data.id}`}>
           <button className="adviceButton" type="button">
             <IoIosAddCircleOutline />
           </button>
@@ -25,5 +25,6 @@ export default function SuggestCard({ data }) {
 SuggestCard.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
   }).isRequired,
 };

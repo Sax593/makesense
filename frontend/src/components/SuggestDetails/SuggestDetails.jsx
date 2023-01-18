@@ -1,9 +1,12 @@
+import { useParams } from "react-router-dom";
 import "./style.scss";
 
 export default function SuggestDetails() {
+  const { id } = useParams();
+
   return (
     <section className="suggestdetail">
-      <h2>title</h2>
+      <h2>title #{id}</h2>
       <div className="main">
         <article className="content">
           <p className="description">description</p>
