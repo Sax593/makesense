@@ -3,8 +3,8 @@
 .comment {
   display: flex;
   flex-wrap: wrap;
-  width: 20%;
-  height: 15%;
+  max-width: 40%;
+  min-width: 15%;
   border-radius: 10%;
   background-color: App.$color-background;
   text-align: center;

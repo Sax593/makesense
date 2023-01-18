@@ -1,8 +1,10 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import "./Style.scss";
+import { DateTime } from "luxon";
 
 export default function Comments({ content, date, author }) {
+  const format = "dd/MM/yy HH:mm";
   const [isHidden, setIsHidden] = useState(false);
   const toggleClass = () => {
     setIsHidden(!isHidden);
@@ -22,7 +24,7 @@ export default function Comments({ content, date, author }) {
       <div className="comment">
         <img className="cAvatar" src="" alt="avatar" />
         <p>{author}</p>
-        <p>{date}</p>
+        <p>{date && DateTime.fromISO(date).toFormat(format)}</p>
         <p>{content}</p>
         <div className="Vote">
           <p>Vote for this comments! or Reply</p>

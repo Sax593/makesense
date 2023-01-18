@@ -20,14 +20,14 @@ export default function Thread() {
     <div className="thread">
       {tComments.map((element) => {
         return (
-          <li key={element.id}>
-            <Comments />
-          </li>
+          <Comments
+            key={element.id}
+            date={element.date}
+            content={element.content}
+            author={element.users_id}
+          />
         );
       })}
-      <Comments />
-      <Comments />
-      <Comments />
     </div>
   );
 }
