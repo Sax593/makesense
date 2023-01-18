@@ -1,0 +1,73 @@
+@use "../src/App.scss";
+
+.comment {
+  display: flex;
+  flex-wrap: wrap;
+  width: 20%;
+  height: 15%;
+  border-radius: 10%;
+  background-color: App.$color-background;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  p {
+    font-family: App.$font-text;
+    color: #ffffff;
+  }
+}
+
+.cAvatar {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 20%;
+  align-self: flex-start;
+}
+
+.replyBtn {
+  align-self: flex-end;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 20%;
+}
+
+.comment.Vote {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  width: auto;
+  border-radius: 10%;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.replyForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+textarea {
+  width: 40%;
+  height: 25%;
+  box-sizing: content-box;
+  background-color: yellowgreen;
+  padding: 20px;
+  border-radius: 5%;
+}
+
+// media query//
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .fullComment {
+    height: 25vh;
+    width: 100vw;
+  }
+}

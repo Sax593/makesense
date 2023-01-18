@@ -36,6 +36,7 @@ export default function SuggestForm() {
             <label htmlFor="title">
               Title:
               <input
+                className="inputText"
                 type="text"
                 name="title"
                 id="title"
@@ -46,6 +47,7 @@ export default function SuggestForm() {
             <label htmlFor="description">
               Description:
               <textarea
+                className="textArea"
                 name="description"
                 id="description"
                 cols="30"
@@ -57,6 +59,7 @@ export default function SuggestForm() {
             <label htmlFor="impact">
               Potential répercution:
               <textarea
+                className="textArea"
                 name="impact"
                 id="impact"
                 cols="30"
