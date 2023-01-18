@@ -11,3 +11,42 @@
 .detailsSg {
   margin-top: 2%;
 }
+
+//SMARTPHONE
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .timeline {
+    margin-top: 25%;
+  }
+  .navBarSg {
+    margin-top: 15%;
+  }
+  .detailsSg {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .timeline {
+    margin-top: 15%;
+  }
+  .navBarSg {
+    margin-top: 10%;
+  }
+  .detailsSg {
+    margin-top: 5%;
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .timeline {
+    margin-top: 12%;
+  }
+  .navBarSg {
+    margin-top: 10%;
+  }
+  .detailsSg {
+    margin-top: 5%;
+  }
+}
