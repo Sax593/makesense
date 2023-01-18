@@ -17,7 +17,6 @@ export default function Vote() {
           Vote
         </button>
         <img className="line" src={line} alt="line" />
-        <img className="line4" src={line} alt="line" />
       </div>
 
       <div className="vote center-items">
@@ -28,7 +27,6 @@ export default function Vote() {
         <button className="vote-button" type="button">
           Vote
         </button>
-        <img className="line2" src={line} alt="line" />
       </div>
 
       <div className="vote center-items">
@@ -39,7 +37,6 @@ export default function Vote() {
         <button className="vote-button" type="button">
           Vote
         </button>
-        <img className="line5" src={line} alt="line" />
       </div>
     </div>
   );
