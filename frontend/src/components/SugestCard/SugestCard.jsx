@@ -1,11 +1,11 @@
 import { IoIosAddCircleOutline } from "react-icons/io";
+import PropTypes from "prop-types";
 import "./style.scss";
 
-export default function SugestCard() {
+export default function SuggestCard({ data }) {
   return (
     <article className="cardz">
-      <h2>Title</h2>
-
+      <h2>{data.title}</h2>
       <div className="wrapper">
         <div className="progressBar" />
       </div>
@@ -18,3 +18,9 @@ export default function SugestCard() {
     </article>
   );
 }
+
+SuggestCard.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+};
