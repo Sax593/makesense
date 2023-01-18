@@ -17,7 +17,7 @@
   margin-top: 4%;
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 900px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 900px) {
   .inputFields {
     width: auto;
     height: 90vh;
@@ -25,14 +25,14 @@
   }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 767px){
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
   .inputFields {
     width: auto;
     height: auto;
   }
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .inputFields {
     width: auto;
     height: auto;
