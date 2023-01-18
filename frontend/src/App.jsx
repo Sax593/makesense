@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import SuggestForm from "@pages/SuggestForm/SuggestForm";
 import FinalDecision from "@components/FinalDecision/FinalDecision";
 import SuggestDetails from "@components/SuggestDetails/SuggestDetails";
+import Suggest from "@pages/Suggest/Suggest";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/details/:id" element={<SuggestDetails />} />
         <Route path="/suggestform" element={<SuggestForm />} />
         <Route path="/finaldecision" element={<FinalDecision />} />
+        <Route path="/suggestionDetails" element={<Suggest />} />
       </Routes>
     </div>
   );
