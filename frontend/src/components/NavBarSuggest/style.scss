@@ -79,6 +79,12 @@
 
 //Desktop
 
+@media only screen and (min-width: 1224px) {
+  .iconSuggest {
+    display: none;
+  }
+}
+
 @keyframes scale {
   from {
     transform: scale(1);
