@@ -1,8 +1,6 @@
-const AbstractManager = require("./AbstractManager");
+require("dotenv").config();
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
-const myPlaintextPassword = "s0//P4$$w0rD";
-const someOtherPlaintextPassword = "not_bacon";
+const AbstractManager = require("./AbstractManager");
 
 class UsersManager extends AbstractManager {
   constructor() {
@@ -10,7 +8,7 @@ class UsersManager extends AbstractManager {
   }
 
   async insert(users) {
-    const hashedPassword = await bcrypt.hash(users.password, 10);
+    const hashedPassword = await bcrypt.hash(process.env.PASSWORD, 10);
     return this.connection.query(
       `insert into ${this.table} (id, name, firstname, password, email, avatar, role, localisation, thread_id) values (?,?,?,?,?,?,?,?,?)`,
       [
@@ -28,7 +26,7 @@ class UsersManager extends AbstractManager {
   }
 
   async update(users) {
-    const hashedPassword = await bcrypt.hash(users.password, 10);
+    const hashedPassword = await bcrypt.hash(users.PASSWORD, 10);
     return this.connection.query(
       `update ${this.table} set name = ?, firstname = ?, password = ? , email = ?, avatar = ?, role = ?, localisation = ?, thread_id = ? where id = ?`,
       [

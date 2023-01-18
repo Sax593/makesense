@@ -6,14 +6,59 @@ import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";
 
 export default function Register() {
+  const [user, setUser] = useState({
+    name: "",
+    firstname: "",
+    localisation: "",
+    email: "",
+    confEmail: "",
+    password: "",
+    confPass: "",
+    role: "Valid",
+    avatar: "",
+  });
+  const hChange = (evt) => {
+    const input = evt.target;
+    setUser({ ...user, [input.name]: input.value });
+
+    if (input.name === "avatar") {
+      const avatarPreview = document.getElementById("avatarPreview");
+      if (input.value) {
+        avatarPreview.src = URL.createObjectURL(input.files[0]);
+      } else {
+        avatarPreview.src = "";
+      }
+    }
+  };
+
+  const hSubmit = (evt) => {
+    evt.preventDefault();
+    if (user.email !== user.confEmail) {
+      alert("Error: Email is not valid");
+    }
+    if (user.password !== user.confPass) {
+      alert("Error: Password is not valid");
+    }
+
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/users`, user);
+  };
+
+  window.addEventListener("beforeunload", () => {
+    const avatarPreview = document.getElementById("avatarPreview");
+    URL.revokeObjectURL(avatarPreview.src);
+  });
+
   return (
-    <section className="register">
+    <section className="subscriptionForm">
       <img className="logoMS" src={logoMS} alt="logoMS" />
       <img className="logoMS2" src={logoMS2} alt="logoMS" />
       <img className="logoMS3" src={logoMS3} alt="logoMS" />
+      <img className="logoMS4" src={logoMS2} alt="logoMS" />
+      <img className="logoMS5" src={logoMS3} alt="logoMS" />
+      <h2 className="textregis">Welcome, please register !</h2>
       <img className="avatarPrev" id="avatarPreview" src="" alt="" />
 
-      <form onSubmit={hSubmit}>
+      <form className="formclass" onSubmit={hSubmit}>
         <label className="inputFields">
           <section className="identityInputs">
             <input
