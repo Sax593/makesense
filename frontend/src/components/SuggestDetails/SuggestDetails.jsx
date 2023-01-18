@@ -1,10 +1,12 @@
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./style.scss";
 
 export default function SuggestDetails() {
   const [suggest, setSuggest] = useState([]);
   const [user, setUser] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
     axios.get("https://randomuser.me/api/?results=3").then(({ data }) => {
@@ -14,7 +16,7 @@ export default function SuggestDetails() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/13`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/${id}`)
       .then(({ data }) => {
         setSuggest(data);
       })
