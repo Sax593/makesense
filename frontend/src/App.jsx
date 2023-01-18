@@ -16,6 +16,7 @@ function App() {
         <Route path="/suggestform" element={<SuggestForm />} />
         <Route path="/finaldecision" element={<FinalDecision />} />
         <Route path="/vote" element={<Vote />} />
+
       </Routes>
     </div>
   );
