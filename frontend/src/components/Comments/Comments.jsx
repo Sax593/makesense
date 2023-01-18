@@ -1,7 +1,8 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import "./Style.scss";
 
-export default function Comments() {
+export default function Comments({ content, date, author }) {
   const [isHidden, setIsHidden] = useState(false);
   const toggleClass = () => {
     setIsHidden(!isHidden);
@@ -20,17 +21,9 @@ export default function Comments() {
     <div className="fullComment">
       <div className="comment">
         <img className="cAvatar" src="" alt="avatar" />
-        <p>Name</p>
-        <p>
-          Je suis un commentaire et je m'agrandis Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Aliquam, optio! Quos atque dolorem
-          adipisci quae, voluptate deleniti eum quibusdam vel iusto enim nulla
-          et modi, neque exercitationem sint molestias voluptas. Lorem, ipsum
-          dolor sit amet consectetur adipisicing elit. Sed esse, at beatae
-          veritatis nam laboriosam delectus, dolores quia eos repudiandae
-          commodi natus, cumque obcaecati ratione pariatur nesciunt doloribus
-          tenetur assumenda.
-        </p>
+        <p>{author}</p>
+        <p>{date}</p>
+        <p>{content}</p>
         <div className="Vote">
           <p>Vote for this comments! or Reply</p>
           <button type="button" className="Vote" onClick={Up}>
@@ -60,3 +53,8 @@ export default function Comments() {
     </div>
   );
 }
+Comments.propTypes = {
+  content: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  date: PropTypes.number.isRequired,
+};
