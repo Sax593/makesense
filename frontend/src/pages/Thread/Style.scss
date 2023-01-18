@@ -1,0 +1,63 @@
+@use "../src/App.scss";
+
+.thread {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .fullComment {
+    display: flex;
+    flex-wrap: wrap;
+    height: 25vh;
+    width: 80vw;
+    border-radius: 20px;
+    background-color: App.$color-background;
+    overflow: scroll;
+    p {
+      font-family: App.$font-text;
+      color: #ffffff;
+    }
+  }
+
+  .thread {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .fullComment {
+    display: flex;
+    flex-wrap: wrap;
+    height: 25vh;
+    width: 80vw;
+    border-radius: 20px;
+    background-color: App.$color-background;
+    overflow: scroll;
+    p {
+      font-family: App.$font-text;
+      color: #ffffff;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .fullComment {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 25vh;
+    width: 80vw;
+    border-radius: 20px;
+    background-color: App.$color-background;
+    overflow: scroll;
+    p {
+      font-family: App.$font-text;
+      color: #ffffff;
+    }
+  }
+}

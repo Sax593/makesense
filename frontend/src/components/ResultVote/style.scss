@@ -1,0 +1,12 @@
+.standardCanvas {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .standardCanvas {
+    margin: auto;
+    max-width: 250px;
+    max-height: 250px;
+  }
+}

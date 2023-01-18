@@ -1,3 +1,5 @@
+@use "../../App.scss";
+
 .main {
   display: flex;
   flex-direction: row;
@@ -6,11 +8,12 @@
 .content {
   display: flex;
   flex-direction: row;
+  gap: 0.5em;
   width: 70vw;
 }
 
 .description,
-.repercution,
+.repercussion,
 h2 {
   padding: 0 1rem;
 }
@@ -22,6 +25,24 @@ h2 {
   align-items: center;
   width: 30vw;
   padding: 0 1rem;
+  gap: 0.5em;
+  margin-left: 0.5em;
+}
+
+.impactedTitle,
+.expertTitle {
+  font-family: App.$font-text;
+  font-size: calc(App.$font-size - 0.4em);
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.impactedTitle {
+  color: #70af90;
+}
+
+.expertTitle {
+  color: #24673a;
 }
 
 .impacted,
@@ -29,6 +50,14 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: #ffff;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  width: 100%;
+  height: 100%;
 }
 
 .avatar {
@@ -38,7 +67,50 @@ h2 {
 }
 
 .avatarpicture {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
+}
+
+.descriptionBlock,
+.repercussionBlock {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffff;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+
+.suggestTitleMain {
+  color: #ffff;
+  font-size: calc(App.$font-size * 1.5);
+  font-family: App.$font-text;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.descriptionTitle,
+.repercussionTitle {
+  font-family: App.$font-text;
+  font-size: calc(App.$font-size * 1.1);
+}
+.descriptionTitle {
+  color: #9b084f;
+}
+.repercussionTitle {
+  color: #c62e43;
+}
+
+.suggestdetail {
+  margin: 0.5em;
+}
+
+@media (max-width: 450px) {
+  .main {
+    flex-direction: column;
+  }
 }

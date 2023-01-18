@@ -1,0 +1,165 @@
+@use "../../App.scss";
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .navBarS {
+    height: App.$navBarSuggestHeight;
+  }
+  .text {
+    display: unset;
+    font-size: calc(App.$font-size / 1.9);
+  }
+
+  .iconSuggest {
+    display: none;
+  }
+
+  #firstB,
+  #secondB,
+  #thirdB,
+  #fourthB {
+    justify-content: center;
+    align-items: center;
+  }
+  .triangle {
+    visibility: visible;
+  }
+}
+
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .navBarS {
+    height: App.$navBarSuggestHeight;
+  }
+  .text {
+    display: none;
+  }
+  .iconSuggest {
+    display: unset;
+    font-size: 2em;
+  }
+  #firstB,
+  #secondB,
+  #thirdB,
+  #fourthB {
+    justify-content: center;
+    align-items: center;
+  }
+  .triangle {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .navBarS {
+    height: App.$navBarSuggestHeight;
+  }
+  .text {
+    display: unset;
+    font-size: calc(App.$font-size / 1.9);
+  }
+
+  .iconSuggest {
+    display: none;
+  }
+
+  #firstB,
+  #secondB,
+  #thirdB,
+  #fourthB {
+    justify-content: center;
+    align-items: center;
+  }
+  .triangle {
+    visibility: visible;
+  }
+}
+
+//Desktop
+
+@media only screen and (min-width: 1224px) {
+  .iconSuggest {
+    display: none;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+.active {
+  color: #70af90;
+  text-shadow: 10px 5px 10px black;
+}
+
+.active .text {
+  animation: scale 0.5s linear forwards;
+}
+
+.noActive {
+  color: #70af8f60;
+  text-shadow: unset;
+}
+
+.navBarS {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #70af8f60;
+  border-top: 1px solid #70af8f60;
+  width: auto;
+}
+
+.navBarS {
+  white-space: nowrap;
+}
+.navBarS .triangle {
+  display: inline-block;
+  line-height: 26px;
+  margin: 0 25px 0 -10px;
+  padding: 0 20px;
+  position: relative;
+}
+.navBarS .triangle::before,
+.navBarS .triangle::after {
+  border-right: 1px solid #70af90;
+  content: "";
+  display: block;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transform: skewX(45deg);
+}
+.navBarS .triangle::after {
+  bottom: 0;
+  top: auto;
+  transform: skewX(-45deg);
+}
+
+#firstB,
+#secondB,
+#thirdB,
+#fourthB {
+  display: flex;
+  width: 100%;
+  height: App.$navBarSuggestHeight;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-out 100ms;
+  background-color: App.$text-color-primary;
+}
+
+.iconSuggest {
+  display: hidden;
+}

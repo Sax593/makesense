@@ -1,14 +1,14 @@
-import "./Style.scss";
 import SugestCard from "@components/SugestCard/SugestCard";
-import Myhome from "@components/Myspace/Myspace";
+import Nav from "@components/Nav/Nav";
 import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";
+import "./Style.scss";
 
 export default function Home() {
   return (
     <>
-      <Myhome />
+      <Nav />
 
       <img className="logoxMS" src={logoMS} alt="logoMS" />
       <img className="logoxMS2" src={logoMS2} alt="logoMS" />
@@ -17,6 +17,24 @@ export default function Home() {
       <section className="titlehome">
         <h1 className="settingstitle"> </h1>
         <h2 className="titlesuggest">Suggestions</h2>
+        <fieldset className="filteridea">
+          <legend>Priorisation </legend>
+
+          <div>
+            <input type="checkbox" id="high" name="high" />
+            <label htmlFor="high">Haute</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="mid" name="mid" />
+            <label htmlFor="mid">Moyenne</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="low" name="low" />
+            <label htmlFor="low">Basse</label>
+          </div>
+        </fieldset>
         <div className="cardx">
           <SugestCard />
           <SugestCard />
