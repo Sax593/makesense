@@ -1,10 +1,14 @@
+import FinalDecision from "@components/FinalDecision/FinalDecision";
 import Nav from "@components/Nav/Nav";
 import NavBarSuggest from "@components/NavBarSuggest/NavBarSuggest";
 import SuggestDetails from "@components/SuggestDetails/SuggestDetails";
 import Timeline from "@components/Timeline/Timeline";
+import Thread from "@pages/Thread/Thread";
+import { useState } from "react";
 import "./style.scss";
 
 export default function Suggest() {
+  const [isActive, setIsActive] = useState("idea");
   return (
     <div>
       <Nav />
@@ -13,11 +17,13 @@ export default function Suggest() {
       </div>
 
       <div className="navBarSg">
-        <NavBarSuggest />
+        <NavBarSuggest isActive={isActive} setIsActive={setIsActive} />
       </div>
 
       <div className="detailsSg">
-        <SuggestDetails />
+        {isActive === "idea" ? <SuggestDetails /> : ""}
+        {isActive === "contrib" ? <Thread /> : ""}
+        {isActive === "finaleD" ? <FinalDecision /> : ""}
       </div>
     </div>
   );
