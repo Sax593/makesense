@@ -8,11 +8,25 @@
 }
 
 .tButton {
-  background-color: blue;
-  color: #ffffff;
-  height: 8vh;
+  margin-top: 2rem;
+  background-color: #27ae60;
+  color: App.$text-color-primary;
+  height: 6rem;
+  width: 6rem;
   border-radius: 50%;
-  font-size: 6vh;
+  font-size: 8vh;
+}
+.replyForm textarea {
+  width: 40%;
+  height: 25%;
+  box-sizing: content-box;
+  padding: 20px;
+  border-radius: 5%;
+  background-color: #ffff;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

@@ -48,6 +48,8 @@ export default function Thread() {
               date={element.date}
               content={element.content}
               author={element.users_id}
+              up={element.up_vote}
+              down={element.down_vote}
             />
           );
         })
@@ -67,8 +69,14 @@ export default function Thread() {
               />
 
               <div>
-                <button type="submit">Submit</button>
-                <button type="button" onClick={toggleClass}>
+                <button type="submit" className="replyBtn">
+                  Submit
+                </button>
+                <button
+                  type="button"
+                  className="replyBtn"
+                  onClick={toggleClass}
+                >
                   Cancel
                 </button>
               </div>

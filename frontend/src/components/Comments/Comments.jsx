@@ -4,18 +4,18 @@ import "./Style.scss";
 import { DateTime } from "luxon";
 import axios from "axios";
 
-export default function Comments({ content, date, author }) {
+export default function Comments({ content, date, author, up, down }) {
   const format = "dd/MM/yy HH:mm";
   const [isHidden, setIsHidden] = useState(false);
   const toggleClass = () => {
     setIsHidden(!isHidden);
   };
 
-  const [upVote, setUpVote] = useState(0);
+  const [upVote, setUpVote] = useState();
   const Up = () => {
     setUpVote(upVote + 1);
   };
-  const [downVote, setDownVote] = useState(0);
+  const [downVote, setDownVote] = useState();
   const Down = () => {
     setDownVote(downVote + 1);
   };
@@ -43,7 +43,9 @@ export default function Comments({ content, date, author }) {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post("http://localhost:5000/comments", replyData);
+    axios.post("http://localhost:5000/comments", replyData).catch((err) => {
+      console.error(err);
+    });
   };
   return (
     <div className="fullComment">
@@ -59,11 +61,11 @@ export default function Comments({ content, date, author }) {
           <button type="button" className="Vote" onClick={Up}>
             💚
           </button>
-          <span className="num"> {upVote}</span>
+          <span className="num">{up}</span>
           <button type="button" className="Vote" onClick={Down}>
             💔
           </button>
-          <span className="num"> {downVote}</span>
+          <span className="num">{down}</span>
           <button type="button" className="replyBtn" onClick={toggleClass}>
             Reply
           </button>
@@ -96,4 +98,6 @@ Comments.propTypes = {
   content: PropTypes.string.isRequired,
   author: PropTypes.number.isRequired,
   date: PropTypes.string.isRequired,
+  up: PropTypes.number.isRequired,
+  down: PropTypes.number.isRequired,
 };
