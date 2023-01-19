@@ -1,4 +1,5 @@
 const express = require("express");
+const passport = require("passport");
 
 const router = express.Router();
 
@@ -28,6 +29,10 @@ router.delete("/users/:id", usersControllers.destroy);
 
 const loginControllers = require("./controllers/loginControllers");
 
-router.post("/api/login", loginControllers.login);
+router.post(
+  "/auth/login",
+  passport.authenticate("local", { session: false }),
+  loginControllers.login
+);
 
 module.exports = router;
