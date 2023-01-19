@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
+const passport = require("passport");
 const router = require("./router");
 
 const app = express();
@@ -49,6 +50,9 @@ if (fs.existsSync(reactIndexFile)) {
     res.sendFile(reactIndexFile);
   });
 }
+
+app.use(passport.initialize());
+require("../services/passport");
 
 // ready to export
 module.exports = app;

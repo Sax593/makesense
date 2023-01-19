@@ -1,10 +1,9 @@
 const models = require("../models");
 
 const login = (req, res) => {
-  const loginId = req.body.id;
-
-  models.login
-    .find(loginId)
+  const logincontent = req.body;
+  models.users
+    .findByMail(logincontent)
     .then(([result]) => {
       res.location(`/suggests/${result.insertId}`).sendStatus(201);
     })

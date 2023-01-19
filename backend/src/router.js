@@ -35,4 +35,12 @@ router.post(
   loginControllers.login
 );
 
+// Auth wall
+
+router.use(passport);
+
+router.get("/protected", (req, res) => {
+  res.send(`Welcome ${req.user.name}`);
+});
+
 module.exports = router;
