@@ -1,32 +1,91 @@
-section.form_idea {
+@use "../../App.scss";
+
+.suggFormTitle{
+  color: #fff30d;
+  font-size: calc(App.$font-size * 1.5);
+  font-family: App.$font-text;
   text-align: center;
+  margin: 0;
 }
 
-.form {
-  margin: 5% auto;
-  padding: 2rem;
-  width: 50%;
-  border: solid 1px black;
-  border-radius: 15px;
-  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.95);
+.left, .right{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
-.input {
+.left{
+  margin-top: 5%;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  background-color: #ffff;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  padding: 1em;
+}
+
+.right{
+  background-color: #ffff;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  padding: 1em;
+}
+
+.labelTitle, .labelDescription, .labelRepercussion{
+  font-family: App.$font-text;
+  font-size: calc(App.$font-size - 0.4em);
+  font-weight: 900;
+  margin: 0.5em;
+}
+
+.labelTitle{
+  color: #70af90;
+}
+.labelDescription{
+  color: #9b084f;
+}
+.labelRepercussion{
+  color: #c62e43;
+}
+
+.inputBlock {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }
 
-label {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem 0;
+.textArea {
+  width: 40vw;
+  max-width: 50vw;
+  background-color: #ffff;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 
-.inputText,
-.textArea {
-  max-width: 20vw;
+#title{
+  border: #70af90 3px solid;
+}
+
+#description{
+  border: #9b084f 3px solid;
+}
+
+#consequences{
+  border: #c62e43 3px solid;
+}
+
+.inputText{
+    max-width: 30vw;
+    background-color: #ffff;
+    border: #e0e4eb 3px solid;
+    box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
 }
 
 .add {
@@ -35,23 +94,64 @@ label {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
 }
 
 .submit {
   width: 3rem;
 }
 
-label.vote {
-  display: flex;
-  flex-direction: row;
+
+.labelExpert, .labelImpacted, .vote{
+  display: block;
+  margin: auto;
+  font-family: App.$font-text;
+  font-size: calc(App.$font-size - 0.4em);
+  font-weight: 900;
 }
 
-.add_button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.labelExpert{
+  color: #24673a;
+  margin-bottom: 1em;
+}
+.labelImpacted{
+  color: #70af90;
+}
+
+.personAdd{
+  color: #196C84;
+  font-size: 2.5em;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-radius: 50%;
 }
 
 .search {
   display: none;
+}
+
+.vote{
+  margin-bottom: 1.5em;
+}
+
+.sendButton{
+  padding: 0.5em;
+  border-radius: 1em;
+  font-family: App.$font-text;
+  box-shadow: 0 20px 60px 0 black;
+  border: none;
+  font-size: 1.2em;
+  display: block;
+  margin: auto;
+  margin-top: 3%;
+  color: App.$text-color-primary;
+}
+
+.sendButton {
+  background: #ffffff;
+  transition: background-color 0.5s ease-out 100ms;
+}
+
+.sendButton:hover {
+  background-color: #27ae60;
 }

@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { IoIosPersonAdd } from "react-icons/io";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 import "./style.scss";
 
@@ -29,55 +31,61 @@ export default function SuggestForm() {
 
   return (
     <section className="form_idea">
-      <p>Suggestion form</p>
-      <form className="form" onSubmit={hSubmit}>
-        <div className="input">
+      <p className="suggFormTitle">Suggestion Form</p>
+      <form className="suggForm" onSubmit={hSubmit}>
+        <div className="inputBlock">
           <div className="left">
-            <label htmlFor="title">
+            <label className="labelTitle" htmlFor="title">
               Title:
-              <input
+              <ReactQuill
                 className="inputText"
                 type="text"
                 name="title"
                 id="title"
                 value={suggest.title}
-                onChange={hChange}
+                onChange={(newValue) => {
+                  setSuggest({ ...suggest, title: newValue });
+                }}
               />
             </label>
-            <label htmlFor="description">
+            <label className="labelDescription" htmlFor="description">
               Description:
-              <textarea
+              <ReactQuill
                 className="textArea"
                 name="description"
                 id="description"
                 cols="30"
                 rows="10"
                 value={suggest.description}
-                onChange={hChange}
+                onChange={(newValue) => {
+                  setSuggest({ ...suggest, description: newValue });
+                }}
               />
             </label>
-            <label htmlFor="impact">
+            <label className="labelRepercussion" htmlFor="impact">
               Potential répercution:
-              <textarea
+              <ReactQuill
                 className="textArea"
-                name="impact"
-                id="impact"
+                name="consequences"
+                id="consequences"
                 cols="30"
                 rows="10"
                 value={suggest.consequences}
-                onChange={(e) =>
-                  setSuggest({ ...suggest, consequences: e.target.value })
-                }
+                onChange={(newValue) => {
+                  setSuggest({ ...suggest, consequences: newValue });
+                }}
               />
             </label>
           </div>
           <div className="right">
-            <label htmlFor="vote" className="vote">
+            <label className="vote" htmlFor="vote">
               Would you like to add some votes?
               <input type="checkbox" name="vote" id="vote" />
             </label>
-            <label className="add_button" htmlFor="expert">
-              Experts:
+            <label className="labelImpacted add_button" htmlFor="impacted">
+              Impacted:
+            </label>
+            <div className="impactedBlock">
               <button
                 onClick={() => {
                   setSearch(!search);
@@ -85,17 +93,20 @@ export default function SuggestForm() {
                 className="add"
                 type="button"
               >
-                <IoIosPersonAdd />
+                <IoIosPersonAdd className="personAdd" />
               </button>
-            </label>
+            </div>
             <input
               className={search ? "search" : null}
               type="search"
               placeholder="name"
               onChange={hChange}
             />
-            <label className="add_button" htmlFor="impacted">
-              Impacted:
+
+            <label className="labelExpert add_button" htmlFor="expert">
+              Experts:
+            </label>
+            <div className="expertBlock">
               <button
                 className="add"
                 type="button"
@@ -103,9 +114,9 @@ export default function SuggestForm() {
                   setVisibility(!visibility);
                 }}
               >
-                <IoIosPersonAdd />
+                <IoIosPersonAdd className="personAdd" />
               </button>
-            </label>
+            </div>
             <input
               className={visibility ? "search" : null}
               type="search"
@@ -114,10 +125,10 @@ export default function SuggestForm() {
             />
           </div>
         </div>
-        <button className="submit" type="submit">
-          Send
-        </button>
       </form>
+      <button className="sendButton" type="submit">
+        Send
+      </button>
     </section>
   );
 }
