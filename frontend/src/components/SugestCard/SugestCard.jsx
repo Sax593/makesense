@@ -12,7 +12,7 @@ export default function SuggestCard({ data }) {
       </div>
       <div className="footerCard">
         <p className="advice">Avis(5)</p>
-        <Link to={`/details/:${data.id}`}>
+        <Link to={`/suggestionDetails/${data.id}`}>
           <button className="adviceButton" type="button">
             <IoIosAddCircleOutline />
           </button>

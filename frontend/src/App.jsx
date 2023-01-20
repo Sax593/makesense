@@ -15,11 +15,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/thread" element={<Thread />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/details/:id" element={<SuggestDetails />} />
         <Route path="/suggestform" element={<SuggestForm />} />
         <Route path="/finaldecision" element={<FinalDecision />} />
+        <Route path="/suggestionDetails/:id" element={<Suggest />} />
         <Route path="/vote" element={<Vote />} />
-        <Route path="/suggestionDetails" element={<Suggest />} />
       </Routes>
     </div>
   );
