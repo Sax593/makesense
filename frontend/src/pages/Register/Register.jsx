@@ -55,7 +55,7 @@ export default function Register() {
       <img className="logoMS3" src={logoMS3} alt="logoMS" />
       <img className="logoMS4" src={logoMS2} alt="logoMS" />
       <img className="logoMS5" src={logoMS3} alt="logoMS" />
-      <h2 className="textregis">Welcome, please register </h2>
+      <h2 className="textregis"> </h2>
       <img
         className="avatarPrev"
         id="avatarPreview"
@@ -149,7 +149,7 @@ export default function Register() {
           />
         </label>
         <button className="validation" type="submit">
-          Register
+          register
         </button>
       </form>
     </section>
