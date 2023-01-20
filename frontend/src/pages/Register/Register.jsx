@@ -30,7 +30,7 @@ export default function Register() {
       }
     }
   };
-
+  const defaultAvatar = "https://via.placeholder.com/150";
   const hSubmit = (evt) => {
     evt.preventDefault();
     if (user.email !== user.confEmail) {
@@ -55,7 +55,13 @@ export default function Register() {
       <img className="logoMS3" src={logoMS3} alt="logoMS" />
       <img className="logoMS4" src={logoMS2} alt="logoMS" />
       <img className="logoMS5" src={logoMS3} alt="logoMS" />
-      <h2 className="textregis">Welcome, please register !</h2>
+      <h2 className="textregis">Welcome, please register </h2>
+      <img
+        className="avatarPrev"
+        id="avatarPreview"
+        src={defaultAvatar}
+        alt=""
+      />
       <img className="avatarPrev" id="avatarPreview" src="" alt="" />
 
       <form className="formclass" onSubmit={hSubmit}>
