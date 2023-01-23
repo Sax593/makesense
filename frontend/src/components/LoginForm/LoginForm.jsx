@@ -1,15 +1,19 @@
 import { useState } from "react";
+import axios from "axios";
 import "./style.scss";
 
 export default function LoginForm() {
   const [newConnect, setNewConnect] = useState({
-    name: "",
+    email: "",
     password: "",
   });
   const hChange = (evt) => {
     setNewConnect({ ...newConnect, [evt.target.name]: evt.target.value });
   };
-  const hSubmit = () => {};
+  const hSubmit = (evt) => {
+    evt.preventDefault();
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, newConnect);
+  };
   return (
     <form className="loginForm" onSubmit={hSubmit}>
       <label className="inputLoginForm">
@@ -17,9 +21,9 @@ export default function LoginForm() {
         <input
           className="inputLogin"
           type="text"
-          name="name"
-          value={newConnect.name}
-          placeholder="Name"
+          name="email"
+          value={newConnect.email}
+          placeholder="Email"
           onChange={hChange}
         />
         <input
