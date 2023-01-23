@@ -6,7 +6,7 @@ import "./style.scss";
 
 export default function Suggest() {
   return (
-    <>
+    <div>
       <Nav />
       <div className="timelineBar">
         <Timeline />
@@ -19,6 +19,6 @@ export default function Suggest() {
       <div className="detailsSg">
         <SuggestDetails />
       </div>
-    </>
+    </div>
   );
 }

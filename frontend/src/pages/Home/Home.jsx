@@ -1,11 +1,21 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import SugestCard from "@components/SugestCard/SugestCard";
 import Nav from "@components/Nav/Nav";
+import "./Style.scss";
 import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";
-import "./Style.scss";
 
 export default function Home() {
+  const [suggest, setSuggest] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests`)
+      .then(({ data }) => {
+        setSuggest(data);
+      });
+  }, []);
   return (
     <>
       <Nav />
@@ -36,15 +46,9 @@ export default function Home() {
           </div>
         </fieldset>
         <div className="cardx">
-          <SugestCard />
-          <SugestCard />
-          <SugestCard />
-          <SugestCard />
-          <SugestCard />
-          <SugestCard />
-          <SugestCard />
-          <SugestCard />
-          <SugestCard />
+          {suggest.map((element) => {
+            return <SugestCard key={element.id} data={element} />;
+          })}
         </div>
       </section>
     </>

@@ -1,20 +1,21 @@
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./style.scss";
 
 export default function SuggestDetails() {
   const [suggest, setSuggest] = useState([]);
   const [user, setUser] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
     axios.get("https://randomuser.me/api/?results=3").then(({ data }) => {
       setUser(data.results);
     });
   }, []);
-
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/13`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/${id}`)
       .then(({ data }) => {
         setSuggest(data);
       })
@@ -22,7 +23,6 @@ export default function SuggestDetails() {
         console.error(err);
       });
   }, []);
-
   return (
     <section className="suggestdetail">
       <h2 className="suggestTitleMain">{suggest.title}</h2>
@@ -41,13 +41,13 @@ export default function SuggestDetails() {
           <div className="impacted">
             <h3 className="peopletitle impactedTitle">Impacted people</h3>
             <div className="avatar">
-              {user.map((avatar) => {
+              {user.map((element) => {
                 return (
                   <img
-                    key={avatar.id}
+                    key={element.id}
                     className="avatarpicture"
-                    src={avatar.picture.medium}
-                    alt={avatar.name.first}
+                    src={element.picture.medium}
+                    alt={element.name.first}
                   />
                 );
               })}

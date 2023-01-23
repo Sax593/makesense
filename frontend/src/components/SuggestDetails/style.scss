@@ -84,13 +84,15 @@ h2 {
 }
 
 .suggestTitleMain {
-  color: #ffff;
+  color: #70af90;
   font-size: calc(App.$font-size * 1.5);
   font-family: App.$font-text;
   position: absolute;
   top: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
+  white-space: nowrap;
+  text-align: center;
 }
 
 .descriptionTitle,
@@ -109,8 +111,95 @@ h2 {
   margin: 0.5em;
 }
 
-@media (max-width: 450px) {
+//SMARTPHONE
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .suggestTitleMain {
+    font-size: 1.5em;
+    font-family: App.$font-text;
+    position: absolute;
+    top: 2%;
+    text-align: center;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+  }
+  .people {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    margin: 0.5em 0;
+    padding: 0;
+  }
   .main {
     flex-direction: column;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .suggestTitleMain {
+    font-size: 1.5em;
+    font-family: App.$font-text;
+    position: absolute;
+    top: 2%;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+  }
+  .people {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    margin: 0.5em 0;
+    padding: 0;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .people {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    margin: 0.5em 0;
+    padding: 0;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    width: 100%;
+  }
+  .suggestTitleMain {
+    font-size: 2em;
+    font-family: App.$font-text;
+    position: absolute;
+    top: 2%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
