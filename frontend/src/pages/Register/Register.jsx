@@ -1,11 +1,13 @@
 import "./style.scss";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import { userContext } from "@services/context/userContext";
 import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";
 
 export default function Register() {
+  const { setUsers } = useContext(userContext);
   const [user, setUser] = useState({
     name: "",
     firstname: "",
@@ -40,6 +42,7 @@ export default function Register() {
       alert("Error: Password is not valid");
     }
     axios.post(`${import.meta.env.VITE_BACKEND_URL}/signup`, user);
+    setUsers(user);
   };
 
   window.addEventListener("beforeunload", () => {
