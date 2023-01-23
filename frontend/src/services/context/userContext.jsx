@@ -4,21 +4,22 @@ import propTypes from "prop-types";
 const userContext = createContext();
 
 function Provider({ children }) {
-  const [user, setUser] = useState({
+  const [users, setUsers] = useState({
+    id: null,
     name: null,
     firstname: null,
-    email: null,
-    avatar: null,
-    role: null,
     localisation: null,
+    email: null,
+    role: null,
+    avatar: null,
   });
 
   const context = useMemo(
     () => ({
-      user,
-      setUser,
+      users,
+      setUsers,
     }),
-    [user, setUser]
+    [users, setUsers]
   );
 
   return (
@@ -29,17 +30,19 @@ function Provider({ children }) {
 export default Provider;
 export { userContext };
 const UserShape = {
+  id: propTypes.number,
   name: propTypes.string,
   firstname: propTypes.string,
   email: propTypes.string,
   avatar: propTypes.string,
   role: propTypes.string,
   localisation: propTypes.string,
+  token: propTypes.string,
 };
 
 Provider.propTypes = {
   children: propTypes.shape({
-    user: propTypes.shape(UserShape),
-    setUser: propTypes.shape(UserShape),
+    users: propTypes.shape(UserShape),
+    setUsers: propTypes.shape(UserShape),
   }).isRequired,
 };

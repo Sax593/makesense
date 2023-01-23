@@ -1,5 +1,4 @@
 require("dotenv").config();
-const bcrypt = require("bcrypt");
 const AbstractManager = require("./AbstractManager");
 
 class UsersManager extends AbstractManager {
@@ -8,14 +7,13 @@ class UsersManager extends AbstractManager {
   }
 
   async insert(users) {
-    const hashedPassword = await bcrypt.hash(process.env.PASSWORD, 10);
     return this.connection.query(
       `insert into ${this.table} (id, name, firstname, password, email, avatar, role, localisation, thread_id) values (?,?,?,?,?,?,?,?,?)`,
       [
         users.id,
         users.name,
         users.firstname,
-        hashedPassword,
+        users.password,
         users.email,
         users.avatar,
         users.role,
@@ -26,13 +24,12 @@ class UsersManager extends AbstractManager {
   }
 
   async update(users) {
-    const hashedPassword = await bcrypt.hash(users.PASSWORD, 10);
     return this.connection.query(
       `update ${this.table} set name = ?, firstname = ?, password = ? , email = ?, avatar = ?, role = ?, localisation = ?, thread_id = ? where id = ?`,
       [
         users.name,
         users.firstname,
-        hashedPassword,
+        users.password,
         users.email,
         users.avatar,
         users.role,
@@ -41,6 +38,12 @@ class UsersManager extends AbstractManager {
         users.id,
       ]
     );
+  }
+
+  findByEmail(email) {
+    return this.connection.query(`select * from ${this.table} where email=?`, [
+      [email],
+    ]);
   }
 }
 

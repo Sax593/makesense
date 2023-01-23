@@ -1,0 +1,70 @@
+@use "../../App";
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10%;
+  width: 30%;
+  height: calc(App.$mainHeight/4);
+}
+
+.loginTitle {
+  text-align: center;
+  color: App.$text-color-primary;
+  font-family: App.$font-text;
+}
+
+.inputLoginForm {
+  border: 1px #e0e4eb solid;
+  background-color: #fff;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px 0 black;
+}
+
+.inputLogin {
+  font-family: App.$font-text;
+  height: 2em;
+  border: #196c84 solid 0.5px;
+  border-radius: 1em;
+  padding-left: 0.5em;
+  color: App.$text-color-primary;
+  margin: 3% 2%;
+}
+
+.loginSubmit {
+  padding: 0.5em;
+  border: none;
+  border-radius: 1em;
+  box-shadow: 0 20px 60px 0 black;
+  font-family: App.$font-text;
+  font-size: 1.2em;
+  margin: auto;
+  margin-top: 5%;
+  color: App.$text-color-primary;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 851px) {
+  .loginForm {
+    margin-top: 5%;
+  }
+  .inputLogin {
+    margin: 1.5% 1%;
+  }
+  .loginTitle {
+    font-size: 1.5em;
+  }
+  .loginSubmit {
+    margin-top: 3%;
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 850px) and (orientation: portrait) {
+  .loginForm {
+    width: 80%;
+    margin-top: 30%;
+  }
+}
