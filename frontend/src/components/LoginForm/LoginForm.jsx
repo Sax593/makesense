@@ -12,7 +12,7 @@ export default function LoginForm() {
   };
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/login`, newConnect);
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/login`, newConnect);
   };
   return (
     <form className="loginForm" onSubmit={hSubmit}>

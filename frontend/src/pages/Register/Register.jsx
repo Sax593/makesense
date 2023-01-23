@@ -39,8 +39,7 @@ export default function Register() {
     if (user.password !== user.confPass) {
       alert("Error: Password is not valid");
     }
-
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/users`, user);
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/signup`, user);
   };
 
   window.addEventListener("beforeunload", () => {
