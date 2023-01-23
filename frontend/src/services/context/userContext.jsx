@@ -4,7 +4,7 @@ import propTypes from "prop-types";
 const userContext = createContext();
 
 function Provider({ children }) {
-  const [user, setUser] = useState({
+  const [users, setUsers] = useState({
     id: null,
     name: null,
     firstname: null,
@@ -12,15 +12,14 @@ function Provider({ children }) {
     email: null,
     role: null,
     avatar: null,
-    token: null,
   });
 
   const context = useMemo(
     () => ({
-      user,
-      setUser,
+      users,
+      setUsers,
     }),
-    [user, setUser]
+    [users, setUsers]
   );
 
   return (
@@ -43,7 +42,7 @@ const UserShape = {
 
 Provider.propTypes = {
   children: propTypes.shape({
-    user: propTypes.shape(UserShape),
-    setUser: propTypes.shape(UserShape),
+    users: propTypes.shape(UserShape),
+    setUsers: propTypes.shape(UserShape),
   }).isRequired,
 };
