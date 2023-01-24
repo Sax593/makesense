@@ -13,7 +13,6 @@ export default function SuggestDetails() {
       setUser(data.results);
     });
   }, []);
-
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/${id}`)
@@ -24,7 +23,6 @@ export default function SuggestDetails() {
         console.error(err);
       });
   }, []);
-
   return (
     <section className="suggestdetail">
       <h2 className="suggestTitleMain">{suggest.title}</h2>
@@ -43,13 +41,13 @@ export default function SuggestDetails() {
           <div className="impacted">
             <h3 className="peopletitle impactedTitle">Impacted people</h3>
             <div className="avatar">
-              {user.map((avatar) => {
+              {user.map((element) => {
                 return (
                   <img
-                    key={avatar.id}
+                    key={element.id}
                     className="avatarpicture"
-                    src={avatar.picture.medium}
-                    alt={avatar.name.first}
+                    src={element.picture.medium}
+                    alt={element.name.first}
                   />
                 );
               })}

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const AbstractManager = require("./AbstractManager");
 
 class UsersManager extends AbstractManager {
@@ -5,9 +6,9 @@ class UsersManager extends AbstractManager {
     super({ table: "users" });
   }
 
-  insert(users) {
+  async insert(users) {
     return this.connection.query(
-      `insert into ${this.table} (id, name, firstname, password, email, avatar, role,thread_id) values (?,?,?,?,?,?,?,?)`,
+      `insert into ${this.table} (id, name, firstname, password, email, avatar, role, localisation, thread_id) values (?,?,?,?,?,?,?,?,?)`,
       [
         users.id,
         users.name,
@@ -16,14 +17,15 @@ class UsersManager extends AbstractManager {
         users.email,
         users.avatar,
         users.role,
+        users.localisation,
         users.thread_id,
       ]
     );
   }
 
-  update(users) {
+  async update(users) {
     return this.connection.query(
-      `update ${this.table} set name = ?, firstname = ?, password = ? , email = ?, avatar = ?, role = ?, thread_id = ? where id = ?`,
+      `update ${this.table} set name = ?, firstname = ?, password = ? , email = ?, avatar = ?, role = ?, localisation = ?, thread_id = ? where id = ?`,
       [
         users.name,
         users.firstname,
@@ -31,10 +33,17 @@ class UsersManager extends AbstractManager {
         users.email,
         users.avatar,
         users.role,
+        users.localisation,
         users.thread_id,
         users.id,
       ]
     );
+  }
+
+  findByEmail(email) {
+    return this.connection.query(`select * from ${this.table} where email=?`, [
+      [email],
+    ]);
   }
 }
 
