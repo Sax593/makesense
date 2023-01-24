@@ -1,4 +1,4 @@
-.cardz {
+.card {
   border: solid 1px black;
   max-width: 30vw;
   padding: 0 2.5vw;
@@ -6,9 +6,10 @@
   border-radius: 1em;
   box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.95);
   transition: transform 0.4s;
+  margin-bottom: 3em;
 }
 
-.cardz:hover {
+.card:hover {
   cursor: pointer;
   transform: scale(1.08);
 }
@@ -19,7 +20,7 @@
 
 .progressBar {
   height: 0.5rem;
-  width: 2vw;
+  width: 5vw;
   background-color: yellowgreen;
 }
 
@@ -34,7 +35,5 @@
   background-color: transparent;
 }
 
-article.cardz {
-  margin-bottom: 3em;
-  padding-left: 10em;
-}
+// article.cardz {
+// }
