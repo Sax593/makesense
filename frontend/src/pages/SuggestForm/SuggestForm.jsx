@@ -1,9 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { IoIosPersonAdd } from "react-icons/io";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-
 import "./style.scss";
 
 export default function SuggestForm() {
@@ -37,45 +34,41 @@ export default function SuggestForm() {
           <div className="left">
             <label className="labelTitle" htmlFor="title">
               Title:
-              <ReactQuill
-                className="inputText"
-                type="text"
-                name="title"
-                id="title"
-                value={suggest.title}
-                onChange={(newValue) => {
-                  setSuggest({ ...suggest, title: newValue });
-                }}
-              />
             </label>
+            <input
+              className="inputText"
+              type="text"
+              name="title"
+              id="title"
+              value={suggest.title}
+              onChange={hChange}
+            />
             <label className="labelDescription" htmlFor="description">
               Description:
-              <ReactQuill
-                className="textArea"
-                name="description"
-                id="description"
-                cols="30"
-                rows="10"
-                value={suggest.description}
-                onChange={(newValue) => {
-                  setSuggest({ ...suggest, description: newValue });
-                }}
-              />
             </label>
+            <textarea
+              className="textArea"
+              name="description"
+              id="description"
+              cols="30"
+              rows="10"
+              value={suggest.description}
+              onChange={hChange}
+            />
             <label className="labelRepercussion" htmlFor="impact">
-              Potential répercution:
-              <ReactQuill
-                className="textArea"
-                name="consequences"
-                id="consequences"
-                cols="30"
-                rows="10"
-                value={suggest.consequences}
-                onChange={(newValue) => {
-                  setSuggest({ ...suggest, consequences: newValue });
-                }}
-              />
+              Potential repercution:
             </label>
+            <textarea
+              className="textArea"
+              name="consequences"
+              id="consequences"
+              cols="30"
+              rows="10"
+              value={suggest.consequences}
+              onChange={(evt) => {
+                setSuggest({ ...suggest, consequences: evt.target.value });
+              }}
+            />
           </div>
           <div className="right">
             <label className="vote" htmlFor="vote">
@@ -125,10 +118,10 @@ export default function SuggestForm() {
             />
           </div>
         </div>
+        <button className="sendButton" type="submit">
+          Send
+        </button>
       </form>
-      <button className="sendButton" type="submit">
-        Send
-      </button>
     </section>
   );
 }

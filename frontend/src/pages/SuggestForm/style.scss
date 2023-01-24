@@ -1,6 +1,6 @@
 @use "../../App.scss";
 
-.suggFormTitle{
+.suggFormTitle {
   color: #fff30d;
   font-size: calc(App.$font-size * 1.5);
   font-family: App.$font-text;
@@ -8,13 +8,14 @@
   margin: 0;
 }
 
-.left, .right{
+.left,
+.right {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
 }
 
-.left{
+.left {
   margin-top: 5%;
   border: #e0e4eb 3px solid;
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
@@ -24,7 +25,7 @@
   padding: 1em;
 }
 
-.right{
+.right {
   background-color: #ffff;
   border: #e0e4eb 3px solid;
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
@@ -33,20 +34,22 @@
   padding: 1em;
 }
 
-.labelTitle, .labelDescription, .labelRepercussion{
+.labelTitle,
+.labelDescription,
+.labelRepercussion {
   font-family: App.$font-text;
   font-size: calc(App.$font-size - 0.4em);
   font-weight: 900;
   margin: 0.5em;
 }
 
-.labelTitle{
+.labelTitle {
   color: #70af90;
 }
-.labelDescription{
+.labelDescription {
   color: #9b084f;
 }
-.labelRepercussion{
+.labelRepercussion {
   color: #c62e43;
 }
 
@@ -67,25 +70,25 @@
   border-bottom-left-radius: 0.5em;
 }
 
-#title{
+#title {
   border: #70af90 3px solid;
 }
 
-#description{
+#description {
   border: #9b084f 3px solid;
 }
 
-#consequences{
+#consequences {
   border: #c62e43 3px solid;
 }
 
-.inputText{
-    max-width: 30vw;
-    background-color: #ffff;
-    border: #e0e4eb 3px solid;
-    box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
-    border-bottom-right-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
+.inputText {
+  max-width: 30vw;
+  background-color: #ffff;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 
 .add {
@@ -101,8 +104,9 @@
   width: 3rem;
 }
 
-
-.labelExpert, .labelImpacted, .vote{
+.labelExpert,
+.labelImpacted,
+.vote {
   display: block;
   margin: auto;
   font-family: App.$font-text;
@@ -110,16 +114,16 @@
   font-weight: 900;
 }
 
-.labelExpert{
+.labelExpert {
   color: #24673a;
   margin-bottom: 1em;
 }
-.labelImpacted{
+.labelImpacted {
   color: #70af90;
 }
 
-.personAdd{
-  color: #196C84;
+.personAdd {
+  color: #196c84;
   font-size: 2.5em;
   border: #e0e4eb 3px solid;
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
@@ -130,11 +134,11 @@
   display: none;
 }
 
-.vote{
+.vote {
   margin-bottom: 1.5em;
 }
 
-.sendButton{
+.sendButton {
   padding: 0.5em;
   border-radius: 1em;
   font-family: App.$font-text;
