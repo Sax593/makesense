@@ -4,6 +4,7 @@ import NavBarSuggest from "@components/NavBarSuggest/NavBarSuggest";
 import SuggestDetails from "@components/SuggestDetails/SuggestDetails";
 import Timeline from "@components/Timeline/Timeline";
 import Thread from "@pages/Thread/Thread";
+import Vote from "@components/Vote/Vote";
 import { useState } from "react";
 import "./style.scss";
 
@@ -23,6 +24,7 @@ export default function Suggest() {
       <div className="detailsSg">
         {isActive === "idea" ? <SuggestDetails /> : ""}
         {isActive === "contrib" ? <Thread /> : ""}
+        {isActive === "voteD" ? <Vote /> : ""}
         {isActive === "finaleD" ? <FinalDecision /> : ""}
       </div>
     </div>
