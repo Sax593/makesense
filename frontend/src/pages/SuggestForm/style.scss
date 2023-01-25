@@ -1,15 +1,21 @@
 @use "../../App.scss";
 
+.headerSuggestF {
+  background-color: #fff;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .suggFormTitle {
-  color: #fff30d;
+  color: App.$text-color-primary;
   font-size: calc(App.$font-size * 1.5);
   font-family: App.$font-text;
-  text-align: center;
-  margin: 0;
 }
 
 .left,
-.right {
+.ExpImpBlock {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -23,9 +29,11 @@
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
   padding: 1em;
+  height: 80vh;
 }
 
-.right {
+.ExpImpBlock,
+#datesBlock {
   background-color: #ffff;
   border: #e0e4eb 3px solid;
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
@@ -41,6 +49,8 @@
   font-size: calc(App.$font-size - 0.4em);
   font-weight: 900;
   margin: 0.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .labelTitle {
@@ -58,6 +68,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  height: 90vh;
 }
 
 .textArea {
@@ -89,6 +100,7 @@
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
+}
 
 .add {
   background-color: transparent;
@@ -133,8 +145,43 @@
   display: none;
 }
 
+.hide {
+  visibility: hidden;
+}
+
 .vote {
   margin-bottom: 1.5em;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 5%;
+  height: 80vh;
+}
+
+#datesBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+
+.contribDate,
+.voteDate,
+.finaleDate {
+  float: right;
+  border: lightgray 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+}
+
+.contribLabl,
+.voteLabl,
+.finaleLabl {
+  color: App.$text-color-primary;
+  font-size: calc(App.$font-size / 1.5);
+  font-family: App.$font-text;
 }
 
 .sendButton {
@@ -158,3 +205,18 @@
 .sendButton:hover {
   background-color: #27ae60;
 }
+
+//SMARTPHONE
+// @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+// }
+
+// @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+
+// }
+
+//PAD
+
+// @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+// }
