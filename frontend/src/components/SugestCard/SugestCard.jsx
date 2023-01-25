@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function SuggestCard({ data }) {
   return (
     <Link to={`/suggestionDetails/${data.id}`} className="suggestBlock">
-      <article className="cardz">
+      <article className="card">
         <h2 className="titleCard">{data.title} </h2>
         <div className="wrapper">
           <div className="progressBar" />

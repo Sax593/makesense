@@ -5,7 +5,7 @@
   color: unset;
 }
 
-.cardz {
+.card{
   border: solid 1px black;
   max-width: 25vw;
   padding: 0 2.5vw;
@@ -24,7 +24,7 @@
   text-align: right;
 }
 
-.cardz:hover {
+.card:hover {
   cursor: pointer;
   transform: scale(1.08);
 }
@@ -47,7 +47,7 @@
   text-align: right;
 }
 
-article.cardz {
+article.card {
   margin-bottom: 3em;
   padding-left: 2em;
   padding-right: 1em;
@@ -56,24 +56,24 @@ article.cardz {
 //SMARTPHONE
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .cardz {
+  .card {
     max-width: none;
     margin: 0;
     padding: 0;
   }
-  article.cardz {
+  article.card {
     margin-bottom: 1em;
     padding-right: 1em;
   }
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
-  .cardz {
+  .card {
     max-width: none;
     margin: 0;
     padding: 0;
   }
-  article.cardz {
+  article.card {
     margin-bottom: 1em;
     padding-right: 1em;
   }
@@ -82,12 +82,12 @@ article.cardz {
 //PAD
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .cardz {
+  .card {
     max-width: 40vw;
     margin: 0;
     padding: 0;
   }
-  article.cardz {
+  article.card {
     margin-bottom: 1em;
     padding-right: 1em;
   }
