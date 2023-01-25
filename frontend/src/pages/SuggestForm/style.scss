@@ -18,7 +18,7 @@
 .ExpImpBlock {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  justify-content: space-around;
 }
 
 .left {
@@ -28,8 +28,8 @@
   background-color: #ffff;
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
-  padding: 1em;
   height: 80vh;
+  width: 60%;
 }
 
 .ExpImpBlock,
@@ -39,7 +39,6 @@
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
-  padding: 1em;
 }
 
 .labelTitle,
@@ -56,9 +55,11 @@
 .labelTitle {
   color: #70af90;
 }
+
 .labelDescription {
   color: #9b084f;
 }
+
 .labelRepercussion {
   color: #c62e43;
 }
@@ -72,8 +73,6 @@
 }
 
 .textArea {
-  width: 40vw;
-  max-width: 50vw;
   background-color: #ffff;
   border: #e0e4eb 3px solid;
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
@@ -108,18 +107,28 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  margin-bottom: 1em;
 }
 
-.submit {
-  width: 3rem;
+#datesBlock {
+  padding: 0.5em;
+}
+
+.ExpImpBlock {
+  margin-bottom: 1em;
+}
+
+.labelExpert,
+.labelImpacted {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .labelExpert,
 .labelImpacted,
 .vote {
-  display: block;
-  margin: auto;
   font-family: App.$font-text;
   font-size: calc(App.$font-size - 0.4em);
   font-weight: 900;
@@ -127,8 +136,8 @@
 
 .labelExpert {
   color: #24673a;
-  margin-bottom: 1em;
 }
+
 .labelImpacted {
   color: #70af90;
 }
@@ -156,7 +165,7 @@
 .right {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 5%;
   height: 80vh;
 }
@@ -207,16 +216,501 @@
 }
 
 //SMARTPHONE
-// @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
-// }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .headerSuggestF {
+    background-color: #fff;
+    height: 10vh;
+    width: 100%;
+  }
 
-// @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .suggFormTitle {
+    color: App.$text-color-primary;
+    font-size: App.$font-size;
+    font-family: App.$font-text;
+  }
 
-// }
+  .left {
+    flex-direction: column;
+    height: unset;
+    width: 100%;
+  }
+
+  .descReperc {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #title,
+  #description,
+  #consequences {
+    max-width: none;
+    width: auto;
+  }
+
+  .inputBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5%;
+    height: unset;
+    width: 100%;
+  }
+
+  .ExpImpBlock,
+  #datesBlock {
+    padding: unset;
+    width: auto;
+  }
+
+  #datesBlock {
+    height: 20vh;
+  }
+
+  .ExpImpBlock {
+    margin-bottom: 1em;
+  }
+
+  .labelTitle,
+  .labelDescription,
+  .labelRepercussion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .labelTitle {
+    color: #70af90;
+  }
+
+  .labelDescription {
+    color: #9b084f;
+  }
+
+  .labelRepercussion {
+    color: #c62e43;
+  }
+
+  .labelExpert,
+  .labelImpacted,
+  .vote {
+    display: block;
+    margin: auto;
+    font-family: App.$font-text;
+    font-size: calc(App.$font-size - 0.4em);
+    font-weight: 900;
+  }
+
+  .labelImpacted {
+    margin-bottom: 1em;
+  }
+
+  .ExpImpSecondBlock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .labelExpert,
+  .labelImpacted {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  .personAdd {
+    font-size: 2em;
+  }
+
+  .vote {
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+  }
+
+  .add {
+    margin-bottom: 0.5em;
+  }
+
+  .contribLabl,
+  .voteLabl,
+  .finaleLabl {
+    color: App.$text-color-primary;
+    font-size: calc(App.$font-size / 1.5);
+    font-family: App.$font-text;
+    padding: 0.5em;
+  }
+
+  .sendButton {
+    margin-top: 2%;
+  }
+
+  .sendButton {
+    background: #ffffff;
+    transition: background-color 0.5s ease-out 100ms;
+  }
+
+  .sendButton:hover {
+    background-color: #27ae60;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .headerSuggestF {
+    height: 15vh;
+  }
+
+  .suggFormTitle {
+    color: App.$text-color-primary;
+    font-size: App.$font-size;
+    font-family: App.$font-text;
+  }
+
+  .left {
+    flex-direction: column;
+    height: unset;
+    width: 100%;
+  }
+
+  .descReperc {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #title,
+  #description,
+  #consequences {
+    max-width: none;
+    width: auto;
+  }
+
+  .inputBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5%;
+    height: unset;
+    width: 100%;
+  }
+
+  .ExpImpBlock,
+  #datesBlock {
+    padding: unset;
+    width: auto;
+  }
+
+  #datesBlock {
+    height: 30vh;
+  }
+
+  .ExpImpBlock {
+    margin-bottom: 1em;
+  }
+
+  .labelTitle,
+  .labelDescription,
+  .labelRepercussion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .labelTitle {
+    color: #70af90;
+  }
+
+  .labelDescription {
+    color: #9b084f;
+  }
+
+  .labelRepercussion {
+    color: #c62e43;
+  }
+
+  .labelExpert,
+  .labelImpacted,
+  .vote {
+    display: block;
+    margin: auto;
+    font-family: App.$font-text;
+    font-size: calc(App.$font-size - 0.4em);
+    font-weight: 900;
+  }
+
+  .labelImpacted {
+    margin-bottom: 1em;
+  }
+
+  .ExpImpSecondBlock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .labelExpert,
+  .labelImpacted {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  .personAdd {
+    font-size: 2em;
+  }
+
+  .vote {
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+  }
+
+  .add {
+    margin-bottom: 0.5em;
+  }
+
+  .contribLabl,
+  .voteLabl,
+  .finaleLabl {
+    color: App.$text-color-primary;
+    font-size: calc(App.$font-size / 1.5);
+    font-family: App.$font-text;
+    padding: 0.5em;
+  }
+
+  .sendButton {
+    margin-top: 2%;
+  }
+
+  .sendButton {
+    background: #ffffff;
+    transition: background-color 0.5s ease-out 100ms;
+  }
+
+  .sendButton:hover {
+    background-color: #27ae60;
+  }
+}
 
 //PAD
 
-// @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  .headerSuggestF {
+    background-color: #fff;
+    height: 15vh;
+    width: 100%;
+  }
 
-// }
+  .suggFormTitle {
+    color: App.$text-color-primary;
+    font-family: App.$font-text;
+  }
+
+  .left {
+    flex-direction: column;
+    height: unset;
+    width: 100%;
+  }
+
+  .descReperc {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #title,
+  #description,
+  #consequences {
+    max-width: none;
+    width: auto;
+  }
+
+  .inputBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5%;
+    height: unset;
+    width: 100%;
+  }
+
+  #datesBlock,
+  .ExpImpBlock {
+    width: auto;
+  }
+
+  #datesBlock {
+    padding: 0.5em;
+  }
+
+  .ExpImpBlock {
+    margin-bottom: 1em;
+  }
+
+  .ExpImpSecondBlock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .labelExpert,
+  .labelImpacted {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  .labelImpacted {
+    color: #70af90;
+  }
+
+  .personAdd {
+    font-size: 2em;
+  }
+
+  .vote {
+    font-size: 0.8em;
+  }
+
+  .add {
+    margin-bottom: 0.5em;
+  }
+
+  .sendButton {
+    margin-top: 1%;
+  }
+
+  .sendButton {
+    background: #ffffff;
+    transition: background-color 0.5s ease-out 100ms;
+  }
+
+  .sendButton:hover {
+    background-color: #27ae60;
+  }
+}
+
+@media only screen and (min-device-width: 1023px) and (max-device-width: 768px) {
+  .headerSuggestF {
+    background-color: #fff;
+    height: 15vh;
+    width: 100%;
+  }
+
+  .suggFormTitle {
+    color: App.$text-color-primary;
+    font-family: App.$font-text;
+  }
+
+  .left {
+    flex-direction: column;
+    height: unset;
+    width: 100%;
+  }
+
+  .descReperc {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #title,
+  #description,
+  #consequences {
+    max-width: none;
+    width: auto;
+  }
+
+  .inputBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5%;
+    height: unset;
+    width: 100%;
+  }
+
+  #datesBlock,
+  .ExpImpBlock {
+    width: auto;
+  }
+
+  #datesBlock {
+    padding: 0.5em;
+  }
+
+  .ExpImpBlock {
+    margin-bottom: 1em;
+  }
+
+  .ExpImpSecondBlock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .labelExpert,
+  .labelImpacted {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  .labelImpacted {
+    color: #70af90;
+  }
+
+  .personAdd {
+    font-size: 2em;
+  }
+
+  .vote {
+    font-size: 0.8em;
+  }
+
+  .add {
+    margin-bottom: 0.5em;
+  }
+
+  .sendButton {
+    margin-top: 1%;
+  }
+
+  .sendButton {
+    background: #ffffff;
+    transition: background-color 0.5s ease-out 100ms;
+  }
+
+  .sendButton:hover {
+    background-color: #27ae60;
+  }
+}

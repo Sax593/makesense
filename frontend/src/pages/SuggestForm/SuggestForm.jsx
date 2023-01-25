@@ -51,32 +51,34 @@ export default function SuggestForm() {
                 onChange={hChange}
               />
             </label>
-            <label className="labelDescription" htmlFor="description">
-              Description:
-              <textarea
-                className="textArea"
-                name="description"
-                id="description"
-                cols="30"
-                rows="10"
-                value={suggest.description}
-                onChange={hChange}
-              />
-            </label>
-            <label className="labelRepercussion" htmlFor="impact">
-              Potential repercution:
-              <textarea
-                className="textArea"
-                name="consequences"
-                id="consequences"
-                cols="30"
-                rows="10"
-                value={suggest.consequences}
-                onChange={(evt) => {
-                  setSuggest({ ...suggest, consequences: evt.target.value });
-                }}
-              />
-            </label>
+            <div className="descReperc">
+              <label className="labelDescription" htmlFor="description">
+                Description:
+                <textarea
+                  className="textArea"
+                  name="description"
+                  id="description"
+                  cols="30"
+                  rows="10"
+                  value={suggest.description}
+                  onChange={hChange}
+                />
+              </label>
+              <label className="labelRepercussion" htmlFor="impact">
+                Potential repercution:
+                <textarea
+                  className="textArea"
+                  name="consequences"
+                  id="consequences"
+                  cols="30"
+                  rows="10"
+                  value={suggest.consequences}
+                  onChange={(evt) => {
+                    setSuggest({ ...suggest, consequences: evt.target.value });
+                  }}
+                />
+              </label>
+            </div>
           </div>
           <div className="right">
             <div className="ExpImpBlock">
@@ -91,47 +93,47 @@ export default function SuggestForm() {
                   }}
                 />
               </label>
-              <label className="labelImpacted add_button" htmlFor="impacted">
-                Impacted:
-              </label>
-              <div className="impactedBlock">
-                <button
-                  onClick={() => {
-                    setSearch(!search);
-                  }}
-                  className="add"
-                  type="button"
-                >
-                  <IoIosPersonAdd className="personAdd" />
-                </button>
-              </div>
-              <input
-                className={search ? "search" : null}
-                type="search"
-                placeholder="name"
-                onChange={hChange}
-              />
+              <div className="ExpImpSecondBlock">
+                <label className="labelImpacted add_button" htmlFor="impacted">
+                  Impacted:
+                  <button
+                    onClick={() => {
+                      setSearch(!search);
+                    }}
+                    className="add"
+                    type="button"
+                  >
+                    <IoIosPersonAdd className="personAdd personAdd1" />
+                  </button>
+                  <input
+                    className={search ? "search" : null}
+                    type="search"
+                    placeholder="name"
+                    onChange={hChange}
+                  />
+                </label>
 
-              <label className="labelExpert add_button" htmlFor="expert">
-                Experts:
-              </label>
-              <div className="expertBlock">
-                <button
-                  className="add"
-                  type="button"
-                  onClick={() => {
-                    setVisibility(!visibility);
-                  }}
-                >
-                  <IoIosPersonAdd className="personAdd" />
-                </button>
+                <label className="labelExpert add_button" htmlFor="expert">
+                  Experts:
+                  <div className="expertBlock">
+                    <button
+                      className="add"
+                      type="button"
+                      onClick={() => {
+                        setVisibility(!visibility);
+                      }}
+                    >
+                      <IoIosPersonAdd className="personAdd personAdd1" />
+                    </button>
+                  </div>
+                  <input
+                    className={visibility ? "search" : null}
+                    type="search"
+                    placeholder="name"
+                    onChange={hChange}
+                  />
+                </label>
               </div>
-              <input
-                className={visibility ? "search" : null}
-                type="search"
-                placeholder="name"
-                onChange={hChange}
-              />
             </div>
             <div id="datesBlock" className={date ? "hide" : null}>
               <div className="contribDateBlock">
@@ -142,6 +144,7 @@ export default function SuggestForm() {
                     type="date"
                     name="contribution_date"
                     value={suggest.contribution_date}
+                    onChange={hChange}
                   />
                 </label>
               </div>
@@ -153,6 +156,7 @@ export default function SuggestForm() {
                     type="date"
                     name="vote_date"
                     value={suggest.vote_date}
+                    onChange={hChange}
                   />
                 </label>
               </div>
@@ -164,6 +168,7 @@ export default function SuggestForm() {
                     type="date"
                     name="final_date"
                     value={suggest.final_date}
+                    onChange={hChange}
                   />
                 </label>
               </div>
