@@ -9,7 +9,7 @@ export default function Vote() {
     <div className="vote-container">
       <img className="house" src={house} alt="house" />
       <img className="votepic" src={votepic} alt="votepic" />
-      <img className="line3" src={line} alt="line" />
+
       <div className="vote center-items">
         <h2 className="proptitle">First proposal</h2>
         <p className="pstyle" id="fpro1" name="fpro" />

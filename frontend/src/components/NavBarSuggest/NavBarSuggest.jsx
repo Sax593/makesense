@@ -37,8 +37,8 @@ export default function NavBarSuggest({ isActive, setIsActive }) {
       <button
         type="button"
         id="thirdB"
-        className={isActive === "votes" ? "active" : "noActive"}
-        onClick={() => setIsActive("votes")}
+        className={isActive === "voteD" ? "active" : "noActive"}
+        onClick={() => setIsActive("voteD")}
       >
         <h3 className="text">Votes</h3>
         <div className="iconSuggest">
