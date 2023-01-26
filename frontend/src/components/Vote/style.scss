@@ -2,39 +2,39 @@
   position: absolute;
   height: 9em;
   left: 23%;
-  top: 45.3%;
+  top: 43.9%;
 }
 .votepictwo {
   position: absolute;
   height: 9em;
   left: 68%;
-  top: 103.5%;
+  top: 102.2%;
 }
 
 .votepicthree {
   position: absolute;
   height: 9em;
   left: 23%;
-  top: 162%;
+  top: 160.5%;
 }
 .house {
   position: absolute;
   height: 9em;
   left: 68%;
-  top: 45.3%;
+  top: 43.7%;
 }
 .house2 {
   position: absolute;
   height: 9em;
   left: 23%;
-  top: 103.3%;
+  top: 102.3%;
 }
 
 .house3 {
   position: absolute;
   height: 9em;
   left: 65%;
-  top: 162%;
+  top: 160.2%;
 }
 
 .line {
@@ -84,6 +84,7 @@
   font-size: 1.6em;
   font-weight: bolder;
   text-decoration: underline 2px whitesmoke;
+  text-underline-offset: 8px;
   text-decoration-thickness: 3px;
 }
 
@@ -130,7 +131,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px black;
-  font-size: 25px;
+  font-size: 22px;
   font-family: Arial, sans-serif;
   font-weight: bolder;
   background-color: #fff;
