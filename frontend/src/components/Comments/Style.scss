@@ -3,15 +3,18 @@
 .comment {
   display: flex;
   flex-wrap: wrap;
-  width: 30vw;
-  border-radius: 10%;
-  background-color: App.$color-background;
+  width: 40vw;
   text-align: center;
   flex-direction: column;
   align-items: center;
+  background-color: #ffff;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
   p {
     font-family: App.$font-text;
-    color: #ffffff;
+    color: App.$text-color-primary;
   }
 }
 .cAuthor {
@@ -59,7 +62,7 @@
 
 .num {
   font-size: 2rem;
-  color: #e0e4eb;
+  color: App.$text-color-primary;
 }
 .replyForm {
   display: flex;

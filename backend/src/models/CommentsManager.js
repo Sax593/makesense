@@ -12,6 +12,18 @@ class CommentsManager extends AbstractManager {
     );
   }
 
+  findAll() {
+    return this.connection.query(
+      `
+      select 
+        comments.*, 
+        users.name 
+      from  
+        ${this.table} 
+        left join users on comments.users_id=users.id`
+    );
+  }
+
   update(comments) {
     return this.connection.query(
       `update ${this.table} set date = ?, content = ?, users_id = ?, suggests_id = ?, up_vote = ?, down_vote= ? where id = ?`,

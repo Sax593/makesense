@@ -1,29 +1,68 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import "./Style.scss";
+// eslint-disable-next-line import/no-unresolved
 import { DateTime } from "luxon";
 import axios from "axios";
 
-export default function Comments({ content, date, author, up, down }) {
+export default function Comments({
+  content,
+  date,
+  author,
+  up,
+  down,
+  id,
+  suggest,
+}) {
   const format = "dd/MM/yy HH:mm";
   const [isHidden, setIsHidden] = useState(false);
   const toggleClass = () => {
     setIsHidden(!isHidden);
   };
 
-  const [upVote, setUpVote] = useState();
-  const Up = () => {
+  const [upVote, setUpVote] = useState(up);
+  const Up = (evt) => {
     setUpVote(upVote + 1);
+    evt.preventDefault();
+    const newCom = {
+      content,
+      date: date.slice(0, 19),
+      users_id: author,
+      up_vote: upVote + 1,
+      down_vote: down,
+      id,
+      suggests_id: suggest,
+    };
+    axios
+      .put(`${import.meta.env.VITE_BACKEND_URL}/comments/${id}`, newCom)
+      .catch((err) => {
+        console.error(err);
+      });
   };
-  const [downVote, setDownVote] = useState();
-  const Down = () => {
+  const [downVote, setDownVote] = useState(down);
+  const Down = (evt) => {
     setDownVote(downVote + 1);
+    evt.preventDefault();
+    const newCom1 = {
+      content,
+      date: date.slice(0, 19),
+      users_id: author,
+      up_vote: upVote,
+      down_vote: downVote + 1,
+      id,
+      suggests_id: suggest,
+    };
+    axios
+      .put(`${import.meta.env.VITE_BACKEND_URL}/comments/${id}`, newCom1)
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   const [replyData, setReplyData] = useState({
     content: "",
     users_id: 20,
-    suggests_id: 13,
+    suggests_id: suggest,
   });
 
   const hChange = (evt) => {
@@ -43,9 +82,11 @@ export default function Comments({ content, date, author, up, down }) {
 
   const hSubmit = (evt) => {
     evt.preventDefault();
-    axios.post("http://localhost:5000/comments", replyData).catch((err) => {
-      console.error(err);
-    });
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/comments`, replyData)
+      .catch((err) => {
+        console.error(err);
+      });
   };
   return (
     <div className="fullComment">
@@ -72,7 +113,7 @@ export default function Comments({ content, date, author, up, down }) {
         </div>
       </div>
       <div className={!isHidden ? "hidden" : "visible"}>
-        <form className="replyForm">
+        <form className="replyForm" onSubmit={hSubmit}>
           <textarea
             name="content"
             placeholder="Reply to comment"
@@ -82,9 +123,7 @@ export default function Comments({ content, date, author, up, down }) {
           />
 
           <div>
-            <button type="submit" onSubmit={hSubmit}>
-              Submit
-            </button>
+            <button type="submit">Submit</button>
             <button type="button" onClick={toggleClass}>
               Cancel
             </button>
@@ -100,4 +139,6 @@ Comments.propTypes = {
   date: PropTypes.string.isRequired,
   up: PropTypes.number.isRequired,
   down: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  suggest: PropTypes.number.isRequired,
 };
