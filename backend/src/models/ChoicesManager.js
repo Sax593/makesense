@@ -1,6 +1,6 @@
 const AbstractManager = require("./AbstractManager");
 
-class choicesManager extends AbstractManager {
+class ChoicesManager extends AbstractManager {
   constructor() {
     super({ table: "choices" });
   }
@@ -20,4 +20,4 @@ class choicesManager extends AbstractManager {
   }
 }
 
-module.exports = choicesManager;
+module.exports = ChoicesManager;
