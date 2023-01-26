@@ -7,7 +7,7 @@ const router = require("./router");
 const app = express();
 
 // use some application-level middlewares
-const whitelist = process.env.FRONTEND_URL.split(",") || [
+const whitelist = process.env.FRONTEND_URL?.split(",") || [
   "http://localhost:3000/",
 ];
 app.use(
