@@ -1,18 +1,23 @@
 .timeline {
-  margin: 50px 60px;
-  height: 4px;
-  background-color: #ccc;
-}
+  width: 90vw;
+  margin-top: 3vh;
+  margin-bottom: 6vh;
+  margin-left: 5.5vw;
 
+  height: 4px;
+  background-color: rgb(168, 163, 163);
+}
+.timelineBar {
+  width: 100vw;
+}
 .timelineProgress {
-  width: 0%;
-  height: 90%;
-  background-color: #c1e94e;
+  width: 95vw;
+  height: 80%;
+  background-color: #ece13f;
 }
 
 .timelineItems {
   margin-left: -10px;
-  margin-right: -10px;
   margin-top: -12px;
   display: flex;
   justify-content: space-between;
@@ -24,21 +29,28 @@
 
 .timelineItem::before {
   content: "";
-  width: 20px;
-  height: 20px;
-  background-color: #ccc;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(168, 163, 163);
+  position: absolute;
+  top: 2px;
   display: block;
   border-radius: 100%;
 }
 
 .timelineContent {
+  border: solid 3px #4b4546;
+  color: #0c3944;
+  font-weight: bold;
+  font-size: 1em;
   position: absolute;
   top: 30px;
-  left: 50%;
+  left: 52%;
   transform: translateX(-50%);
   background-color: #ddd;
   width: 100px;
   padding: 5px 10px;
+  margin-left: 5px;
   border-radius: 5px;
   text-align: center;
 }
@@ -47,26 +59,32 @@
   content: "";
   width: 10px;
   height: 10px;
-  background-color: #ddd;
+  background-color: rgb(168, 163, 163);
   display: block;
   position: absolute;
   top: -8px;
-  margin-left: -2px;
   left: 50%;
+
   transform: rotate(-45deg) translateX(-50%);
 }
 
 .timelineItem.active::before {
-  background-color: #c1e94e;
+  position: absolute;
+  top: 2px;
+  height: 15px;
+  width: 15px;
+  background-color: #e4365c;
 }
 
 .timelineItem.active .timelineContent {
-  color: #0c3944;
-  background-color: #c1e94e;
+  background-color: #dddddd;
+  font-weight: bold;
+  font-size: 1em;
+  border: solid 3px rgb(255, 221, 31);
 }
 
 .timelineItem.active .timelineContent::before {
-  background-color: #c1e94e;
+  background-color: #fdfa34;
 }
 
 //SMARTPHONE

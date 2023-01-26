@@ -95,12 +95,16 @@
 }
 
 .active {
-  color: #fff30d;
-  text-shadow: 10px 5px 10px black;
+  color: #1f1f1f;
 }
 
 .active .text {
   animation: scale 0.5s linear forwards;
+  color: rgb(224, 224, 206);
+  font-size: 1em;
+  font-weight: bolder;
+
+  text-shadow: 2px 2px black;
 }
 
 .noActive {
