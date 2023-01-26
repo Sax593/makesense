@@ -7,27 +7,33 @@ class CommentsManager extends AbstractManager {
 
   insert(comments) {
     return this.connection.query(
-      `insert into ${this.table} (id, date, content, users_id, suggests_id, comments_id) values (?,?,?,?,?,?)`,
-      [
-        comments.id,
-        comments.date,
-        comments.content,
-        comments.users_id,
-        comments.suggests_id,
-        comments.comments_id,
-      ]
+      `insert into ${this.table} (date, content, users_id, suggests_id, up_vote, down_vote) values (NOW(),?,?,?,0,0)`,
+      [comments.content, comments.users_id, comments.suggests_id]
+    );
+  }
+
+  findAll() {
+    return this.connection.query(
+      `
+      select 
+        comments.*, 
+        users.name 
+      from  
+        ${this.table} 
+        left join users on comments.users_id=users.id`
     );
   }
 
   update(comments) {
     return this.connection.query(
-      `update ${this.table} set date = ?, content = ?, users_id = ?, suggests_id = ? , comments_id = ? where id = ?`,
+      `update ${this.table} set date = ?, content = ?, users_id = ?, suggests_id = ?, up_vote = ?, down_vote= ? where id = ?`,
       [
         comments.date,
         comments.content,
         comments.users_id,
         comments.suggests_id,
-        comments.comments_id,
+        comments.up_vote,
+        comments.down_vote,
         comments.id,
       ]
     );
