@@ -95,16 +95,13 @@
 }
 
 .active {
-  color: #1f1f1f;
+  color: #fff30d;
 }
 
 .active .text {
   animation: scale 0.5s linear forwards;
-  color: rgb(224, 224, 206);
+  color: rgb(206, 209, 20);
   font-size: 1em;
-  font-weight: bolder;
-
-  text-shadow: 2px 2px black;
 }
 
 .noActive {
@@ -116,8 +113,8 @@
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #70af8f60;
-  border-top: 1px solid #70af8f60;
+  border-bottom: 1px solid #2ab46f60;
+  border-top: 1px solid #5f090960;
   width: auto;
 }
 
