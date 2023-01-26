@@ -1,13 +1,11 @@
-import { useState } from "react";
 import "./style.scss";
 import { MdTopic } from "react-icons/md";
 import { VscCommentDiscussion } from "react-icons/vsc";
 import { FaVoteYea } from "react-icons/fa";
 import { AiFillFileUnknown } from "react-icons/ai";
+import PropTypes from "prop-types";
 
-export default function NavBarSuggest() {
-  const [isActive, setIsActive] = useState("idea");
-
+export default function NavBarSuggest({ isActive, setIsActive }) {
   return (
     <div className="navBarS">
       <button
@@ -39,8 +37,8 @@ export default function NavBarSuggest() {
       <button
         type="button"
         id="thirdB"
-        className={isActive === "votes" ? "active" : "noActive"}
-        onClick={() => setIsActive("votes")}
+        className={isActive === "voteD" ? "active" : "noActive"}
+        onClick={() => setIsActive("voteD")}
       >
         <h3 className="text">Votes</h3>
         <div className="iconSuggest">
@@ -63,3 +61,8 @@ export default function NavBarSuggest() {
     </div>
   );
 }
+
+NavBarSuggest.propTypes = {
+  isActive: PropTypes.string.isRequired,
+  setIsActive: PropTypes.string.isRequired,
+};

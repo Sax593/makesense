@@ -1,0 +1,55 @@
+@use "../../App.scss";
+
+.containerprogress {
+  height: 20;
+  width: 100%;
+  background-color: white;
+  border-radius: 5em;
+  margin: 50;
+}
+
+.fillerprogressnull {
+  height: "100%";
+  width: 5%;
+  background-color: blue;
+  border-radius: 75%;
+  text-align: "right";
+}
+
+.fillerprogresslow {
+  height: "100%";
+  width: 25%;
+  background-color: green;
+  border-radius: 5em;
+  text-align: "right";
+}
+
+.fillerprogressmedium {
+  height: "100%";
+  width: 50%;
+  background-color: yellow;
+  border-radius: 5em;
+  text-align: "right";
+}
+
+.fillerprogressheight {
+  height: "100%";
+  width: 75%;
+  background-color: red;
+  border-radius: 5em;
+  text-align: "right";
+}
+
+.fillerprogressclosed {
+  height: "100%";
+  width: 100%;
+  background-color: grey;
+  border-radius: 5em;
+  text-align: "right";
+}
+
+.labelprogress {
+  padding-left: 1em;
+  color: black;
+  font-weight: bold;
+}

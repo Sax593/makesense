@@ -58,7 +58,7 @@
   }
   .text {
     display: unset;
-    font-size: calc(App.$font-size / 1.9);
+    font-size: calc(App.$font-size / 2.5);
   }
 
   .iconSuggest {
@@ -79,6 +79,12 @@
 
 //Desktop
 
+@media only screen and (min-width: 1224px) {
+  .iconSuggest {
+    display: none;
+  }
+}
+
 @keyframes scale {
   from {
     transform: scale(1);
@@ -89,7 +95,7 @@
 }
 
 .active {
-  color: #70af90;
+  color: #fff30d;
   text-shadow: 10px 5px 10px black;
 }
 

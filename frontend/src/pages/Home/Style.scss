@@ -1,114 +1,147 @@
 @use "../../App";
 
-.settingstitle {
-  background-color: App.$color-background;
+#headerSuggestion {
+  background-color: white;
+  height: 20vh;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 0rem;
 }
-.settingsp {
+
+#headerSuggestion > h2 {
+  color: App.$text-color-primary;
+  font-size: calc(App.$font-size * 1.5);
+  font-weight: bolder;
+  font-family: App.$font-text;
+  margin: 0;
+}
+
+.filterBlock {
+  margin-left: 15%;
+}
+.filteridea {
+  margin-top: 2em;
   display: flex;
-
-  padding-top: 10rem;
-  color: whitesmoke;
-  font-size: 2.5em;
-  padding-left: 50rem;
-
-  font-family: Raleway, Helvetica, Arial, sans-serif;
+  justify-content: space-evenly;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  width: 30%;
 }
 
-.logoxMS {
-  position: absolute;
-  height: 10em;
-  left: 10%;
-  top: 5%;
-}
-
-.logoxMS2 {
-  position: absolute;
-  height: 12em;
-  right: 10%;
-  top: 80%;
-  z-index: -5;
-  transform: rotate(-120deg);
-}
-
-.logoxMS3 {
-  position: absolute;
-  height: 15em;
-  transform: rotate(-220deg);
-  right: -7%;
-  top: -8%;
-}
-
-.titlesuggest {
-  text-align: center;
-  padding-bottom: 1rem;
-  padding-top: 2em;
-  color: whitesmoke;
-  text-shadow: 2px 2px black;
-  font-size: 2.2em;
+.priorisation,
+.priorityLabel {
+  font-family: App.$font-text;
   font-weight: bolder;
 }
 
-.filterti {
-  margin-top: 0.6rem;
-  margin-left: 1rem;
-  font-size: 2rem;
+.priorisation {
+  color: App.$color-background;
 }
-.filterti1 {
-  margin-top: 0.6rem;
-  margin-right: 1rem;
-  font-size: 2rem;
+
+.hightP {
+  color: red;
 }
-.filteridea {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+
+.mediumP {
+  color: orange;
 }
+
+.lowP {
+  color: green;
+}
+
+.noneP {
+  color: lightgrey;
+}
+
 .cardx {
-  align-items: center;
-  padding-top: 3vh;
+  display: flex;
+  padding-top: 2em;
   flex-wrap: wrap;
-  width: 60vw;
-  display: flex;
   justify-content: space-around;
-}
-.titlehome {
-  display: flex;
-
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
 }
 
-@media (max-width: 850px) {
-  .logoxMS {
-    position: absolute;
-    height: 10em;
-    left: 1%;
-    top: 5%;
-  }
+.cardsBlock {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
 
-  .logoxMS3 {
-    position: absolute;
-    height: 15em;
-    transform: rotate(-220deg);
-    right: -9%;
-    top: -8%;
+//SMARTPHONE
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #headerSuggestion {
+    height: 15vh;
+  }
+  .filteridea {
+    width: 45%;
+  }
+  .priorisation,
+  .priorityLabel {
+    font-size: calc(App.$font-size / 2.5);
+  }
+  .cardx {
+    padding-top: 1em;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .cardsBlock {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .cardx {
+    padding-top: 3em;
   }
 }
-@media (max-width: 450px) {
-  .logoxMS {
-    position: absolute;
-    height: 10em;
-    left: -11em;
-    top: 10em;
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  #headerSuggestion {
+    height: 15vh;
+  }
+  .filteridea {
+    width: 45%;
+  }
+  .priorisation,
+  .priorityLabel {
+    font-size: calc(App.$font-size / 2.5);
+  }
+  .cardx {
+    padding-top: 3em;
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #headerSuggestion {
+    height: 15vh;
+    width: auto;
+  }
+  .filteridea {
+    width: 35%;
+  }
+  .priorisation,
+  .priorityLabel {
+    font-size: calc(App.$font-size / 2);
+  }
+  .cardx {
+    padding-top: 2em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1em;
+    flex-direction: row;
   }
 
-  .logoxMS3 {
-    position: absolute;
-    height: 15em;
-    transform: rotate(-220deg);
-    right: -15em;
-    top: -11em;
+  #headerSuggestion > h2 {
+    color: App.$text-color-primary;
+    font-size: App.$font-size;
+    display: unset;
+  }
+
+  .cardsBlock {
+    padding-left: unset;
+    padding-right: unset;
   }
 }

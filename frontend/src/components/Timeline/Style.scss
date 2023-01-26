@@ -6,8 +6,8 @@
 
 .timelineProgress {
   width: 0%;
-  height: 100%;
-  background-color: orange;
+  height: 90%;
+  background-color: #c1e94e;
 }
 
 .timelineItems {
@@ -57,14 +57,31 @@
 }
 
 .timelineItem.active::before {
-  background-color: orange;
+  background-color: #c1e94e;
 }
 
 .timelineItem.active .timelineContent {
-  color: #fff;
-  background-color: orange;
+  color: #0c3944;
+  background-color: #c1e94e;
 }
 
 .timelineItem.active .timelineContent::before {
-  background-color: orange;
+  background-color: #c1e94e;
+}
+
+//SMARTPHONE
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .timelineContent {
+    font-size: 0.5em;
+    left: 50%;
+    width: 40px;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .timelineContent {
+    font-size: 0.8em;
+    left: 50%;
+    width: 60px;
+  }
 }
