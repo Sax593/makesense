@@ -28,7 +28,7 @@ class CommentsManager extends AbstractManager {
     return this.connection.query(
       `update ${this.table} set date = ?, content = ?, users_id = ?, suggests_id = ?, up_vote = ?, down_vote= ? where id = ?`,
       [
-        comments.date,
+        comments.date.slice(0, 19),
         comments.content,
         comments.users_id,
         comments.suggests_id,
