@@ -20,7 +20,7 @@ export default function Nav() {
       <Link id="historic" className="menu-item" to="/historic">
         <FaHistory /> Historique<span className="endpoint">.</span>
       </Link>
-      <Link id="logout" className="menu-item" to="/logout">
+      <Link id="logout" className="menu-item" to="/">
         <VscDebugDisconnect /> Logout<span className="endpoint">.</span>
       </Link>
 
