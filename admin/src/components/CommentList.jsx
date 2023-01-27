@@ -17,7 +17,7 @@ export default function CommentList() {
         <ReferenceField source="users_id" reference="users" />
         <ReferenceField source="suggests_id" reference="suggests" />
         <NumberField source="up_vote" />
-        <DateField source="down_vote" />
+        <NumberField source="down_vote" />
       </Datagrid>
     </List>
   );
