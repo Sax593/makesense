@@ -1,22 +1,38 @@
+import { DateTime } from "luxon";
+import propTypes from "prop-types";
 import "./Style.scss";
 
-export default function Timeline() {
+export default function Timeline({ suggestData }) {
+  const format = "yyyy/MM/dd";
+
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, "0");
+  const mm = String(today.getMonth() + 1).padStart(2, "0"); // January is 0!
+  const yyyy = today.getFullYear();
+  today = `${yyyy}/${mm}/${dd}`;
+
+  const isDateInPast = (dateToTest) => {
+    const dataDate = DateTime.fromISO(dateToTest).toFormat(format);
+    return today >= dataDate;
+  };
   const items = [
     {
-      name: "10/12/2022",
+      name: `${DateTime.fromISO(suggestData.date).toFormat(format)}`,
       active: true,
     },
     {
-      name: "18/12/2022",
-      active: true,
+      name: `${DateTime.fromISO(suggestData.contribution_date).toFormat(
+        format
+      )}`,
+      active: isDateInPast(suggestData.contribution_date),
     },
     {
-      name: "05/05/2023",
-      active: false,
+      name: `${DateTime.fromISO(suggestData.vote_date).toFormat(format)}`,
+      active: isDateInPast(suggestData.vote_date),
     },
     {
-      name: "28/01/2023",
-      active: false,
+      name: `${DateTime.fromISO(suggestData.final_date).toFormat(format)}`,
+      active: isDateInPast(suggestData.final_date),
     },
   ];
   const totalItems = items.length;
@@ -40,3 +56,12 @@ export default function Timeline() {
     </div>
   );
 }
+
+Timeline.propTypes = {
+  suggestData: propTypes.shape({
+    date: propTypes.instanceOf(Date).isRequired,
+    contribution_date: propTypes.instanceOf(Date).isRequired,
+    vote_date: propTypes.instanceOf(Date).isRequired,
+    final_date: propTypes.instanceOf(Date).isRequired,
+  }).isRequired,
+};
