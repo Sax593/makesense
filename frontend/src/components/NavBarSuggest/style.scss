@@ -96,11 +96,12 @@
 
 .active {
   color: #fff30d;
-  text-shadow: 10px 5px 10px black;
 }
 
 .active .text {
   animation: scale 0.5s linear forwards;
+  color: rgb(206, 209, 20);
+  font-size: 1em;
 }
 
 .noActive {
@@ -112,8 +113,8 @@
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #70af8f60;
-  border-top: 1px solid #70af8f60;
+  border-bottom: 1px solid #2ab46f60;
+  border-top: 1px solid #5f090960;
   width: auto;
 }
 

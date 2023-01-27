@@ -1,54 +1,131 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import PropTypes from "prop-types";
 import "./Style.scss";
+// eslint-disable-next-line import/no-unresolved
+import { DateTime } from "luxon";
+import axios from "axios";
+import { RxAvatar } from "react-icons/rx";
+import { userContext } from "@services/context/userContext";
 
-export default function Comments() {
+export default function Comments({
+  content,
+  date,
+  author,
+  up,
+  down,
+  id,
+  suggest,
+  name,
+}) {
+  const { users } = useContext(userContext);
+  const format = "dd/MM/yy HH:mm";
   const [isHidden, setIsHidden] = useState(false);
   const toggleClass = () => {
     setIsHidden(!isHidden);
   };
 
-  const [upVote, setUpVote] = useState(0);
-  const Up = () => {
+  const [upVote, setUpVote] = useState(up);
+  const Up = (evt) => {
     setUpVote(upVote + 1);
+    evt.preventDefault();
+    const newCom = {
+      content,
+      date: date.slice(0, 19),
+      users_id: author,
+      up_vote: upVote + 1,
+      down_vote: down,
+      id,
+      suggests_id: suggest,
+    };
+    axios
+      .put(`${import.meta.env.VITE_BACKEND_URL}/comments/${id}`, newCom)
+      .catch((err) => {
+        console.error(err);
+      });
   };
-  const [downVote, setDownVote] = useState(0);
-  const Down = () => {
+  const [downVote, setDownVote] = useState(down);
+  const Down = (evt) => {
     setDownVote(downVote + 1);
+    evt.preventDefault();
+    const newCom1 = {
+      content,
+      date: date.slice(0, 19),
+      users_id: author,
+      up_vote: upVote,
+      down_vote: downVote + 1,
+      id,
+      suggests_id: suggest,
+    };
+    axios
+      .put(`${import.meta.env.VITE_BACKEND_URL}/comments/${id}`, newCom1)
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
+  const [replyData, setReplyData] = useState({
+    content: "",
+    users_id: users.id,
+    suggests_id: suggest,
+  });
+
+  const hChange = (evt) => {
+    const { hname, value, type, checked } = evt.target;
+    let newValue = null;
+    switch (type) {
+      case "checkbox":
+        newValue = checked;
+        break;
+      case "file":
+        return;
+      default:
+        newValue = value;
+    }
+    setReplyData({ ...replyData, [hname]: newValue });
+  };
+
+  const hSubmit = (evt) => {
+    evt.preventDefault();
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/comments`, replyData)
+      .catch((err) => {
+        console.error(err);
+      });
+  };
   return (
     <div className="fullComment">
       <div className="comment">
-        <img className="cAvatar" src="" alt="avatar" />
-        <p>Name</p>
-        <p>
-          Je suis un commentaire et je m'agrandis Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Aliquam, optio! Quos atque dolorem
-          adipisci quae, voluptate deleniti eum quibusdam vel iusto enim nulla
-          et modi, neque exercitationem sint molestias voluptas. Lorem, ipsum
-          dolor sit amet consectetur adipisicing elit. Sed esse, at beatae
-          veritatis nam laboriosam delectus, dolores quia eos repudiandae
-          commodi natus, cumque obcaecati ratione pariatur nesciunt doloribus
-          tenetur assumenda.
+        <RxAvatar className="cAvatar" />
+        <p className="cAuthor">{name}</p>
+        <p className="cDate">
+          {date && DateTime.fromISO(date).toFormat(format)}
         </p>
+        <p className="cContent">{content}</p>
         <div className="Vote">
           <p>Vote for this comments! or Reply</p>
           <button type="button" className="Vote" onClick={Up}>
             💚
           </button>
-          <span className="num"> {upVote}</span>
+          <span className="num">{up}</span>
           <button type="button" className="Vote" onClick={Down}>
             💔
           </button>
-          <span className="num"> {downVote}</span>
+          <span className="num">{down}</span>
           <button type="button" className="replyBtn" onClick={toggleClass}>
             Reply
           </button>
         </div>
       </div>
       <div className={!isHidden ? "hidden" : "visible"}>
-        <form className="replyForm">
-          <textarea placeholder="Reply to comment" rows="4" />
+        <form className="replyForm" onSubmit={hSubmit}>
+          <textarea
+            name="content"
+            placeholder="Reply to comment"
+            rows="4"
+            onChange={hChange}
+            value={replyData.content}
+          />
+
           <div>
             <button type="submit">Submit</button>
             <button type="button" onClick={toggleClass}>
@@ -60,3 +137,13 @@ export default function Comments() {
     </div>
   );
 }
+Comments.propTypes = {
+  content: PropTypes.string.isRequired,
+  author: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
+  up: PropTypes.number.isRequired,
+  down: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  suggest: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+};
