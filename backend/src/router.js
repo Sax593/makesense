@@ -31,4 +31,12 @@ const authControllers = require("./controllers/authControllers");
 router.post("/signup", authControllers.signup);
 router.post("/login", authControllers.login);
 
+const choicesControllers = require("./controllers/choicesControllers");
+
+router.get("/choices", choicesControllers.browse);
+router.get("/choices/:id", choicesControllers.read);
+router.post("/choices", choicesControllers.add);
+router.put("/choices/:id", choicesControllers.edit);
+router.delete("/choices/:id", choicesControllers.destroy);
+
 module.exports = router;
