@@ -5,6 +5,8 @@
   text-align: center;
   font-weight: bold;
   font-size: 2em;
+  margin-left: 3vw;
+  padding-top: 1vh;
 }
 
 .underscore {
@@ -21,10 +23,39 @@
 }
 
 .linktoregister {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-family: App.$font-text;
-  font-size: App.$font-size;
-  margin: 1em;
+  color: #0c3944;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1vh;
+  margin-right: 3vw;
+  width: 10vw;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.linktoregister:after {
+  content: "";
+  background-color: #ffffff;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.linktoregister:hover:after {
+  top: 0px;
+  left: 0px;
 }

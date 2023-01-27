@@ -11,7 +11,7 @@ export default function Login() {
         </h1>
         <Link to="/register">
           <button type="button" className="linktoregister">
-            SignUp
+            Sign up
           </button>
         </Link>
       </header>
