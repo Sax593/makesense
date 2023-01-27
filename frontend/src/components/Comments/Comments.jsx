@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import "./Style.scss";
 // eslint-disable-next-line import/no-unresolved
 import { DateTime } from "luxon";
 import axios from "axios";
+import { RxAvatar } from "react-icons/rx";
+import { userContext } from "@services/context/userContext";
 
 export default function Comments({
   content,
@@ -13,7 +15,9 @@ export default function Comments({
   down,
   id,
   suggest,
+  name,
 }) {
+  const { users } = useContext(userContext);
   const format = "dd/MM/yy HH:mm";
   const [isHidden, setIsHidden] = useState(false);
   const toggleClass = () => {
@@ -61,12 +65,12 @@ export default function Comments({
 
   const [replyData, setReplyData] = useState({
     content: "",
-    users_id: 20,
+    users_id: users.id,
     suggests_id: suggest,
   });
 
   const hChange = (evt) => {
-    const { name, value, type, checked } = evt.target;
+    const { hname, value, type, checked } = evt.target;
     let newValue = null;
     switch (type) {
       case "checkbox":
@@ -77,7 +81,7 @@ export default function Comments({
       default:
         newValue = value;
     }
-    setReplyData({ ...replyData, [name]: newValue });
+    setReplyData({ ...replyData, [hname]: newValue });
   };
 
   const hSubmit = (evt) => {
@@ -91,8 +95,8 @@ export default function Comments({
   return (
     <div className="fullComment">
       <div className="comment">
-        <img className="cAvatar" src="" alt="avatar" />
-        <p className="cAuthor">{author}</p>
+        <RxAvatar className="cAvatar" />
+        <p className="cAuthor">{name}</p>
         <p className="cDate">
           {date && DateTime.fromISO(date).toFormat(format)}
         </p>
@@ -141,4 +145,5 @@ Comments.propTypes = {
   down: PropTypes.number.isRequired,
   id: PropTypes.number.isRequired,
   suggest: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
 };
