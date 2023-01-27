@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./style.scss";
 import line from "../../assets/line.svg";
 
 export default function FinalContent() {
   const [content, setContent] = useState([]);
+  const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/6`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/${id}`)
       .then(({ data }) => {
         setContent(data);
       });
