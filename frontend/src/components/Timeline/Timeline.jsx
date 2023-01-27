@@ -2,7 +2,7 @@ import { DateTime } from "luxon";
 import propTypes from "prop-types";
 import "./Style.scss";
 
-export default function Timeline({ suggestData }) {
+export default function Timeline({ suggestData, setIsVisible }) {
   const format = "yyyy/MM/dd";
 
   let today = new Date();
@@ -13,7 +13,11 @@ export default function Timeline({ suggestData }) {
 
   const isDateInPast = (dateToTest) => {
     const dataDate = DateTime.fromISO(dateToTest).toFormat(format);
-    return today >= dataDate;
+    if (today >= dataDate) {
+      setIsVisible(true);
+      return true;
+    }
+    return false;
   };
   const items = [
     {
@@ -58,6 +62,7 @@ export default function Timeline({ suggestData }) {
 }
 
 Timeline.propTypes = {
+  setIsVisible: propTypes.bool.isRequired,
   suggestData: propTypes.shape({
     date: propTypes.instanceOf(Date).isRequired,
     contribution_date: propTypes.instanceOf(Date).isRequired,

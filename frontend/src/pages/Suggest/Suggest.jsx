@@ -12,6 +12,7 @@ import "./style.scss";
 
 export default function Suggest() {
   const [isActive, setIsActive] = useState("idea");
+  const [isVisible, setIsVisible] = useState(false);
   const [suggest, setSuggest] = useState([]);
   const { id } = useParams();
 
@@ -29,7 +30,7 @@ export default function Suggest() {
     <div>
       <Nav />
       <div className="timelineBar">
-        <Timeline suggestData={suggest} />
+        <Timeline suggestData={suggest} setIsVisible={setIsVisible} />
       </div>
 
       <div className="navBarSg">
@@ -38,9 +39,9 @@ export default function Suggest() {
 
       <div className="detailsSg">
         {isActive === "idea" ? <SuggestDetails suggestData={suggest} /> : ""}
-        {isActive === "contrib" ? <Thread /> : ""}
-        {isActive === "voteD" ? <Vote /> : ""}
-        {isActive === "finaleD" ? <FinalDecision /> : ""}
+        {isActive === "contrib" && isVisible === true ? <Thread /> : ""}
+        {isActive === "voteD" && isVisible === true ? <Vote /> : ""}
+        {isActive === "finaleD" && isVisible === true ? <FinalDecision /> : ""}
       </div>
     </div>
   );
