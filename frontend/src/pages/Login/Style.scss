@@ -1,3 +1,5 @@
+@use "../../App.scss";
+
 .titlelogo {
   color: #fff;
   text-align: center;
@@ -9,4 +11,20 @@
   font-size: 1em;
   font-weight: 1000;
   color: #fff30d;
+}
+
+.loginNavbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.linktoregister {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: App.$font-text;
+  font-size: App.$font-size;
+  margin: 1em;
 }
