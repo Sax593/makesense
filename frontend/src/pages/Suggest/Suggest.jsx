@@ -41,7 +41,11 @@ export default function Suggest() {
         {isActive === "idea" ? <SuggestDetails suggestData={suggest} /> : ""}
         {isActive === "contrib" && isVisible === true ? <Thread /> : ""}
         {isActive === "voteD" && isVisible === true ? <Vote /> : ""}
-        {isActive === "finaleD" && isVisible === true ? <FinalDecision /> : ""}
+        {isActive === "finaleD" && isVisible === true ? (
+          <FinalDecision suggestData={suggest} />
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
