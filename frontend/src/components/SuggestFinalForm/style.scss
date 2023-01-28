@@ -50,3 +50,39 @@
 .sendButton:hover {
   background-color: #27ae60;
 }
+
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .labelFinal {
+    width: 100%;
+    margin: 0.5em;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+  .inputTextFinal {
+    height: 40vh;
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .inputTextFinal {
+    height: 35vh;
+  }
+  .labelFinal {
+    width: 100%;
+    margin: 0.5em;
+  }
+}
+
+//large screen
+
+@media only screen and (min-width: 1250px){
+  .labelFinal {
+    width: 100%;
+    margin: 0.5em;
+  }
+}

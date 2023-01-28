@@ -19,11 +19,36 @@
   margin-bottom: 7%;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
   .headerSuggestF {
     height: 10vh;
   }
   .suggFormTitle {
     font-size: calc(App.$font-size / 1.1);
+  }
+}
+
+// @media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+
+// }
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .headerSuggestF {
+    height: 10vh;
+  }
+  .suggFormTitle {
+    font-size: calc(App.$font-size / 0.5);
+  }
+}
+
+// large screen
+
+@media only screen and (min-width: 1250px){
+  .suggFormTitle {
+    font-size: calc(App.$font-size / 0.5);
   }
 }
