@@ -8,7 +8,7 @@ export default function PersonnalHistoric() {
   const [suggest, setSuggest] = useState([]);
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/users/46`)
       .then(({ data }) => {
         setSuggest(data);
       });
