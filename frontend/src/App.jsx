@@ -21,7 +21,7 @@ function App() {
         <Route path="/finaldecision" element={<FinalDecision />} />
         <Route path="/suggestionDetails/:id" element={<Suggest />} />
         <Route path="/vote" element={<Vote />} />
-        <Route path="/yourhsitoric" element={<PersonnalHistoric />} />
+        <Route path="/yourhistoric" element={<PersonnalHistoric />} />
       </Routes>
     </div>
   );
