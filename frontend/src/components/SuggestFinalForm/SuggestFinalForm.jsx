@@ -6,7 +6,7 @@ import "./style.scss";
 export default function SuggestFinalForm() {
   const { id } = useParams();
   const [final, setFinal] = useState({
-    final: "",
+    finale_decision: "",
   });
   const hChange = (evt) => {
     setFinal({ ...final, [evt.target.name]: evt.target.value });
@@ -31,7 +31,7 @@ export default function SuggestFinalForm() {
             <textarea
               className="inputTextFinal"
               type="text"
-              name="final"
+              name="finale_decision"
               id="finalDText"
               value={final.name}
               onChange={hChange}
