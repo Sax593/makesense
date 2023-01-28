@@ -1,6 +1,8 @@
 import Nav from "@components/Nav/Nav";
 import NavBarSuggestForm from "@components/NavBarSuggestForm/NavBarSuggestForm";
+import SuggestFinalForm from "@components/SuggestFinalForm/SuggestFinalForm";
 import SuggestIdeaDetail from "@components/SuggestIdeaDetail/SuggestIdeaDetail";
+import SuggestVotesForm from "@components/SuggestVotesForm/SuggestVotesForm";
 import TimelineForm from "@components/TimelineForm/TimelineForm";
 import { useState } from "react";
 import "./style.scss";
@@ -22,6 +24,8 @@ export default function SuggestForm() {
 
       <div className="detailsSg">
         {isActive === "idea" ? <SuggestIdeaDetail /> : ""}
+        {isActive === "voteD" ? <SuggestVotesForm /> : ""}
+        {isActive === "finaleD" ? <SuggestFinalForm /> : ""}
       </div>
     </section>
   );
