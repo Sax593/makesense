@@ -1,7 +1,8 @@
 @use "../../App.scss";
 
-
-.labelFirstPro, .labelSecondPro, .labelThirdPro{
+.labelFirstPro,
+.labelSecondPro,
+.labelThirdPro {
   display: flex;
   flex-direction: column;
   width: 30%;
@@ -10,23 +11,32 @@
   font-size: App.$font-size;
 }
 
-.inputBlockVotes{
+.inputBlockVotes {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.inputTextFirst, .inputTextSecond, .inputTextThird{
+.inputTextFirst,
+.inputTextSecond,
+.inputTextThird {
   height: 30vh;
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
 }
-#titleFirstProp, #titleSecondProp, #titleThirdProp{
+#titleFirstProp,
+#titleSecondProp,
+#titleThirdProp {
   border-top-right-radius: 0.5em;
   border-top-left-radius: 0.5em;
 }
 
-#titleFirstProp, #titleSecondProp, #titleThirdProp, .inputTextFirst, .inputTextSecond, .inputTextThird{
+#titleFirstProp,
+#titleSecondProp,
+#titleThirdProp,
+.inputTextFirst,
+.inputTextSecond,
+.inputTextThird {
   background-color: #ffff;
   border: #e0e4eb 3px solid;
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
@@ -36,7 +46,7 @@
   color: App.$text-color-primary;
 }
 
-.submButton{
+.submButton {
   display: block;
   margin: auto;
   margin-top: 1%;
@@ -49,12 +59,97 @@
   font-size: 1.2em;
   color: App.$text-color-primary;
 }
-  
-  .sendButton {
-    background: #ffffff;
-    transition: background-color 0.5s ease-out 100ms;
+
+.sendButton {
+  background: #ffffff;
+  transition: background-color 0.5s ease-out 100ms;
+}
+
+.sendButton:hover {
+  background-color: #27ae60;
+}
+
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .inputBlockVotes {
+    flex-direction: column;
+    justify-content: unset;
   }
-  
-  .sendButton:hover {
-    background-color: #27ae60;
+
+  .inputTextFirst,
+  .inputTextSecond,
+  .inputTextThird {
+    height: 20vh;
   }
+
+  #titleFirstProp,
+  #titleSecondProp,
+  #titleThirdProp,
+  .inputTextFirst,
+  .inputTextSecond,
+  .inputTextThird {
+    font-size: calc(App.$font-size/3);
+  }
+
+  .labelFirstPro,
+  .labelSecondPro,
+  .labelThirdPro {
+    width: unset;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+  .inputTextFirst,
+  .inputTextSecond,
+  .inputTextThird {
+    height: 35vh;
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .inputBlockVotes {
+    flex-direction: column;
+    justify-content: unset;
+  }
+  .labelFirstPro,
+  .labelSecondPro,
+  .labelThirdPro {
+    width: unset;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    font-size: App.$font-size;
+  }
+  .inputTextFirst,
+  .inputTextSecond,
+  .inputTextThird {
+    height: 20vh;
+  }
+
+  #titleFirstProp,
+  #titleSecondProp,
+  #titleThirdProp,
+  .inputTextFirst,
+  .inputTextSecond,
+  .inputTextThird {
+    font-size: calc(App.$font-size/1.5);
+  }
+}
+
+//large screen
+
+@media only screen and (min-width: 1250px){
+  .labelFirstPro,
+  .labelSecondPro,
+  .labelThirdPro {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-top: 1em;
+  }
+}

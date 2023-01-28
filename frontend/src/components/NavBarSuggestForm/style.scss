@@ -71,7 +71,6 @@
   display: hidden;
 }
 
-
 //PAD
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
@@ -82,7 +81,7 @@
     display: unset;
     font-size: calc(App.$font-size / 1.9);
   }
-  .navBarSForm .triangleForm{
+  .navBarSForm .triangleForm {
     margin: 0 50px 0 -5px;
     padding: 0 25px;
     position: relative;
@@ -168,4 +167,3 @@
     transform: scale(2);
   }
 }
-

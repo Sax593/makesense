@@ -1,6 +1,6 @@
 @use "../../App.scss";
 
-.labelFinal{
+.labelFinal {
   display: flex;
   flex-direction: column;
   width: 30%;
@@ -9,13 +9,13 @@
   font-size: App.$font-size;
 }
 
-.inputBlockFinal{
+.inputBlockFinal {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.inputTextFinal{
+.inputTextFinal {
   height: 30vh;
   background-color: #ffff;
   border: #e0e4eb 3px solid;
@@ -28,7 +28,7 @@
   color: App.$text-color-primary;
 }
 
-.submButton{
+.submButton {
   display: block;
   margin: auto;
   margin-top: 1%;
@@ -41,12 +41,12 @@
   font-size: 1.2em;
   color: App.$text-color-primary;
 }
-  
-  .sendButton {
-    background: #ffffff;
-    transition: background-color 0.5s ease-out 100ms;
-  }
-  
-  .sendButton:hover {
-    background-color: #27ae60;
-  }
+
+.sendButton {
+  background: #ffffff;
+  transition: background-color 0.5s ease-out 100ms;
+}
+
+.sendButton:hover {
+  background-color: #27ae60;
+}
