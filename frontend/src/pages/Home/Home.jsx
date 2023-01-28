@@ -6,7 +6,7 @@ import "./Style.scss";
 
 export default function Home() {
   const [suggest, setSuggest] = useState([]);
-  const [setPriority] = useState(null);
+  const [, setPriority] = useState(null);
 
   useEffect(() => {
     axios
