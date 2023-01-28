@@ -31,7 +31,7 @@ export default {
 
   getOne: (resource, params) =>
     httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
-      data: { ...params.data, id: json.id },
+      data: { ...params.data, ...json },
     })),
 
   create: (resource, params) =>
