@@ -16,53 +16,37 @@
   border-radius: 50%;
   font-size: 8vh;
 }
-.replyForm textarea {
-  width: 40%;
-  height: 25%;
-  box-sizing: content-box;
-  padding: 20px;
-  border-radius: 5%;
-  background-color: #ffff;
-  border: #e0e4eb 3px solid;
-  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
-  border-bottom-right-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-}
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .fullComment {
-    display: flex;
-    height: 25vh;
-    width: 80vw;
-    border-radius: 20px;
-    background-color: App.$color-background;
-    overflow: scroll;
-    p {
-      font-family: App.$font-text;
-      color: #ffffff;
-    }
-  }
-
-  .thread {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 20px;
+.replyForm {
+  align-self: flex-end;
+  textarea {
+    width: 80%;
+    height: 40%;
+    box-sizing: content-box;
+    padding: 20px;
+    border-radius: 5%;
+    background-color: #ffff;
+    border: #e0e4eb 3px solid;
+    box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
   }
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .fullComment {
     display: flex;
-    height: 25vh;
-    width: 80vw;
+    width: 90vw;
     border-radius: 20px;
-    background-color: App.$color-background;
     overflow: scroll;
     p {
       font-family: App.$font-text;
-      color: #ffffff;
+      color: App.$text-color-primary;
     }
+  }
+  .replyForm {
+    background-color: #ffffff;
+    width: 90vw;
   }
 }
 
@@ -70,14 +54,28 @@
   .fullComment {
     display: flex;
     flex-wrap: nowrap;
-    height: 25vh;
     width: 80vw;
     border-radius: 20px;
     background-color: App.$color-background;
     overflow: scroll;
     p {
       font-family: App.$font-text;
-      color: #ffffff;
+      color: App.$text-color-primary;
     }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .fullComment {
+    display: flex;
+    flex-direction: column;
+    p {
+      color: App.$text-color-primary;
+    }
+  }
+
+  .replyForm {
+    background-color: #ffffff;
+    align-items: center;
   }
 }
