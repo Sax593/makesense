@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IoIosPersonAdd } from "react-icons/io";
 import "./style.scss";
 
-export default function SuggestIdeaDetail() {
+export default function SuggestIdeaForm() {
   const [search, setSearch] = useState(true);
   const [visibility, setVisibility] = useState(true);
   const [date, setDate] = useState(true);

@@ -28,8 +28,8 @@ export default function TimelineForm() {
       />
       <div className="timelineItemsForm">
         {items.map((item) => (
-          <div className={`timelineItem${item.active ? " active" : ""}`}>
-            <div className="timelineContent"> {item.name}</div>
+          <div className={`timelineItemForm${item.active ? " active" : ""}`}>
+            <div className="timelineContentForm"> {item.name}</div>
           </div>
         ))}
       </div>

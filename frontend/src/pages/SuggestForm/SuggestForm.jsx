@@ -1,7 +1,7 @@
 import Nav from "@components/Nav/Nav";
 import NavBarSuggestForm from "@components/NavBarSuggestForm/NavBarSuggestForm";
 import SuggestFinalForm from "@components/SuggestFinalForm/SuggestFinalForm";
-import SuggestIdeaDetail from "@components/SuggestIdeaDetail/SuggestIdeaDetail";
+import SuggestIdeaForm from "@components/SuggestIdeaForm/SuggestIdeaForm";
 import SuggestVotesForm from "@components/SuggestVotesForm/SuggestVotesForm";
 import TimelineForm from "@components/TimelineForm/TimelineForm";
 import { useState } from "react";
@@ -22,8 +22,8 @@ export default function SuggestForm() {
         <NavBarSuggestForm isActive={isActive} setIsActive={setIsActive} />
       </div>
 
-      <div className="detailsSg">
-        {isActive === "idea" ? <SuggestIdeaDetail /> : ""}
+      <div className="detailsSgForm">
+        {isActive === "idea" ? <SuggestIdeaForm /> : ""}
         {isActive === "voteD" ? <SuggestVotesForm /> : ""}
         {isActive === "finaleD" ? <SuggestFinalForm /> : ""}
       </div>

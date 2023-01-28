@@ -6,10 +6,10 @@ import PropTypes from "prop-types";
 
 export default function NavBarSuggestForm({ isActive, setIsActive }) {
   return (
-    <div className="navBarS">
+    <div className="navBarSForm">
       <button
         type="button"
-        id="firstB"
+        id="firstBForm"
         className={isActive === "idea" ? "active" : "noActive"}
         onClick={() => setIsActive("idea")}
       >
@@ -18,10 +18,10 @@ export default function NavBarSuggestForm({ isActive, setIsActive }) {
           <MdTopic />
         </div>
       </button>
-      <div className="triangle" />
+      <div className="triangleForm" />
       <button
         type="button"
-        id="thirdB"
+        id="thirdBForm"
         className={isActive === "voteD" ? "active" : "noActive"}
         onClick={() => setIsActive("voteD")}
       >
@@ -30,11 +30,11 @@ export default function NavBarSuggestForm({ isActive, setIsActive }) {
           <FaVoteYea />
         </div>
       </button>
-      <div className="triangle" />
+      <div className="triangleForm" />
 
       <button
         type="button"
-        id="fourthB"
+        id="fourthBForm"
         className={isActive === "finaleD" ? "active" : "noActive"}
         onClick={() => setIsActive("finaleD")}
       >

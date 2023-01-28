@@ -23,11 +23,11 @@
   justify-content: space-between;
 }
 
-.timelineItem {
+.timelineItemForm {
   position: relative;
 }
 
-.timelineItem::before {
+.timelineItemForm::before {
   content: "";
   width: 15px;
   height: 15px;
@@ -38,7 +38,7 @@
   border-radius: 100%;
 }
 
-.timelineContent {
+.timelineContentForm {
   border: solid 3px lightgrey;
   color: #0c3944;
   font-weight: bold;
@@ -55,7 +55,7 @@
   text-align: center;
 }
 
-.timelineContent::before {
+.timelineContentForm::before {
   content: "";
   width: 10px;
   height: 10px;
@@ -68,7 +68,7 @@
   transform: rotate(-45deg) translateX(-50%);
 }
 
-.timelineItem.active::before {
+.timelineItemForm.active::before {
   position: absolute;
   top: 2px;
   height: 15px;
@@ -76,30 +76,52 @@
   background-color: #e4365c;
 }
 
-.timelineItem.active .timelineContent {
+.timelineItemForm.active .timelineContentForm {
   background-color: #dddddd;
   font-weight: bold;
   font-size: 1em;
   border: solid 3px rgb(255, 221, 31);
 }
 
-.timelineItem.active .timelineContent::before {
+.timelineItemForm.active .timelineContentForm::before {
   background-color: #fdfa34;
 }
 
 //SMARTPHONE
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .timelineContent {
+  .timelineForm{
+    margin-top: 10%;
+    margin-bottom: 20%;
+  }
+
+  .timelineContentForm {
     font-size: 0.5em;
     left: 50%;
     width: 40px;
   }
+  .timelineItemForm.active .timelineContentForm {
+    font-size: 0.5em;
+  }
+  
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
-  .timelineContent {
+  .timelineForm{
+    margin-top: 5%;
+    margin-bottom: 15%;
+  }
+  .timelineContentForm {
     font-size: 0.8em;
     left: 50%;
     width: 60px;
+  }
+  .timelineItemForm.active .timelineContentForm {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .timelineForm{
+    margin-bottom: 10%;
   }
 }

@@ -18,3 +18,14 @@
   margin-top: 5%;
   margin-bottom: 7%;
 }
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .headerSuggestF {
+    height: 10vh;
+  }
+  .suggFormTitle {
+    font-size: calc(App.$font-size /1.1);
+  }
+
+}
