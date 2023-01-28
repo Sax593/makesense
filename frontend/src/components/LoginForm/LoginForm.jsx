@@ -21,7 +21,7 @@ export default function LoginForm() {
       .then(({ data }) => {
         const { user } = data;
         setUsers(user);
-        navigate("/home");
+        navigate("/");
       })
       .catch((err) => {
         console.error(err);
