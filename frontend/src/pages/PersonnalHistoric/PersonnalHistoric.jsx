@@ -17,7 +17,7 @@ export default function PersonnalHistoric() {
     <>
       <Nav />
       <header id="headerSuggestion">
-        <h2 className="titlesuggest">Historic of Suggestions</h2>
+        <h2 className="titlesuggest">Historic of your suggestions</h2>
       </header>
       <section className="titlehome">
         <div className="cardsBlock">
