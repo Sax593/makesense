@@ -52,14 +52,20 @@ export default function Register() {
         text: "You are well registered!",
       });
     }
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/signup`, user);
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/signup`, user)
+      .then(
+        Swal.fire({
+          icon: "success",
+          title: "Wrong Password",
+          text: "The two passwords do not match!",
+        }),
+        navigate("/home")
+      )
+      .catch((err) => {
+        console.error(err);
+      });
     setUsers(user);
-    Swal.fire({
-      icon: "success",
-      title: "Wrong Password",
-      text: "The two passwords do not match!",
-    });
-    navigate("/home");
   };
 
   window.addEventListener("beforeunload", () => {
