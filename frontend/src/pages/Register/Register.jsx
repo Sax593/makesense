@@ -45,7 +45,7 @@ export default function Register() {
     }
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/signup`, user)
-      .then(navigate("/home"))
+      .then(navigate("/"))
       .catch((err) => {
         console.error(err);
       });
