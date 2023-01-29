@@ -4,6 +4,7 @@ import { userContext } from "@services/context/userContext";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
 import wallmake from "../../assets/makesensel.svg";
+import line from "../../assets/line.svg";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ export default function LoginForm() {
           Connect
         </button>
       </form>
+      <img className="linefinal" src={line} alt="line" />
     </>
   );
 }

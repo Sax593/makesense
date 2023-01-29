@@ -1,11 +1,11 @@
 @use "../../App.scss";
 
-.titlelogo {
+.titlelogotwo {
   color: #fff;
   text-align: center;
   font-weight: bold;
-  font-size: 2em;
-  margin-left: 3vw;
+  font-size: 3em;
+  padding-left: 3vw;
   padding-top: 1vh;
 }
 
@@ -26,13 +26,12 @@
   color: #0c3944;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 1vh;
   margin-right: 3vw;
   width: 10vw;
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 1px;
-  padding: 13px 20px 13px;
+  padding: 13px 13px 13px;
   outline: 0;
   border: 1px solid black;
   cursor: pointer;

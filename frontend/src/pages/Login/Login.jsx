@@ -6,7 +6,7 @@ export default function Login() {
   return (
     <>
       <header className="loginNavbar">
-        <h1 className="titlelogo">
+        <h1 className="titlelogotwo">
           Make<span className="underscore">_</span>suggest
         </h1>
         <Link to="/register">

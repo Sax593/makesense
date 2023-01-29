@@ -7,7 +7,7 @@ import "./Style.scss";
 
 export default function Nav() {
   return (
-    <Menu pageWrapId="page-wrap">
+    <Menu pageWrapId="page-wrap" width={280}>
       <h1 className="titlelogo">
         Make<span className="underscore">_</span>suggest
       </h1>

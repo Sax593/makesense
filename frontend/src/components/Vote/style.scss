@@ -2,39 +2,39 @@
   position: absolute;
   height: 9em;
   left: 23%;
-  top: 40.9%;
+  top: 41vh;
 }
 .votepictwo {
   position: absolute;
   height: 9em;
   left: 66%;
-  top: 97.3%;
+  top: 97.5vh;
 }
 
 .votepicthree {
   position: absolute;
   height: 9em;
   left: 23%;
-  top: 155.2%;
+  top: 155.2vh;
 }
 .house {
   position: absolute;
   height: 9em;
   left: 68%;
-  top: 40.9%;
+  top: 40.9vh;
 }
 .house2 {
   position: absolute;
   height: 9em;
   left: 23%;
-  top: 97.3%;
+  top: 97.3vh;
 }
 
 .house3 {
   position: absolute;
   height: 9em;
   left: 65%;
-  top: 155.2%;
+  top: 155.2vh;
 }
 
 .line {
@@ -137,6 +137,29 @@
   background-color: #fff;
   white-space: wrap;
   overflow: auto;
+}
+
+@media (min-width: 1900px) {
+  .votepic {
+    top: 39.5vh;
+  }
+  .votepictwo {
+    top: 94vh;
+  }
+
+  .votepicthree {
+    top: 149.7vh;
+  }
+  .house {
+    top: 39.5vh;
+  }
+  .house2 {
+    top: 94vh;
+  }
+
+  .house3 {
+    top: 149.7vh;
+  }
 }
 
 @media (min-width: 768px) {
