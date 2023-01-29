@@ -1,11 +1,13 @@
 import Comments from "@components/Comments/Comments";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { userContext } from "@services/context/userContext";
 
 import "./Style.scss";
 
 export default function Thread() {
+  const { users } = useContext(userContext);
   const [isHidden, setIsHidden] = useState(false);
   const toggleClass = () => {
     setIsHidden(!isHidden);
@@ -26,10 +28,9 @@ export default function Thread() {
         console.error(err);
       });
   }, []);
-
   const [hChangeData, setHChangeData] = useState({
     content: "",
-    users_id: 20,
+    users_id: users.id,
     suggests_id: id,
   });
   const hChange = (evt) => {
@@ -68,6 +69,7 @@ export default function Thread() {
               up={element.up_vote}
               down={element.down_vote}
               suggest={element.suggests_id}
+              name={element.name}
             />
           );
         })
