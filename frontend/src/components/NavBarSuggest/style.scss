@@ -1,90 +1,5 @@
 @use "../../App.scss";
 
-//PAD
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .navBarS {
-    height: App.$navBarSuggestHeight;
-  }
-  .text {
-    display: unset;
-    font-size: calc(App.$font-size / 1.9);
-  }
-
-  .iconSuggest {
-    display: none;
-  }
-
-  #firstB,
-  #secondB,
-  #thirdB,
-  #fourthB {
-    justify-content: center;
-    align-items: center;
-  }
-  .triangle {
-    visibility: visible;
-  }
-}
-
-//SMARTPHONE
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .navBarS {
-    height: App.$navBarSuggestHeight;
-  }
-  .text {
-    display: none;
-  }
-  .iconSuggest {
-    display: unset;
-    font-size: 2em;
-  }
-  #firstB,
-  #secondB,
-  #thirdB,
-  #fourthB {
-    justify-content: center;
-    align-items: center;
-  }
-  .triangle {
-    visibility: hidden;
-  }
-}
-
-@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
-  .navBarS {
-    height: App.$navBarSuggestHeight;
-  }
-  .text {
-    display: unset;
-    font-size: calc(App.$font-size / 2.5);
-  }
-
-  .iconSuggest {
-    display: none;
-  }
-
-  #firstB,
-  #secondB,
-  #thirdB,
-  #fourthB {
-    justify-content: center;
-    align-items: center;
-  }
-  .triangle {
-    visibility: visible;
-  }
-}
-
-//Desktop
-
-@media only screen and (min-width: 1224px) {
-  .iconSuggest {
-    display: none;
-  }
-}
-
 @keyframes scale {
   from {
     transform: scale(1);
@@ -95,12 +10,12 @@
 }
 
 .active {
-  color: #fff30d;
+  color: #fff;
 }
 
 .active .text {
   animation: scale 0.5s linear forwards;
-  color: rgb(206, 209, 20);
+  color: #fff;
   font-size: 1em;
 }
 
@@ -113,9 +28,8 @@
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #2ab46f60;
-  border-top: 1px solid #5f090960;
-  width: auto;
+  border-bottom: 1px solid #70af8f60;
+  border-top: 1px solid #70af8f60;
 }
 
 .navBarS {
@@ -163,4 +77,97 @@
 
 .iconSuggest {
   display: hidden;
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .navBarS {
+    height: App.$navBarSuggestHeight;
+  }
+  .text {
+    display: unset;
+    font-size: calc(App.$font-size / 1.9);
+  }
+
+  .iconSuggest {
+    display: none;
+  }
+
+  #firstB,
+  #secondB,
+  #thirdB,
+  #fourthB {
+    justify-content: center;
+    align-items: center;
+  }
+  .triangle {
+    visibility: visible;
+  }
+}
+
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .navBarS {
+    height: App.$navBarSuggestHeight;
+  }
+  .text {
+    display: none;
+  }
+  .iconSuggest {
+    display: unset;
+    font-size: 2em;
+  }
+  #firstB,
+  #secondB,
+  #thirdB,
+  #fourthB {
+    justify-content: center;
+    align-items: center;
+  }
+  .triangle {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+  .navBarS {
+    height: App.$navBarSuggestHeight;
+  }
+  .text {
+    display: unset;
+    font-size: calc(App.$font-size / 2.5);
+  }
+
+  .iconSuggest {
+    display: none;
+  }
+
+  #firstB,
+  #secondB,
+  #thirdB,
+  #fourthB {
+    justify-content: center;
+    align-items: center;
+  }
+  .triangle {
+    visibility: visible;
+  }
+  @keyframes scale {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.3);
+    }
+  }
+}
+
+//Desktop
+
+@media only screen and (min-width: 1224px) {
+  .iconSuggest {
+    display: none;
+  }
 }

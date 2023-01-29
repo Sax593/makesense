@@ -29,6 +29,9 @@ export default function Suggest() {
   return (
     <div>
       <Nav />
+      <header id="headerSuggestionMain">
+        <h2 className="titlesuggest">{suggest.title}</h2>
+      </header>
       <div className="timelineBar">
         <Timeline suggestData={suggest} setIsVisible={setIsVisible} />
       </div>

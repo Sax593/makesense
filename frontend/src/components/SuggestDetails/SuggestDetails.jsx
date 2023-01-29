@@ -25,7 +25,6 @@ export default function SuggestDetails() {
   }, []);
   return (
     <section className="suggestdetail">
-      <h2 className="suggestTitleMain">{suggest.title}</h2>
       <div className="main">
         <article className="content">
           <section className="descriptionBlock">
