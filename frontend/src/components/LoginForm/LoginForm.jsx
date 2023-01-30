@@ -4,6 +4,8 @@ import { userContext } from "@services/context/userContext";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./style.scss";
+import wallmake from "../../assets/makesensel.svg";
+import line from "../../assets/line.svg";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -22,7 +24,7 @@ export default function LoginForm() {
       .then(({ data }) => {
         const { user } = data;
         setUsers(user);
-        navigate("/home");
+        navigate("/");
       })
       .catch((err) => {
         console.error(err);
@@ -34,29 +36,33 @@ export default function LoginForm() {
       });
   };
   return (
-    <form className="loginForm" onSubmit={hSubmit}>
-      <label className="inputLoginForm">
-        <h1 className="loginTitle">LogIn</h1>
-        <input
-          className="inputLogin"
-          type="text"
-          name="email"
-          value={newConnect.email}
-          placeholder="Email"
-          onChange={hChange}
-        />
-        <input
-          className="inputLogin"
-          type="password"
-          name="password"
-          value={newConnect.password}
-          placeholder="Password"
-          onChange={hChange}
-        />
-      </label>
-      <button type="submit" className="loginSubmit">
-        Connect
-      </button>
-    </form>
+    <>
+      <img className="wallmake" src={wallmake} alt="wallmake" />
+      <form className="loginForm" onSubmit={hSubmit}>
+        <label className="inputLoginForm">
+          <h1 className="loginTitle">Login</h1>
+          <input
+            className="inputLogin"
+            type="text"
+            name="email"
+            value={newConnect.email}
+            placeholder="Email"
+            onChange={hChange}
+          />
+          <input
+            className="inputLogin"
+            type="password"
+            name="password"
+            value={newConnect.password}
+            placeholder="Password"
+            onChange={hChange}
+          />
+        </label>
+        <button type="submit" className="loginSubmit">
+          Connect
+        </button>
+      </form>
+      <img className="linefinal" src={line} alt="line" />
+    </>
   );
 }

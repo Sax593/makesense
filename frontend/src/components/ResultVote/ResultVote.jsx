@@ -26,7 +26,7 @@ export default function ResultVote() {
   useEffect(() => {
     if (hasRendered) return;
     setHasRendered(true);
-
+    Chart.defaults.color = "#FFF";
     const createChart = async () => {
       const chart = await new Chart(doughnutCanvas.current, {
         type: "doughnut",

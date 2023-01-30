@@ -6,6 +6,7 @@ import "./Style.scss";
 
 export default function Home() {
   const [suggest, setSuggest] = useState([]);
+  const [priority, setPriority] = useState();
 
   useEffect(() => {
     axios
@@ -31,6 +32,7 @@ export default function Home() {
                 type="checkbox"
                 id="all"
                 name="all"
+                onClick={() => setPriority()}
               />
               <label className="priorityLabel all" htmlFor="all">
                 All
@@ -84,9 +86,17 @@ export default function Home() {
         </div>
         <div className="cardsBlock">
           <div className="cardx">
-            {suggest.map((element) => {
-              return <SugestCard key={element.id} data={element} />;
-            })}
+            {suggest
+              .filter((suggestion) => {
+                if (!priority) {
+                  return true;
+                }
+                return suggestion.priority === priority;
+              })
+
+              .map((element) => {
+                return <SugestCard key={element.id} data={element} />;
+              })}
           </div>
         </div>
       </section>

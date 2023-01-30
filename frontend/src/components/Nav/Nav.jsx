@@ -11,7 +11,7 @@ export default function Nav() {
       <h1 className="titlelogo">
         Make<span className="underscore">_</span>suggest
       </h1>
-      <Link id="home" className="menu-item" to="/home">
+      <Link id="home" className="menu-item" to="/">
         <FaHome /> Home<span className="endpoint">.</span>
       </Link>
       <Link id="suggest" className="menu-item" to="/suggestform">
