@@ -6,7 +6,6 @@ import "./Style.scss";
 
 export default function Home() {
   const [suggest, setSuggest] = useState([]);
-  const [, setPriority] = useState(null);
 
   useEffect(() => {
     axios
@@ -32,7 +31,6 @@ export default function Home() {
                 type="checkbox"
                 id="all"
                 name="all"
-                onClick={() => setPriority(null)}
               />
               <label className="priorityLabel all" htmlFor="all">
                 All
@@ -44,7 +42,6 @@ export default function Home() {
                 type="checkbox"
                 id="new"
                 name="new"
-                onClick={() => setPriority(0)}
               />
               <label className="priorityLabel noneP" htmlFor="new">
                 New
@@ -56,7 +53,6 @@ export default function Home() {
                 type="checkbox"
                 id="low"
                 name="low"
-                onClick={() => setPriority(1)}
               />
               <label className="priorityLabel lowP" htmlFor="low">
                 Low
@@ -68,7 +64,6 @@ export default function Home() {
                 type="checkbox"
                 id="mid"
                 name="mid"
-                onClick={() => setPriority(2)}
               />
               <label className="priorityLabel mediumP " htmlFor="mid">
                 Medium
@@ -80,7 +75,6 @@ export default function Home() {
                 type="checkbox"
                 id="high"
                 name="high"
-                onClick={() => setPriority(3)}
               />
               <label className="priorityLabel hightP" htmlFor="high">
                 High
