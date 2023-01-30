@@ -2,12 +2,15 @@ import "./style.scss";
 import { useContext, useState } from "react";
 import axios from "axios";
 import { userContext } from "@services/context/userContext";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import logoMS from "../../assets/pills.svg";
 import logoMS2 from "../../assets/pills2.svg";
 import logoMS3 from "../../assets/pills3.svg";
 
 export default function Register() {
   const { setUsers } = useContext(userContext);
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     firstname: "",
@@ -36,12 +39,32 @@ export default function Register() {
   const hSubmit = (evt) => {
     evt.preventDefault();
     if (user.email !== user.confEmail) {
-      alert("Error: Email is not valid");
+      Swal.fire({
+        icon: "error",
+        title: "Wrong Email",
+        text: "The two mails do not match!",
+      });
     }
     if (user.password !== user.confPass) {
-      alert("Error: Password is not valid");
+      Swal.fire({
+        icon: "error",
+        title: "Register success",
+        text: "You are well registered!",
+      });
     }
-    axios.post(`${import.meta.env.VITE_BACKEND_URL}/signup`, user);
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/signup`, user)
+      .then(
+        Swal.fire({
+          icon: "success",
+          title: "Wrong Password",
+          text: "The two passwords do not match!",
+        }),
+        navigate("/home")
+      )
+      .catch((err) => {
+        console.error(err);
+      });
     setUsers(user);
   };
 

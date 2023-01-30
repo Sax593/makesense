@@ -8,13 +8,14 @@ import FinalDecision from "@components/FinalDecision/FinalDecision";
 import Vote from "@components/Vote/Vote";
 import Suggest from "@pages/Suggest/Suggest";
 import Historic from "@pages/Historic/Historic";
+import PersonnalHistoric from "@pages/PersonnalHistoric/PersonnalHistoric";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="/thread" element={<Thread />} />
         <Route path="/register" element={<Register />} />
         <Route path="/suggestform" element={<SuggestForm />} />
@@ -22,6 +23,7 @@ function App() {
         <Route path="/suggestionDetails/:id" element={<Suggest />} />
         <Route path="/historic" element={<Historic />} />
         <Route path="/vote" element={<Vote />} />
+        <Route path="/yourhistoric" element={<PersonnalHistoric />} />
       </Routes>
     </div>
   );

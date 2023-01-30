@@ -37,6 +37,13 @@ class SuggestsManager extends AbstractManager {
       ]
     );
   }
+
+  findByUsersId(id) {
+    return this.connection.query(
+      `SELECT * FROM ${this.table} where users_id = ?`,
+      [id]
+    );
+  }
 }
 
 module.exports = SuggestsManager;
