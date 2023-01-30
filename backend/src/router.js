@@ -17,6 +17,7 @@ router.get("/suggests/:id", suggestsControllers.read);
 router.post("/suggests", suggestsControllers.add);
 router.put("/suggests/:id", suggestsControllers.edit);
 router.delete("/suggests/:id", suggestsControllers.destroy);
+router.get("/suggests/users/:id", suggestsControllers.userssuggests);
 
 const usersControllers = require("./controllers/usersControllers");
 
