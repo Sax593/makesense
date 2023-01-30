@@ -83,19 +83,6 @@ h2 {
   border-bottom-left-radius: 0.5em;
 }
 
-.suggestTitleMain {
-  color: #fffde8;
-  font-size: calc(App.$font-size * 1.4);
-  font-family: App.$font-text;
-  position: absolute;
-  top: 3.3vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-  text-align: center;
-  font-weight: bolder;
-}
-
 .descriptionTitle,
 .repercussionTitle {
   font-family: App.$font-text;
@@ -140,6 +127,10 @@ h2 {
   .main {
     flex-direction: column;
   }
+  .avatarpicture {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
@@ -169,6 +160,17 @@ h2 {
   .main {
     display: flex;
     flex-direction: column;
+  }
+
+  .descriptionTitle,
+  .repercussionTitle {
+    margin: 0;
+    margin-top: 0.5em;
+  }
+
+  .avatarpicture {
+    width: 2rem;
+    height: 2rem;
   }
 }
 
