@@ -1,40 +1,28 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import propTypes from "prop-types";
 import "./style.scss";
 
-export default function SuggestDetails() {
-  const [suggest, setSuggest] = useState([]);
+export default function SuggestDetails({ suggestData }) {
   const [user, setUser] = useState([]);
-  const { id } = useParams();
 
   useEffect(() => {
     axios.get("https://randomuser.me/api/?results=3").then(({ data }) => {
       setUser(data.results);
     });
   }, []);
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/${id}`)
-      .then(({ data }) => {
-        setSuggest(data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
   return (
     <section className="suggestdetail">
-      <h2 className="suggestTitleMain">{suggest.title}</h2>
+      <h2 className="suggestTitleMain">{suggestData.title}</h2>
       <div className="main">
         <article className="content">
           <section className="descriptionBlock">
             <h2 className="descriptionTitle">The idea</h2>
-            <p className="description">{suggest.description}</p>
+            <p className="description">{suggestData.description}</p>
           </section>
           <section className="repercussionBlock">
             <h2 className="repercussionTitle">The repercussions</h2>
-            <p className="repercussion">{suggest.consequences}</p>
+            <p className="repercussion">{suggestData.consequences}</p>
           </section>
         </article>
         <article className="people">
@@ -73,3 +61,11 @@ export default function SuggestDetails() {
     </section>
   );
 }
+
+SuggestDetails.propTypes = {
+  suggestData: propTypes.shape({
+    title: propTypes.string.isRequired,
+    description: propTypes.string.isRequired,
+    consequences: propTypes.string.isRequired,
+  }).isRequired,
+};

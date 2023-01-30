@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { userContext } from "@services/context/userContext";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./style.scss";
 
 export default function LoginForm() {
@@ -21,10 +22,15 @@ export default function LoginForm() {
       .then(({ data }) => {
         const { user } = data;
         setUsers(user);
-        navigate("/");
+        navigate("/home");
       })
       .catch((err) => {
         console.error(err);
+        Swal.fire({
+          icon: "error",
+          title: "Connect Failure",
+          text: "Wrong passwords or email address!",
+        });
       });
   };
   return (
