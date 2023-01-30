@@ -1,9 +1,8 @@
 .timeline {
-  width: 90vw;
-  margin-top: 3vh;
-  margin-bottom: 6vh;
-  margin-left: 5.5vw;
-
+  display: block;
+  margin: auto;
+  width: 80vw;
+  margin-bottom: 3%;
   height: 4px;
   background-color: rgb(168, 163, 163);
 }
@@ -88,15 +87,33 @@
 }
 
 //SMARTPHONE
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
   .timelineContent {
-    font-size: 0.5em;
-    left: 50%;
+    font-size: 0.4em;
     width: 40px;
+  }
+  .timelineItem.active .timelineContent {
+    font-size: 0.4em;
+  }
+  .timelineItems {
+    margin-top: -10px;
+  }
+  .timelineContent {
+    padding: 5px 4px;
+    margin-left: 5px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .timelineContent::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    top: -10px;
+    left: 50%;
   }
 }
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
   .timelineContent {
     font-size: 0.8em;
     left: 50%;

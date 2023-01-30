@@ -1,39 +1,58 @@
 @use "../../App.scss";
 
-.timelineBar {
-  padding-top: 5%;
+#headerSuggestionMain {
+  background-color: white;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#headerSuggestionMain > h2 {
+  color: App.$text-color-primary;
+  font-size: calc(App.$font-size * 1.5);
+  font-weight: bolder;
+  font-family: App.$font-text;
 }
 
 .navBarSg {
   padding-top: 3%;
 }
 
-.detailsSg {
-  padding-top: 2%;
-}
-
 //SMARTPHONE
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .timeline {
-    margin-top: 25%;
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  #headerSuggestionMain {
+    height: 10vh;
   }
-  .navBarSg {
-    margin-top: 15%;
-  }
-  .detailsSg {
-    margin-top: 5%;
-  }
-}
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  #headerSuggestionMain > h2 {
+    color: App.$text-color-primary;
+    font-size: calc(App.$font-size / 1.5);
+    text-align: center;
+  }
   .timeline {
-    margin-top: 15%;
+    margin-top: 5%;
   }
   .navBarSg {
     margin-top: 10%;
   }
   .detailsSg {
     margin-top: 5%;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+  .timeline {
+    margin-top: 5%;
+  }
+  .navBarSg {
+    margin-top: 10%;
+  }
+  .detailsSg {
+    margin-top: 5%;
+  }
+  #headerSuggestionMain {
+    height: 15vh;
   }
 }
 
@@ -41,12 +60,28 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .timeline {
-    margin-top: 12%;
+    margin-top: 5%;
   }
   .navBarSg {
-    margin-top: 10%;
+    margin-top: 5%;
   }
   .detailsSg {
     margin-top: 5%;
+  }
+  #headerSuggestionMain > h2 {
+    font-size: calc(App.$font-size / 1.1);
+  }
+}
+
+//LARGE SCREEN
+@media only screen and (min-device-width: 1249px) {
+  .timeline {
+    margin-top: 3%;
+  }
+  .navBarSg {
+    margin-top: 3%;
+  }
+  .detailsSg {
+    margin-top: 3%;
   }
 }
