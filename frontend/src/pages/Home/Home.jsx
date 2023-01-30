@@ -6,6 +6,7 @@ import "./Style.scss";
 
 export default function Home() {
   const [suggest, setSuggest] = useState([]);
+
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/suggests`)
@@ -13,6 +14,7 @@ export default function Home() {
         setSuggest(data);
       });
   }, []);
+
   return (
     <>
       <Nav />
@@ -27,11 +29,22 @@ export default function Home() {
               <input
                 className="checkboxP"
                 type="checkbox"
-                id="none"
-                name="none"
+                id="all"
+                name="all"
               />
-              <label className="priorityLabel noneP" htmlFor="low">
-                None
+              <label className="priorityLabel all" htmlFor="all">
+                All
+              </label>
+            </div>
+            <div>
+              <input
+                className="checkboxP"
+                type="checkbox"
+                id="new"
+                name="new"
+              />
+              <label className="priorityLabel noneP" htmlFor="new">
+                New
               </label>
             </div>
             <div>

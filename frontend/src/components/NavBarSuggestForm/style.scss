@@ -1,14 +1,5 @@
 @use "../../App.scss";
 
-@keyframes scale {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(2);
-  }
-}
-
 .active {
   color: #fff;
 }
@@ -24,26 +15,27 @@
   text-shadow: unset;
 }
 
-.navBarS {
+.navBarSForm {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #70af8f60;
   border-top: 1px solid #70af8f60;
+  width: auto;
 }
 
-.navBarS {
+.navBarSForm {
   white-space: nowrap;
 }
-.navBarS .triangle {
+.navBarSForm .triangleForm {
   display: inline-block;
   line-height: 26px;
   margin: 0 25px 0 -10px;
   padding: 0 20px;
   position: relative;
 }
-.navBarS .triangle::before,
-.navBarS .triangle::after {
+.navBarSForm .triangleForm::before,
+.navBarSForm .triangleForm::after {
   border-right: 1px solid #70af90;
   content: "";
   display: block;
@@ -55,16 +47,16 @@
   z-index: -1;
   transform: skewX(45deg);
 }
-.navBarS .triangle::after {
+.navBarSForm .triangleForm::after {
   bottom: 0;
   top: auto;
   transform: skewX(-45deg);
 }
 
-#firstB,
+#firstBForm,
 #secondB,
-#thirdB,
-#fourthB {
+#thirdBForm,
+#fourthBForm {
   display: flex;
   width: 100%;
   height: App.$navBarSuggestHeight;
@@ -81,35 +73,39 @@
 
 //PAD
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .navBarS {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .navBarSFormForm {
     height: App.$navBarSuggestHeight;
   }
   .text {
     display: unset;
     font-size: calc(App.$font-size / 1.9);
   }
-
+  .navBarSForm .triangleForm {
+    margin: 0 50px 0 -5px;
+    padding: 0 25px;
+    position: relative;
+  }
   .iconSuggest {
     display: none;
   }
 
-  #firstB,
+  #firstBForm,
   #secondB,
-  #thirdB,
-  #fourthB {
+  #thirdBForm,
+  #fourthBForm {
     justify-content: center;
     align-items: center;
   }
-  .triangle {
+  .triangleForm {
     visibility: visible;
   }
 }
 
 //SMARTPHONE
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
-  .navBarS {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .navBarSForm {
     height: App.$navBarSuggestHeight;
   }
   .text {
@@ -119,20 +115,19 @@
     display: unset;
     font-size: 2em;
   }
-  #firstB,
-  #secondB,
-  #thirdB,
-  #fourthB {
+  #firstBForm,
+  #thirdBForm,
+  #fourthBForm {
     justify-content: center;
     align-items: center;
   }
-  .triangle {
+  .triangleForm {
     visibility: hidden;
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
-  .navBarS {
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .navBarSForm {
     height: App.$navBarSuggestHeight;
   }
   .text {
@@ -144,23 +139,15 @@
     display: none;
   }
 
-  #firstB,
+  #firstBForm,
   #secondB,
-  #thirdB,
-  #fourthB {
+  #thirdBForm,
+  #fourthBForm {
     justify-content: center;
     align-items: center;
   }
-  .triangle {
+  .triangleForm {
     visibility: visible;
-  }
-  @keyframes scale {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.3);
-    }
   }
 }
 
@@ -169,5 +156,14 @@
 @media only screen and (min-width: 1224px) {
   .iconSuggest {
     display: none;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
   }
 }

@@ -7,6 +7,8 @@ import SuggestForm from "@pages/SuggestForm/SuggestForm";
 import FinalDecision from "@components/FinalDecision/FinalDecision";
 import Vote from "@components/Vote/Vote";
 import Suggest from "@pages/Suggest/Suggest";
+import Historic from "@pages/Historic/Historic";
+import PersonnalHistoric from "@pages/PersonnalHistoric/PersonnalHistoric";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
         <Route path="/suggestform" element={<SuggestForm />} />
         <Route path="/finaldecision" element={<FinalDecision />} />
         <Route path="/suggestionDetails/:id" element={<Suggest />} />
+        <Route path="/historic" element={<Historic />} />
         <Route path="/vote" element={<Vote />} />
+        <Route path="/yourhistoric" element={<PersonnalHistoric />} />
       </Routes>
     </div>
   );

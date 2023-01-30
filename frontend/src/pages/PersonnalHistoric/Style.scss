@@ -1,0 +1,96 @@
+@use "../../App";
+
+#headerSuggestion {
+  background-color: white;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#headerSuggestion > h2 {
+  color: App.$text-color-primary;
+  font-size: calc(App.$font-size * 1.5);
+  font-weight: bolder;
+  font-family: App.$font-text;
+  margin: 0;
+}
+
+.cardsBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1.5em;
+}
+
+.cardsuggest {
+  width: 45vw;
+  margin-top: 2em;
+  border: 2px solid white;
+  padding-left: 1em;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+
+.titleParts {
+  color: white;
+  font-family: App.$font-text;
+}
+
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #headerSuggestion {
+    height: 15vh;
+  }
+
+  .cardsBlock {
+    padding: 0 0.5em;
+  }
+
+  .cardsuggest {
+    padding-top: 1em;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-top: 3em;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  #headerSuggestion {
+    height: 15vh;
+  }
+
+  .cardsuggest {
+    padding-top: 3em;
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #headerSuggestion {
+    height: 15vh;
+    width: auto;
+  }
+
+  .cardsBlock {
+    padding-left: unset;
+    padding-right: unset;
+  }
+
+  .cardsuggest {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2em;
+    gap: 1em;
+  }
+
+  #headerSuggestion > h2 {
+    color: App.$text-color-primary;
+    font-size: App.$font-size;
+    display: unset;
+  }
+}

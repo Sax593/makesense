@@ -1,0 +1,88 @@
+@use "../../App.scss";
+
+.labelFinal {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  font-family: App.$font-text;
+  color: App.$color-background;
+  font-size: App.$font-size;
+}
+
+.inputBlockFinal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.inputTextFinal {
+  height: 30vh;
+  background-color: #ffff;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  margin-top: 2%;
+  font-size: calc(App.$font-size/2.5);
+  font-family: App.$font-text;
+  color: App.$text-color-primary;
+}
+
+.submButton {
+  display: block;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 0.3em;
+  border-radius: 1em;
+  font-family: App.$font-text;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border: none;
+  font-size: 1.2em;
+  color: App.$text-color-primary;
+}
+
+.sendButton {
+  background: #ffffff;
+  transition: background-color 0.5s ease-out 100ms;
+}
+
+.sendButton:hover {
+  background-color: #27ae60;
+}
+
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .labelFinal {
+    width: 100%;
+    margin: 0.5em;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+  .inputTextFinal {
+    height: 40vh;
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .inputTextFinal {
+    height: 35vh;
+  }
+  .labelFinal {
+    width: 100%;
+    margin: 0.5em;
+  }
+}
+
+//large screen
+
+@media only screen and (min-width: 1250px) {
+  .labelFinal {
+    width: 100%;
+    margin: 0.5em;
+  }
+}

@@ -1,0 +1,125 @@
+.timelineForm {
+  display: block;
+  width: 70vw;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: 4px;
+  background-color: rgb(168, 163, 163);
+}
+.timelineBar {
+  width: 100vw;
+}
+.timelineProgress {
+  width: 95vw;
+  height: 80%;
+  background-color: #ece13f;
+}
+
+.timelineItemsForm {
+  margin-left: -9px;
+  margin-top: -9px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timelineItemForm {
+  position: relative;
+}
+
+.timelineItemForm::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: rgb(168, 163, 163);
+  position: absolute;
+  top: 2px;
+  display: block;
+  border-radius: 100%;
+}
+
+.timelineContentForm {
+  border: solid 3px lightgrey;
+  color: #0c3944;
+  font-weight: bold;
+  font-size: 1em;
+  position: absolute;
+  top: 30px;
+  left: 52%;
+  transform: translateX(-50%);
+  background-color: #ddd;
+  width: 100px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.timelineContentForm::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgb(168, 163, 163);
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: rotate(-45deg) translateX(-50%);
+}
+
+.timelineItemForm.active::before {
+  position: absolute;
+  top: 2px;
+  height: 15px;
+  width: 15px;
+  background-color: #e4365c;
+}
+
+.timelineItemForm.active .timelineContentForm {
+  background-color: #dddddd;
+  font-weight: bold;
+  font-size: 1em;
+  border: solid 3px rgb(255, 221, 31);
+}
+
+.timelineItemForm.active .timelineContentForm::before {
+  background-color: #fdfa34;
+}
+
+//SMARTPHONE
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .timelineForm {
+    margin-top: 10%;
+    margin-bottom: 20%;
+  }
+
+  .timelineContentForm {
+    font-size: 0.5em;
+    left: 50%;
+    width: 40px;
+  }
+  .timelineItemForm.active .timelineContentForm {
+    font-size: 0.5em;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .timelineForm {
+    margin-top: 5%;
+    margin-bottom: 15%;
+  }
+  .timelineContentForm {
+    font-size: 0.8em;
+    left: 50%;
+    width: 60px;
+  }
+  .timelineItemForm.active .timelineContentForm {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .timelineForm {
+    margin-bottom: 10%;
+  }
+}

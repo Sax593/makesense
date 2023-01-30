@@ -21,6 +21,6 @@ SuggestCard.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
-    priority: PropTypes.string.isRequired,
+    priority: PropTypes.number.isRequired,
   }).isRequired,
 };
