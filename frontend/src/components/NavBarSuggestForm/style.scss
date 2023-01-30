@@ -1,0 +1,169 @@
+@use "../../App.scss";
+
+.active {
+  color: #fff;
+}
+
+.active .text {
+  animation: scale 0.5s linear forwards;
+  color: #fff;
+  font-size: 1em;
+}
+
+.noActive {
+  color: #70af8f60;
+  text-shadow: unset;
+}
+
+.navBarSForm {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #70af8f60;
+  border-top: 1px solid #70af8f60;
+  width: auto;
+}
+
+.navBarSForm {
+  white-space: nowrap;
+}
+.navBarSForm .triangleForm {
+  display: inline-block;
+  line-height: 26px;
+  margin: 0 25px 0 -10px;
+  padding: 0 20px;
+  position: relative;
+}
+.navBarSForm .triangleForm::before,
+.navBarSForm .triangleForm::after {
+  border-right: 1px solid #70af90;
+  content: "";
+  display: block;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transform: skewX(45deg);
+}
+.navBarSForm .triangleForm::after {
+  bottom: 0;
+  top: auto;
+  transform: skewX(-45deg);
+}
+
+#firstBForm,
+#secondB,
+#thirdBForm,
+#fourthBForm {
+  display: flex;
+  width: 100%;
+  height: App.$navBarSuggestHeight;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-out 100ms;
+  background-color: App.$text-color-primary;
+}
+
+.iconSuggest {
+  display: hidden;
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .navBarSFormForm {
+    height: App.$navBarSuggestHeight;
+  }
+  .text {
+    display: unset;
+    font-size: calc(App.$font-size / 1.9);
+  }
+  .navBarSForm .triangleForm {
+    margin: 0 50px 0 -5px;
+    padding: 0 25px;
+    position: relative;
+  }
+  .iconSuggest {
+    display: none;
+  }
+
+  #firstBForm,
+  #secondB,
+  #thirdBForm,
+  #fourthBForm {
+    justify-content: center;
+    align-items: center;
+  }
+  .triangleForm {
+    visibility: visible;
+  }
+}
+
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .navBarSForm {
+    height: App.$navBarSuggestHeight;
+  }
+  .text {
+    display: none;
+  }
+  .iconSuggest {
+    display: unset;
+    font-size: 2em;
+  }
+  #firstBForm,
+  #thirdBForm,
+  #fourthBForm {
+    justify-content: center;
+    align-items: center;
+  }
+  .triangleForm {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  .navBarSForm {
+    height: App.$navBarSuggestHeight;
+  }
+  .text {
+    display: unset;
+    font-size: calc(App.$font-size / 2.5);
+  }
+
+  .iconSuggest {
+    display: none;
+  }
+
+  #firstBForm,
+  #secondB,
+  #thirdBForm,
+  #fourthBForm {
+    justify-content: center;
+    align-items: center;
+  }
+  .triangleForm {
+    visibility: visible;
+  }
+}
+
+//Desktop
+
+@media only screen and (min-width: 1224px) {
+  .iconSuggest {
+    display: none;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}

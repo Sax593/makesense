@@ -1,0 +1,89 @@
+@use "../../App";
+
+#headerSuggestion {
+  background-color: white;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#headerSuggestion > h2 {
+  color: App.$text-color-primary;
+  font-size: calc(App.$font-size * 1.5);
+  font-weight: bolder;
+  font-family: App.$font-text;
+  margin: 0;
+}
+
+.cardx {
+  display: flex;
+  padding-top: 2em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.cardsBlock {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+//SMARTPHONE
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #headerSuggestion {
+    height: 15vh;
+  }
+
+  .cardx {
+    padding-top: 1em;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .cardsBlock {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .cardx {
+    padding-top: 3em;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 767px) {
+  #headerSuggestion {
+    height: 15vh;
+  }
+
+  .cardx {
+    padding-top: 3em;
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #headerSuggestion {
+    height: 15vh;
+    width: auto;
+  }
+
+  .cardx {
+    padding-top: 2em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1em;
+    flex-direction: row;
+  }
+
+  #headerSuggestion > h2 {
+    color: App.$text-color-primary;
+    font-size: App.$font-size;
+    display: unset;
+  }
+
+  .cardsBlock {
+    padding-left: unset;
+    padding-right: unset;
+  }
+}

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { userContext } from "@services/context/userContext";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./style.scss";
 import wallmake from "../../assets/makesensel.svg";
 import line from "../../assets/line.svg";
@@ -27,6 +28,11 @@ export default function LoginForm() {
       })
       .catch((err) => {
         console.error(err);
+        Swal.fire({
+          icon: "error",
+          title: "Connect Failure",
+          text: "Wrong passwords or email address!",
+        });
       });
   };
   return (
