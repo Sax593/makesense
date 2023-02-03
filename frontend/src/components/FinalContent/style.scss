@@ -30,24 +30,12 @@
   border: 5px solid rgb(219, 199, 15);
 }
 
-.colfinal {
-  margin-top: 5em;
-  margin-left: 8em;
-}
 
 .pstylefinalvote {
   margin: 0;
   color: black;
 }
 
-.linefinal {
-  position: absolute;
-  height: 6em;
-  width: 100%;
-  left: 0%;
-  top: 91%;
-  transform: rotate(-180deg);
-}
 @media only screen and (max-device-width: 480px) {
   .finalcontent {
     width: auto;
