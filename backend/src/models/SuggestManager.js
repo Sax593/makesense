@@ -44,6 +44,13 @@ class SuggestsManager extends AbstractManager {
       [id]
     );
   }
+
+  countcomment(id) {
+    return this.connection.query(
+      `SELECT count(suggests_id) as count FROM comments where suggests_id = ? group by content`,
+      [id]
+    );
+  }
 }
 
 module.exports = SuggestsManager;
