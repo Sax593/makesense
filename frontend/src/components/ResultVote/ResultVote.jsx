@@ -33,7 +33,7 @@ export default function ResultVote({ suggest }) {
           datasets: [
             {
               label: "Suggest by vote",
-              data: chartData.map((row) => row.title.length),
+              data: chartData.map((row) => row.count),
             },
           ],
         },

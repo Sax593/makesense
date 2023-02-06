@@ -13,10 +13,8 @@ class ChoicesManager extends AbstractManager {
   }
 
   countVote(id) {
-    return (
-      this.connection.query(
-        `SELECT choices.title, COUNT(choices.title) as count_title FROM choices LEFT JOIN votes ON choices.id=votes.choices_id WHERE choices.suggests_id = ? GROUP BY choices.title;`
-      ),
+    return this.connection.query(
+      `SELECT choices.title, count(votes.choices_id) as count FROM choices inner join votes on votes.choices_id=choices.id where choices.suggests_id = ? group by choices_id`,
       [id]
     );
   }

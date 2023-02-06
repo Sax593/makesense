@@ -84,7 +84,7 @@ const destroy = (req, res) => {
 
 const bysuggestid = (req, res) => {
   models.choices
-    .findAll()
+    .countVote(req.params.id)
     .then(([rows]) => {
       res.send(rows);
     })
