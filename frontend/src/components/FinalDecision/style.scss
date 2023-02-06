@@ -4,14 +4,6 @@
   justify-content: space-around;
 }
 
-.linefinal {
-  height: 6em;
-  width: 100%;
-  left: 0%;
-  top: 91%;
-  transform: rotate(-180deg);
-}
-
 @media only screen and (max-device-width: 480px) {
   .result {
     flex-direction: column;
