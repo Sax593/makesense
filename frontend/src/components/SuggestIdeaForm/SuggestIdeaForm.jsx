@@ -30,15 +30,22 @@ export default function SuggestIdeaForm() {
     evt.preventDefault();
     await axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/suggests`, suggest)
+      .then(() => {
+        Swal.fire({
+          title: "Suggestion submitted",
+          text: "Your suggestion has been successfully submitted",
+          icon: "success",
+        });
+        navigate("/home");
+      })
       .catch((err) => {
+        Swal.fire({
+          title: "Something went wrong",
+          text: "submission failed",
+          icon: "error",
+        });
         console.error(err);
       });
-    Swal.fire({
-      title: "Suggestion submitted",
-      text: "Your suggestion has been successfully submitted",
-      icon: "success",
-    });
-    navigate("/home");
   };
 
   return (
