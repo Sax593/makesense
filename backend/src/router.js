@@ -40,5 +40,6 @@ router.post("/choices", choicesControllers.add);
 router.put("/choices/:id", choicesControllers.edit);
 router.delete("/choices/:id", choicesControllers.destroy);
 router.get("/choices/bysuggest/:id", choicesControllers.bysuggestid);
+router.get("/choices/countVote/:id", choicesControllers.countAllVote);
 
 module.exports = router;

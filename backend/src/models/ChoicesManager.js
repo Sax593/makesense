@@ -12,6 +12,15 @@ class ChoicesManager extends AbstractManager {
     );
   }
 
+  countVote(id) {
+    return (
+      this.connection.query(
+        `SELECT choices.title, COUNT(choices.title) as count_title FROM choices LEFT JOIN votes ON choices.id=votes.choices_id WHERE choices.suggests_id = ? GROUP BY choices.title;`
+      ),
+      [id]
+    );
+  }
+
   update(choices) {
     return this.connection.query(
       `update ${this.table} set id = ?, name = ?, suggests_id=?`,
