@@ -1,49 +1,26 @@
+@use "../../App.scss";
+
+.headervote {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  max-width: 50%;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+.house,
+.house2,
+.house3,
+.votepicthree,
+.votepictwo,
 .votepic {
-  position: absolute;
-  height: 9em;
-  left: 23%;
-  top: 41vh;
-}
-.votepictwo {
-  position: absolute;
-  height: 9em;
-  left: 66%;
-  top: 97.5vh;
-}
-
-.votepicthree {
-  position: absolute;
-  height: 9em;
-  left: 23%;
-  top: 155.2vh;
-}
-.house {
-  position: absolute;
-  height: 9em;
-  left: 68%;
-  top: 40.9vh;
-}
-.house2 {
-  position: absolute;
-  height: 9em;
-  left: 23%;
-  top: 97.3vh;
-}
-
-.house3 {
-  position: absolute;
-  height: 9em;
-  left: 65%;
-  top: 155.2vh;
-}
-
-.line {
-  position: absolute;
-  height: 6em;
-  width: 100%;
-  left: 0%;
-  top: 217%;
-  transform: rotate(-180deg);
+  height: 20vh;
+  padding: 0.5em;
 }
 
 .center-items {
@@ -51,41 +28,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5em;
 }
 
-#fpro1 {
-  margin-top: 3vh;
-  width: 55vw;
-  height: 25vh;
-  margin-bottom: 7vh;
-}
-
-#fpro2 {
-  margin-top: 3vh;
-  width: 55vw;
-  height: 25vh;
-  margin-bottom: 7vh;
-}
-
+#fpro1,
+#fpro2,
 #fpro3 {
+  width: 70%;
+  height: 30vh;
   margin-top: 3vh;
-  width: 55vw;
-  height: 25vh;
-  margin-bottom: 7vh;
+  margin-bottom: 3vh;
 }
 
 .proptitle {
-  display: flex;
-  margin-top: 7rem;
-  align-items: center;
-  justify-content: center;
-  color: whitesmoke;
-  text-shadow: 2px 2px black;
-  font-size: 1.6em;
-  font-weight: bolder;
-  text-decoration: underline 2px whitesmoke;
-  text-underline-offset: 8px;
-  text-decoration-thickness: 3px;
+  font-size: App.$font-size;
+  font-family: App.$font-text;
+  color: App.$text-color-primary;
+  text-align: center;
 }
 
 .vote-button {
@@ -94,6 +53,7 @@
   margin-bottom: 1vh;
   width: 20%;
   font-size: 20px;
+  font-family: App.$font-text;
   font-weight: bolder;
   letter-spacing: 1px;
   padding: 13px 20px 13px;
@@ -128,42 +88,124 @@
   height: 100px;
   padding: 10px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px black;
-  font-size: 22px;
-  font-family: Arial, sans-serif;
-  font-weight: bolder;
-  background-color: #fff;
   white-space: wrap;
   overflow: auto;
+  border: #e0e4eb 3px solid;
+  box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
+  background-color: #ffff;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  font-size: calc(App.$font-size/1.5);
+  font-family: App.$font-text;
+  color: App.$text-color-primary;
+  text-align: justify;
 }
 
-@media (min-width: 1900px) {
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .house,
+  .house2,
+  .house3,
+  .votepicthree,
+  .votepictwo,
   .votepic {
-    top: 39.5vh;
-  }
-  .votepictwo {
-    top: 94vh;
+    height: 5vh;
   }
 
-  .votepicthree {
-    top: 149.7vh;
-  }
-  .house {
-    top: 39.5vh;
-  }
-  .house2 {
-    top: 94vh;
+  .headervote {
+    max-width: unset;
+    width: auto;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
 
-  .house3 {
-    top: 149.7vh;
+  .proptitle {
+    font-size: calc(App.$font-size / 2.5);
+  }
+
+  .pstyle {
+    font-size: calc(App.$font-size/2.5);
+  }
+
+  #fpro1,
+  #fpro2,
+  #fpro3 {
+    width: auto;
+    height: 20vh;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  .center-items {
+    margin-bottom: 10%;
+  }
+
+  .vote-button {
+    width: 20%;
+    font-size: 0.5em;
   }
 }
 
-@media (min-width: 768px) {
-  .vote-button {
-    padding: 13px 50px 13px;
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape) {
+  .house,
+  .house2,
+  .house3,
+  .votepicthree,
+  .votepictwo,
+  .votepic {
+    height: 15vh;
+  }
+
+  #fpro1,
+  #fpro2,
+  #fpro3 {
+    width: 85%;
+    height: 35vh;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  .headervote {
+    width: 80%;
+  }
+
+  .proptitle {
+    font-size: calc(App.$font-size / 2);
+  }
+
+  .pstyle {
+    font-size: calc(App.$font-size/2);
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .house,
+  .house2,
+  .house3,
+  .votepicthree,
+  .votepictwo,
+  .votepic {
+    height: 15vh;
+  }
+
+  .headervote {
+    max-width: unset;
+    width: auto;
+  }
+
+  #fpro1,
+  #fpro2,
+  #fpro3 {
+    width: auto;
+    height: 30vh;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
 }

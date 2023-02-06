@@ -34,7 +34,7 @@ export default function Home() {
                 name="all"
                 onClick={() => setPriority()}
               />
-              <label className="priorityLabel all" htmlFor="all">
+              <label className="priorityLabel allP" htmlFor="all">
                 All
               </label>
             </div>
