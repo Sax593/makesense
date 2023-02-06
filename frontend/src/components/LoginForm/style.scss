@@ -84,6 +84,9 @@
   cursor: not-allowed;
 }
 
+.linefinal {
+  margin-top: 23vh;
+}
 @media only screen and (max-width: 1920px) {
   .loginForm {
     margin-top: 28.5vh;
@@ -93,6 +96,9 @@
   }
   .loginTitle {
     font-size: 1.5em;
+  }
+  .linefinal {
+    margin-top: 24vh;
   }
 }
 
