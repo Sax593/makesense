@@ -59,8 +59,7 @@
   left: 0px;
 }
 
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px){
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
   .linktoregister {
     width: 20vw;
     justify-content: center;
@@ -77,7 +76,7 @@
     align-items: flex-end;
   }
 
-  .titlelogotwo{
+  .titlelogotwo {
     align-self: center;
   }
 }
