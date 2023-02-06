@@ -22,7 +22,7 @@ export default function Home() {
         <h2 className="titlesuggest">Suggestions</h2>
       </header>
       <section className="titlehome">
-        <div className="filterBlock">
+        <form className="filterBlock">
           <fieldset className="filteridea">
             <legend className="priorisation">Priorisation </legend>
             <div>
@@ -86,7 +86,7 @@ export default function Home() {
               </label>
             </div>
           </fieldset>
-        </div>
+        </form>
         <div className="cardsBlock">
           <div className="cardx">
             {suggest
