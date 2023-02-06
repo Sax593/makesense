@@ -6,6 +6,7 @@ import { DateTime } from "luxon";
 import axios from "axios";
 import { RxAvatar } from "react-icons/rx";
 import { userContext } from "@services/context/userContext";
+import Swal from "sweetalert2";
 
 export default function Comments({
   content,
@@ -70,7 +71,8 @@ export default function Comments({
   });
 
   const hChange = (evt) => {
-    const { hname, value, type, checked } = evt.target;
+    // eslint-disable-next-line no-shadow
+    const { name, value, type, checked } = evt.target;
     let newValue = null;
     switch (type) {
       case "checkbox":
@@ -81,36 +83,57 @@ export default function Comments({
       default:
         newValue = value;
     }
-    setReplyData({ ...replyData, [hname]: newValue });
+    setReplyData({ ...replyData, [name]: newValue });
   };
 
   const hSubmit = (evt) => {
     evt.preventDefault();
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/comments`, replyData)
+      .then(
+        Swal.fire({
+          icon: "success",
+          title: "Thank You!",
+          text: "Your comments has be sent",
+        })
+      )
       .catch((err) => {
         console.error(err);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
       });
   };
+
   return (
     <div className="fullComment">
       <div className="comment">
-        <RxAvatar className="cAvatar" />
-        <p className="cAuthor">{name}</p>
-        <p className="cDate">
-          {date && DateTime.fromISO(date).toFormat(format)}
-        </p>
+        <div id="headercomment">
+          <RxAvatar className="cAvatar" />
+          <p className="cAuthor">{name}</p>
+          <p className="cDate">
+            {date && DateTime.fromISO(date).toFormat(format)}
+          </p>
+        </div>
         <p className="cContent">{content}</p>
-        <div className="Vote">
-          <p>Vote for this comments! or Reply</p>
-          <button type="button" className="Vote" onClick={Up}>
-            💚
-          </button>
-          <span className="num">{up}</span>
-          <button type="button" className="Vote" onClick={Down}>
-            💔
-          </button>
-          <span className="num">{down}</span>
+
+        <div id="Vote">
+          <span>
+            <span className="num">
+              <button type="button" className="Vote" onClick={Up}>
+                💚
+              </button>
+              {up}
+            </span>
+            <span className="num">
+              <button type="button" className="Vote" onClick={Down}>
+                💔
+              </button>
+              {down}
+            </span>
+          </span>
           <button type="button" className="replyBtn" onClick={toggleClass}>
             Reply
           </button>
@@ -125,7 +148,6 @@ export default function Comments({
             onChange={hChange}
             value={replyData.content}
           />
-
           <div>
             <button type="submit">Submit</button>
             <button type="button" onClick={toggleClass}>
