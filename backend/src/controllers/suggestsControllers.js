@@ -102,7 +102,7 @@ const countcomments = (req, res) => {
   models.suggests
     .countcomment(req.params.id)
     .then(([rows]) => {
-      res.send(rows);
+      res.send(rows[0]);
     })
     .catch((err) => {
       console.error(err);

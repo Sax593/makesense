@@ -47,7 +47,7 @@ class SuggestsManager extends AbstractManager {
 
   countcomment(id) {
     return this.connection.query(
-      `SELECT content, count(suggests_id) as count FROM comments where suggests_id=21 group by content;`,
+      `SELECT count(suggests_id) as count FROM comments where suggests_id = ? group by content`,
       [id]
     );
   }
