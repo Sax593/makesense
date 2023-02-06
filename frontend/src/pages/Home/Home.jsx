@@ -30,7 +30,7 @@ export default function Home() {
                 className="checkboxP"
                 type="radio"
                 id="all"
-                name="all"
+                name="priority"
                 onClick={() => setPriority()}
               />
               <label className="priorityLabel allP" htmlFor="all">
@@ -42,7 +42,7 @@ export default function Home() {
                 className="checkboxP"
                 type="radio"
                 id="new"
-                name="new"
+                name="priority"
                 onClick={() => setPriority(0)}
               />
               <label className="priorityLabel noneP" htmlFor="new">
@@ -54,7 +54,7 @@ export default function Home() {
                 className="checkboxP"
                 type="radio"
                 id="low"
-                name="low"
+                name="priority"
                 onClick={() => setPriority(1)}
               />
               <label className="priorityLabel lowP" htmlFor="low">
@@ -66,7 +66,7 @@ export default function Home() {
                 className="checkboxP"
                 type="radio"
                 id="mid"
-                name="mid"
+                name="priority"
                 onClick={() => setPriority(2)}
               />
               <label className="priorityLabel mediumP " htmlFor="mid">
@@ -78,7 +78,7 @@ export default function Home() {
                 className="checkboxP"
                 type="radio"
                 id="high"
-                name="high"
+                name="priority"
                 onClick={() => setPriority(3)}
               />
               <label className="priorityLabel hightP" htmlFor="high">
