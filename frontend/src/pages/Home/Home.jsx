@@ -15,7 +15,6 @@ export default function Home() {
         setSuggest(data);
       });
   }, []);
-
   return (
     <>
       <Nav />
@@ -29,7 +28,7 @@ export default function Home() {
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="all"
                 name="all"
                 onClick={() => setPriority()}
@@ -41,9 +40,10 @@ export default function Home() {
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="new"
                 name="new"
+                onClick={() => setPriority(0)}
               />
               <label className="priorityLabel noneP" htmlFor="new">
                 New
@@ -52,9 +52,10 @@ export default function Home() {
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="low"
                 name="low"
+                onClick={() => setPriority(1)}
               />
               <label className="priorityLabel lowP" htmlFor="low">
                 Low
@@ -63,9 +64,10 @@ export default function Home() {
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="mid"
                 name="mid"
+                onClick={() => setPriority(2)}
               />
               <label className="priorityLabel mediumP " htmlFor="mid">
                 Medium
@@ -74,9 +76,10 @@ export default function Home() {
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="high"
                 name="high"
+                onClick={() => setPriority(3)}
               />
               <label className="priorityLabel hightP" htmlFor="high">
                 High
@@ -88,12 +91,14 @@ export default function Home() {
           <div className="cardx">
             {suggest
               .filter((suggestion) => {
-                if (!priority) {
-                  return true;
+                if (priority !== undefined) {
+                  if (suggestion.priority === priority) {
+                    return true;
+                  }
+                  return false;
                 }
-                return suggestion.priority === priority;
+                return true;
               })
-
               .map((element) => {
                 return <SugestCard key={element.id} suggestData={element} />;
               })}
