@@ -9,10 +9,9 @@ export default function FinalDecision({ suggestData }) {
   return (
     <>
       <section className="result">
-        <ResultVote />
+        <ResultVote suggest={suggestData} />
         <FinalContent suggest={suggestData} />
       </section>
-      <img className="linefinal" src={line} alt="line" />
     </>
   );
 }
