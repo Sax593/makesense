@@ -3,9 +3,8 @@ import axios from "axios";
 import { userContext } from "@services/context/userContext";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import "./style.scss";
 import wallmake from "../../assets/makesensel.svg";
-import line from "../../assets/line.svg";
+import "./style.scss";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -37,7 +36,6 @@ export default function LoginForm() {
   };
   return (
     <>
-      <img className="wallmake" src={wallmake} alt="wallmake" />
       <form className="loginForm" onSubmit={hSubmit}>
         <label className="inputLoginForm">
           <h1 className="loginTitle">Login</h1>
@@ -64,7 +62,9 @@ export default function LoginForm() {
           Connect
         </button>
       </form>
-      <img className="linefinal" src={line} alt="line" />
+      <div>
+        <img className="wallmake" src={wallmake} alt="wallmake" />
+      </div>
     </>
   );
 }
