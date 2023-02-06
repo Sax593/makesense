@@ -18,6 +18,7 @@ router.post("/suggests", suggestsControllers.add);
 router.put("/suggests/:id", suggestsControllers.edit);
 router.delete("/suggests/:id", suggestsControllers.destroy);
 router.get("/suggests/users/:id", suggestsControllers.userssuggests);
+router.get("/suggests/countcomments", suggestsControllers.countcomments);
 
 const usersControllers = require("./controllers/usersControllers");
 

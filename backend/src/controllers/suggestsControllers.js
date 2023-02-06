@@ -98,6 +98,18 @@ const userssuggests = (req, res) => {
     });
 };
 
+const countcomments = (req, res) => {
+  models.suggests
+    .countcomment(req.params.id)
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   browse,
   read,
@@ -105,4 +117,5 @@ module.exports = {
   add,
   destroy,
   userssuggests,
+  countcomments,
 };
