@@ -88,6 +88,8 @@
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
+  font-family: App.$font-text;
+  color: App.$text-color-primary;
 }
 
 .add {
@@ -120,7 +122,6 @@
 .vote {
   font-family: App.$font-text;
   font-size: calc(App.$font-size - 0.4em);
-  font-weight: 900;
 }
 
 .labelExpert {

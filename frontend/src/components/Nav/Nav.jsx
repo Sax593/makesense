@@ -26,8 +26,6 @@ export default function Nav() {
       <Link id="logout" className="menu-item" to="/">
         <VscDebugDisconnect /> Logout<span className="endpoint">.</span>
       </Link>
-
-      <p className="lang">Fr 🇫🇷 En 🇬🇧 Es 🇪🇸</p>
     </Menu>
   );
 }

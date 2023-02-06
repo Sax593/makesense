@@ -11,8 +11,8 @@
 .wallmake {
   position: absolute;
   height: 70vh;
-  width: 100vw;
-  top: 17%;
+  width: 100%;
+  top: 30%;
   z-index: -1;
 }
 
@@ -48,24 +48,19 @@
   margin: auto;
   padding: 0.5em;
   border: none;
-  border-radius: 1em;
+  border-radius: 0.5em;
   box-shadow: 0 20px 60px 0 black;
   font-family: App.$font-text;
   font-size: 1.2em;
-  font-weight: bold;
   margin-top: 4vh;
   background-color: #ffffff;
-  border-radius: 12px;
   color: App.$text-color-primary;
   cursor: pointer;
   font-weight: bold;
   padding: 0.5em;
-  text-align: center;
   transition: 200ms;
-  width: 5vw;
-  box-sizing: border-box;
-  border: 0;
-  font-size: 16px;
+  width: auto;
+  font-size: calc(App.$font-size / 1.5);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -122,5 +117,10 @@
   .loginForm {
     width: 80%;
     margin-top: 30%;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .loginSubmit {
   }
 }

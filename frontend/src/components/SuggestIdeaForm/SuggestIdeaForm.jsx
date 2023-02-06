@@ -1,12 +1,17 @@
 import axios from "axios";
 import { useState } from "react";
 import { IoIosPersonAdd } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
 import "./style.scss";
 
 export default function SuggestIdeaForm() {
   const [search, setSearch] = useState(true);
   const [visibility, setVisibility] = useState(true);
   const [date, setDate] = useState(true);
+
+  const navigate = useNavigate();
 
   const [suggest, setSuggest] = useState({
     title: "",
@@ -21,11 +26,24 @@ export default function SuggestIdeaForm() {
   const hChange = (evt) => {
     setSuggest({ ...suggest, [evt.target.name]: evt.target.value });
   };
-  const hSubmit = (evt) => {
+  const hSubmit = async (evt) => {
     evt.preventDefault();
-    axios
+    await axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/suggests`, suggest)
+      .then(() => {
+        Swal.fire({
+          title: "Suggestion submitted",
+          text: "Your suggestion has been successfully submitted",
+          icon: "success",
+        });
+        navigate("/home");
+      })
       .catch((err) => {
+        Swal.fire({
+          title: "Something went wrong",
+          text: "submission failed",
+          icon: "error",
+        });
         console.error(err);
       });
   };

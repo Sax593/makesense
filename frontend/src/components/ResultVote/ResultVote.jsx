@@ -1,49 +1,52 @@
+import axios from "axios";
 import Chart from "chart.js/auto";
 import { useRef, useEffect, useState } from "react";
+import propTypes from "prop-types";
 
 import "./style.scss";
 
-export default function ResultVote() {
-  const data = [
-    {
-      decision: "Nous déménageons a Madrid",
-      vote: 35,
-    },
-    {
-      decision: "Nous créons un autre campus a Madrid",
-      vote: 15,
-    },
-    {
-      decision: "Nous ne déménageons pas",
-      vote: 53,
-    },
-  ];
+export default function ResultVote({ suggest }) {
+  const [chartData, setChartData] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `${import.meta.env.VITE_BACKEND_URL}/choices/bysuggest/${suggest.id}`
+      )
+      .then(({ data }) => {
+        setChartData(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
-  const [, setDoughnut] = useState(null);
-  const [hasRendered, setHasRendered] = useState(false);
   const doughnutCanvas = useRef(null);
 
   useEffect(() => {
-    if (hasRendered) return;
-    setHasRendered(true);
+    if (!chartData.length) return;
     Chart.defaults.color = "#FFF";
     const createChart = async () => {
-      const chart = await new Chart(doughnutCanvas.current, {
+      await new Chart(doughnutCanvas.current, {
         type: "doughnut",
         data: {
-          labels: data.map((row) => row.decision),
+          labels: chartData.map((row) => `${row.title}`),
           datasets: [
             {
               label: "Suggest by vote",
-              data: data.map((row) => row.vote),
+              data: chartData.map((row) => row.count),
             },
           ],
         },
       });
-      setDoughnut(chart);
     };
     createChart();
-  }, []);
+  }, [chartData]);
 
   return <canvas ref={doughnutCanvas} className="standardCanvas" />;
 }
+
+ResultVote.propTypes = {
+  suggest: propTypes.shape({
+    id: propTypes.number.isRequired,
+  }).isRequired,
+};

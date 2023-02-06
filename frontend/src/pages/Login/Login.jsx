@@ -7,7 +7,7 @@ export default function Login() {
     <>
       <header className="loginNavbar">
         <h1 className="titlelogotwo">
-          Make<span className="underscore">_</span>suggest
+          make<span className="underscore">_</span>suggest
         </h1>
         <Link to="/register">
           <button type="button" className="linktoregister">

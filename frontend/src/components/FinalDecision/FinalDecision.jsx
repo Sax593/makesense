@@ -6,10 +6,12 @@ import "./style.scss";
 
 export default function FinalDecision({ suggestData }) {
   return (
-    <section className="result">
-      <ResultVote />
-      <FinalContent suggest={suggestData} />
-    </section>
+    <>
+      <section className="result">
+        <ResultVote suggest={suggestData} />
+        <FinalContent suggest={suggestData} />
+      </section>
+    </>
   );
 }
 

@@ -1,3 +1,5 @@
+@use "../../App";
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
@@ -89,7 +91,6 @@
   padding-right: 7vw;
   color: white;
   text-align: center;
-  font-weight: bold;
   font-size: 1.6em;
 }
 
@@ -100,10 +101,9 @@
 .menu-item {
   padding: 3vh;
   margin: 0vh;
-  font-family: Raleway, Helvetica, Arial, sans-serif;
+  font-family: App.$font-text;
   text-decoration: none;
   font-size: 1.2rem;
-  font-weight: bold;
   text-align: justify;
   text-underline-offset: 8px;
   width: 14rem;
@@ -129,7 +129,6 @@
     justify-content: center;
     color: white;
     justify-content: center;
-    font-weight: bold;
     padding-right: 6.5em;
     font-size: 1.6em;
   }
