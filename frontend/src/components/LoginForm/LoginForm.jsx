@@ -48,6 +48,7 @@ export default function LoginForm() {
             value={newConnect.email}
             placeholder="Email"
             onChange={hChange}
+            autoComplete="off"
           />
           <input
             className="inputLogin"
@@ -56,6 +57,7 @@ export default function LoginForm() {
             value={newConnect.password}
             placeholder="Password"
             onChange={hChange}
+            autoComplete="off"
           />
         </label>
         <button type="submit" className="loginSubmit">
