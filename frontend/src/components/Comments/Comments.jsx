@@ -6,6 +6,7 @@ import axios from "axios";
 import { RxAvatar } from "react-icons/rx";
 import { userContext } from "@services/context/userContext";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function Comments({
   content,
@@ -17,6 +18,7 @@ export default function Comments({
   suggest,
   hname,
 }) {
+  const navigate = useNavigate();
   const { users } = useContext(userContext);
   const format = "dd/MM/yy HH:mm";
   const [isHidden, setIsHidden] = useState(false);
@@ -88,13 +90,14 @@ export default function Comments({
     evt.preventDefault();
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/comments`, replyData)
-      .then(
+      .then(() => {
         Swal.fire({
+          title: "Comment submitted",
+          text: "Your comment has been successfully submitted",
           icon: "success",
-          title: "Thank You!",
-          text: "Your comment has be sent",
-        })
-      )
+        });
+        navigate(0);
+      })
       .catch((err) => {
         console.error(err);
         Swal.fire({
