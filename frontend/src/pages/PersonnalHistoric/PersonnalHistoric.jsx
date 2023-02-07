@@ -31,7 +31,7 @@ export default function PersonnalHistoric() {
                 return false;
               })
               .map((element) => {
-                return <SugestCard key={element.id} data={element} />;
+                return <SugestCard suggestData={element} />;
               })}
           </div>
           <div className="cardsuggest">
@@ -44,7 +44,7 @@ export default function PersonnalHistoric() {
                 return false;
               })
               .map((element) => {
-                return <SugestCard key={element.id} data={element} />;
+                return <SugestCard key={element.id} suggestData={element} />;
               })}
           </div>
         </div>
