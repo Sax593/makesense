@@ -7,6 +7,8 @@
   text-align: center;
   flex-direction: column;
   align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   background-color: #ffff;
   border: #e0e4eb 3px solid;
   box-shadow: 0 0 0 1px rgba(92, 106, 196, 0.1);
@@ -18,31 +20,27 @@
   }
 }
 .cAuthor {
-  align-self: start;
   font-size: larger;
   margin-left: 1vw;
 }
 .cDate {
-  align-self: flex-end;
-  font-size: small;
-  margin-right: 1vw;
+  font-size: large;
   font-style: oblique;
   text-decoration: underline;
 }
 
 .cContent {
-  font-size: larger;
+  font-weight: bolder;
+  font-size: 1.5rem;
   margin-left: 1vw;
   margin-right: 1vw;
+  min-height: 5rem;
 }
 
 .cAvatar {
   height: 3rem;
   width: 3rem;
   border-radius: 20%;
-  align-self: flex-start;
-  padding-left: 2rem;
-  padding-top: 2rem;
 }
 
 .replyBtn {
@@ -54,7 +52,6 @@
 }
 
 .comment .Vote {
-  border-radius: 10%;
   text-align: center;
   align-self: flex-end;
   font-size: larger;
@@ -95,4 +92,32 @@
   .comment {
     width: unset;
   }
+}
+
+#headercomment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 20%;
+  width: 100%;
+  align-items: center;
+}
+
+#Vote {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: space-between;
+  button {
+    cursor: pointer;
+  }
+}
+
+.Vote {
+  border: none;
+  background: none;
+  font-size: larger;
+  cursor: pointer;
 }
