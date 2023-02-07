@@ -22,15 +22,15 @@ export default function Home() {
         <h2 className="titlesuggest">Suggestions</h2>
       </header>
       <section className="titlehome">
-        <div className="filterBlock">
+        <form className="filterBlock">
           <fieldset className="filteridea">
             <legend className="priorisation">Priorisation </legend>
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="all"
-                name="all"
+                name="priority"
                 onClick={() => setPriority()}
               />
               <label className="priorityLabel allP" htmlFor="all">
@@ -40,9 +40,10 @@ export default function Home() {
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="new"
-                name="new"
+                name="priority"
+                onClick={() => setPriority(0)}
               />
               <label className="priorityLabel noneP" htmlFor="new">
                 New
@@ -51,9 +52,10 @@ export default function Home() {
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="low"
-                name="low"
+                name="priority"
+                onClick={() => setPriority(1)}
               />
               <label className="priorityLabel lowP" htmlFor="low">
                 Low
@@ -62,9 +64,10 @@ export default function Home() {
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="mid"
-                name="mid"
+                name="priority"
+                onClick={() => setPriority(2)}
               />
               <label className="priorityLabel mediumP " htmlFor="mid">
                 Medium
@@ -73,26 +76,29 @@ export default function Home() {
             <div>
               <input
                 className="checkboxP"
-                type="checkbox"
+                type="radio"
                 id="high"
-                name="high"
+                name="priority"
+                onClick={() => setPriority(3)}
               />
               <label className="priorityLabel hightP" htmlFor="high">
                 High
               </label>
             </div>
           </fieldset>
-        </div>
+        </form>
         <div className="cardsBlock">
           <div className="cardx">
             {suggest
               .filter((suggestion) => {
-                if (!priority) {
-                  return true;
+                if (priority !== undefined) {
+                  if (suggestion.priority === priority) {
+                    return true;
+                  }
+                  return false;
                 }
-                return suggestion.priority === priority;
+                return true;
               })
-
               .map((element) => {
                 return <SugestCard key={element.id} suggestData={element} />;
               })}
