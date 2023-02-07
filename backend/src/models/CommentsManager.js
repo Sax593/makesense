@@ -17,7 +17,7 @@ class CommentsManager extends AbstractManager {
       `
       select 
         comments.*, 
-        users.name 
+        users.name as hname
       from  
         ${this.table} 
         left join users on comments.users_id=users.id`

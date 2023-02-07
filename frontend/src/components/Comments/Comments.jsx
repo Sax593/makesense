@@ -1,7 +1,6 @@
 import { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import "./Style.scss";
-// eslint-disable-next-line import/no-unresolved
 import { DateTime } from "luxon";
 import axios from "axios";
 import { RxAvatar } from "react-icons/rx";
@@ -16,7 +15,7 @@ export default function Comments({
   down,
   id,
   suggest,
-  name,
+  hname,
 }) {
   const { users } = useContext(userContext);
   const format = "dd/MM/yy HH:mm";
@@ -71,7 +70,6 @@ export default function Comments({
   });
 
   const hChange = (evt) => {
-    // eslint-disable-next-line no-shadow
     const { name, value, type, checked } = evt.target;
     let newValue = null;
     switch (type) {
@@ -112,7 +110,7 @@ export default function Comments({
       <div className="comment">
         <div id="headercomment">
           <RxAvatar className="cAvatar" />
-          <p className="cAuthor">{name}</p>
+          <p className="cAuthor">{hname}</p>
           <p className="cDate">
             {date && DateTime.fromISO(date).toFormat(format)}
           </p>
@@ -167,5 +165,5 @@ Comments.propTypes = {
   down: PropTypes.number.isRequired,
   id: PropTypes.number.isRequired,
   suggest: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
+  hname: PropTypes.string.isRequired,
 };

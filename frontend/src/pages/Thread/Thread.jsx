@@ -69,7 +69,7 @@ export default function Thread() {
               up={element.up_vote}
               down={element.down_vote}
               suggest={element.suggests_id}
-              name={element.name}
+              hname={element.hname}
             />
           );
         })
