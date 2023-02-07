@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SugestCard from "@components/SugestCard/SugestCard";
 import Nav from "@components/Nav/Nav";
+import SuggestCardToForm from "@components/SuggestCardToForm/SugestCardToForm";
 import "./Style.scss";
 
 export default function PersonnalHistoric() {
@@ -31,7 +32,9 @@ export default function PersonnalHistoric() {
                 return false;
               })
               .map((element) => {
-                return <SugestCard suggestData={element} />;
+                return (
+                  <SuggestCardToForm key={element.id} suggestData={element} />
+                );
               })}
           </div>
           <div className="cardsuggest">

@@ -9,6 +9,7 @@ import Vote from "@components/Vote/Vote";
 import Suggest from "@pages/Suggest/Suggest";
 import Historic from "@pages/Historic/Historic";
 import PersonnalHistoric from "@pages/PersonnalHistoric/PersonnalHistoric";
+import SuggestFormFirstStep from "@pages/SuggestForm FirstStep/SuggestForm";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/thread" element={<Thread />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/suggestform" element={<SuggestForm />} />
+        <Route path="/suggestform/:id" element={<SuggestForm />} />
+        <Route path="/suggestform" element={<SuggestFormFirstStep />} />
         <Route path="/finaldecision" element={<FinalDecision />} />
         <Route path="/suggestionDetails/:id" element={<Suggest />} />
         <Route path="/historic" element={<Historic />} />

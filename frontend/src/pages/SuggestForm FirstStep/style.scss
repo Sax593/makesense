@@ -1,0 +1,51 @@
+@use "../../App.scss";
+
+.headerSuggestF {
+  background-color: #fff;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.suggFormTitle {
+  color: App.$text-color-primary;
+  font-size: calc(App.$font-size * 1.5);
+  font-family: App.$font-text;
+  font-weight: bolder;
+}
+
+.timelineBarForm {
+  margin-top: 5%;
+  margin-bottom: 7%;
+}
+
+//SMARTPHONE
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .headerSuggestF {
+    height: 10vh;
+  }
+  .suggFormTitle {
+    font-size: calc(App.$font-size / 1.1);
+  }
+}
+
+//PAD
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1249px) {
+  .headerSuggestF {
+    height: 10vh;
+  }
+  .suggFormTitle {
+    font-size: calc(App.$font-size / 0.5);
+  }
+}
+
+// large screen
+
+@media only screen and (min-width: 1250px) {
+  .suggFormTitle {
+    font-size: calc(App.$font-size / 0.5);
+  }
+}
