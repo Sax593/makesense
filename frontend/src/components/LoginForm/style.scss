@@ -52,7 +52,7 @@
   box-shadow: 0 20px 60px 0 black;
   font-family: App.$font-text;
   font-size: 1.2em;
-  margin-top: 4vh;
+  margin-top: 2vh;
   background-color: #ffffff;
   color: App.$text-color-primary;
   cursor: pointer;
@@ -109,12 +109,14 @@
 
 @media only screen and (max-width: 850px) and (orientation: portrait) {
   .loginForm {
-    width: 40%;
+    width: 70%;
     margin-top: 30%;
+  }
+  .loginTitle{
+    margin-bottom: 2%;
+  }
+  .wallmake{
+    top: 20%;
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
-  .loginSubmit {
-  }
-}
