@@ -92,7 +92,7 @@ export default function Comments({
         Swal.fire({
           icon: "success",
           title: "Thank You!",
-          text: "Your comments has be sent",
+          text: "Your comment has be sent",
         })
       )
       .catch((err) => {
