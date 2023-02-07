@@ -30,7 +30,7 @@ export default function Historic() {
                 return false;
               })
               .map((element) => {
-                return <SugestCard key={element.id} data={element} />;
+                return <SugestCard key={element.id} suggestData={element} />;
               })}
           </div>
         </div>
