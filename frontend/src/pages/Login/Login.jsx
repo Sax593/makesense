@@ -9,7 +9,7 @@ export default function Login() {
         <h1 className="titlelogotwo">
           make<span className="underscore">_</span>suggest
         </h1>
-        <Link to="/register">
+        <Link to="/register" className="buttonSign">
           <button type="button" className="linktoregister">
             Sign up
           </button>

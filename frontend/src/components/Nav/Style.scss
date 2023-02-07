@@ -81,7 +81,6 @@
 
 .endpoint {
   font-size: 2rem;
-
   color: #fff30d;
 }
 
@@ -150,24 +149,8 @@
     width: 100vw;
   }
 
-  .bm-item-list {
-    color: #ffffff;
-    padding: 2em;
-    padding-left: 12em;
-    width: 30em;
-    justify-content: center;
-  }
-
   .bm-cross {
     background: #fffffe;
-    width: 5px !important;
-    height: 20px !important;
-  }
-  .lang {
-    font-size: 0.8em;
-    width: 9rem;
-    padding-top: 0.4em;
-    padding-left: 2.5em;
   }
   .menu-item {
     padding-left: 2.5rem;
@@ -175,6 +158,16 @@
   }
 
   .bm-cross-button {
-    left: 350px;
+    left: 380px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px){
+  .bm-item-list {
+    color: #ffffff;
+    // padding: 2em;
+    // padding-left: 10%;
+    width: 100%;
+    justify-content: center;
   }
 }
