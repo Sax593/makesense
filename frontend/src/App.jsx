@@ -10,22 +10,32 @@ import Suggest from "@pages/Suggest/Suggest";
 import Historic from "@pages/Historic/Historic";
 import PersonnalHistoric from "@pages/PersonnalHistoric/PersonnalHistoric";
 import SuggestFormFirstStep from "@pages/SuggestForm FirstStep/SuggestForm";
+import { useContext } from "react";
+import { userContext } from "@services/context/userContext";
 
 function App() {
+  const { users } = useContext(userContext);
   return (
     <div className="App">
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Login />} />
-        <Route path="/thread" element={<Thread />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/suggestform/:id" element={<SuggestForm />} />
-        <Route path="/suggestform" element={<SuggestFormFirstStep />} />
-        <Route path="/finaldecision" element={<FinalDecision />} />
-        <Route path="/suggestionDetails/:id" element={<Suggest />} />
-        <Route path="/historic" element={<Historic />} />
-        <Route path="/vote" element={<Vote />} />
-        <Route path="/yourhistoric" element={<PersonnalHistoric />} />
+        {users.email ? (
+          <>
+            <Route path="/home" element={<Home />} />
+            <Route path="/thread" element={<Thread />} />
+            <Route path="/suggestform/:id" element={<SuggestForm />} />
+            <Route path="/suggestform" element={<SuggestFormFirstStep />} />
+            <Route path="/finaldecision" element={<FinalDecision />} />
+            <Route path="/suggestionDetails/:id" element={<Suggest />} />
+            <Route path="/historic" element={<Historic />} />
+            <Route path="/vote" element={<Vote />} />
+            <Route path="/yourhistoric" element={<PersonnalHistoric />} />
+          </>
+        ) : (
+          <>
+            <Route path="/" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </>
+        )}
       </Routes>
     </div>
   );
