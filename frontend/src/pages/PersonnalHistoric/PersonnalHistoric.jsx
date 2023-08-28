@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import SugestCard from "@components/SugestCard/SugestCard";
 import Nav from "@components/Nav/Nav";
 import SuggestCardToForm from "@components/SuggestCardToForm/SugestCardToForm";
 import "./Style.scss";
+import { userContext } from "@services/context/userContext";
 
 export default function PersonnalHistoric() {
+  const { users } = useContext(userContext);
   const [suggest, setSuggest] = useState([]);
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/users/46`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/suggests/users/${users.id}`)
       .then(({ data }) => {
         setSuggest(data);
       });

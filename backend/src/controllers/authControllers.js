@@ -38,7 +38,11 @@ const login = async (req, res) => {
     const [user] = results;
     delete user.password;
     const token = jwt.sign(user, process.env.JWT_PASSWORD);
-    res.send({ token, user });
+    res
+      .cookie("access_token", token, {
+        httpOnly: true,
+      })
+      .send({ user });
   } else {
     res.status(401).send("You are not register!");
   }
