@@ -40,13 +40,12 @@
     flex-wrap: nowrap;
     justify-content: space-around;
     flex-direction: column;
+    padding-top: 3em;
   }
   .cardsBlock {
+    flex-direction: column;
     padding-left: 0.5em;
     padding-right: 0.5em;
-  }
-  .cardx {
-    padding-top: 3em;
   }
 }
 

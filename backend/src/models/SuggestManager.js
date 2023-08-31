@@ -7,7 +7,7 @@ class SuggestsManager extends AbstractManager {
 
   insert(suggests) {
     return this.connection.query(
-      `insert into ${this.table} (title, description, date, consequences, priority, contribution_date, vote_date, final_date) values (?,?,NOW(),?,?,?,?,?)`,
+      `insert into ${this.table} (title, description, date, consequences, priority, contribution_date, vote_date, final_date, users_id) values (?,?,NOW(),?,?,?,?,?,?)`,
       [
         suggests.title,
         suggests.description,
@@ -16,6 +16,7 @@ class SuggestsManager extends AbstractManager {
         suggests.contribution_date,
         suggests.vote_date,
         suggests.final_date,
+        suggests.users_id,
       ]
     );
   }

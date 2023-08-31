@@ -3,8 +3,8 @@ import axios from "axios";
 import SugestCard from "@components/SugestCard/SugestCard";
 import Nav from "@components/Nav/Nav";
 import SuggestCardToForm from "@components/SuggestCardToForm/SugestCardToForm";
-import "./Style.scss";
 import { userContext } from "@services/context/userContext";
+import "./Style.scss";
 
 export default function PersonnalHistoric() {
   const { users } = useContext(userContext);

@@ -19,7 +19,6 @@ export default function ResultVote({ suggest }) {
         console.error(err);
       });
   }, []);
-
   const doughnutCanvas = useRef(null);
 
   useEffect(() => {

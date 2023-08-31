@@ -1,12 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { IoIosPersonAdd } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import { userContext } from "@services/context/userContext";
 import "./style.scss";
 
 export default function SuggestIdeaForm() {
+  const { users } = useContext(userContext);
   const [search, setSearch] = useState(true);
   const [visibility, setVisibility] = useState(true);
   const [date, setDate] = useState(true);
@@ -21,6 +22,7 @@ export default function SuggestIdeaForm() {
     contribution_date: "",
     vote_date: "",
     final_date: "",
+    users_id: users.id,
   });
 
   const hChange = (evt) => {
